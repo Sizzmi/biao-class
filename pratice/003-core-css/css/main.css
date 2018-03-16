@@ -1,0 +1,21 @@
+/*p{
+    background: gray;
+}
+.yellow{
+    background: yellow;
+}
+#logo{
+    border:
+}
+*/
+div a {
+    background:hotpink;
+}
+
+div > a {
+    background:red;
+}
+
+div > * {
+    border: 2px solid tomato;
+}
