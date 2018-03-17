@@ -1,0 +1,39 @@
+h1{
+    color:purple;
+    background:yellow;
+}
+div,p{
+    color:greenyellow;
+}
+.red{
+    color:blue;
+}
+.bold{
+    font-weight: 1200;
+}
+
+[title]{
+    color:gray;
+    border: 1px solid #009;
+}
+
+.button,
+input[type="submit"]{
+    border: 0;
+
+}
+input[type="text"]{
+    width: 100%;
+    padding: 5px;
+}
+a:link{
+    color:blue;
+}
+
+a:visited{
+    color:gray;
+}
+button:hover,
+a:hover{
+    background:#eee;
+}
