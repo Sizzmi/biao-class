@@ -1,118 +1,126 @@
 <style>
-
-    body {
-      margin: 0;
-    }
     .row {
-      font-size: 0;
-      margin-bottom: 2px; /*临时*/
+        font-size: 0;
+        margin: 5px;
     }
     .col {
-      font-size: 15px;
-      display: inline-block;
-      vertical-align: top;
+        font-size: 17px;
+        display: inline-block;
+        background: green;
     }
-    .col:nth-child(odd) {
-      background: blueviolet;
-    }
-    .col:nth-child(even) {
-      background: tomato;
-    }
-    .container {
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      }
-    
 
-</style>
-<div class="row">
-    <div style="width: 20%;" class="col left LOGO">
-        <a href="#">LOGO<img></a>
-    </div>
-    <div style="float:right;width: 50%;" class="col link-group" >
-        <div style="width: 20%;"class="col typeshowuser">
-            <a class="reg" href="#"></a>
-            <a class="log" href="#"></a>
+    .reg,.log, .link-group,.true-search {
+        text-align: right;
+    }
+    .house-num,.search-group {
+        text-align: center;
+        
+    }
+
+    
+    .search-chioce {
+    max-width: 600px; /*最大宽度：600像素*/
+    margin-left: auto; /*左margin：自动*/
+    margin-right: auto; /*右margin：自动*/
+  }
+  </style>
+  <div class="row first-screen">
+    <div class="row">
+        <div style="width:20%" class="col">logo</div>
+        <div style="width:80%" class="col">
+            <div class="row">
+                <div style="width: 100%" class="col reg">登录</div>
+                <div style="width: 100%" class="col log">注册</div>
+            </div>
+            <div  class="row link-group">
+                <div style="width: 7%" class="col">新房</div>
+                <div style="width: 7%" class="col">二手房</div>
+                <div style="width: 7%" class="col">学校</div>
+                <div style="width: 7%" class="col">租房</div>
+                <div style="width: 7%" class="col">旅居</div>
+                <div style="width: 7%" class="col">海外</div>
+                <div style="width: 7%" class="col">小区</div>
+                <div style="width: 7%" class="col">经纪人</div>
+                <div style="width: 7%" class="col">指南</div>
+                <div style="width: 7%" class="col">房价</div>
+                <div style="width: 7%" class="col">工具</div>
+                <div style="width: 7%" class="col">发布房源</div>
+            </div>            
         </div>
-        <ul>
-            <a href="#">二手房</a>
-            <a href="#">新房</a>
-            <a href="#">学校</a>
-            <a href="#">租房</a>
-            <a href="#">旅居</a>
-            <a href="#">海外</a>
-            <a href="#">小区</a>
-            <a href="#">经纪人</a>
-            <a href="#">指南</a>
-            <a href="#">房价</a>
-            <a href="#">工具</a>
-            <a href="#">发布房源</a>
-                
-        </ul>
-
     </div>
-    
-  </div>
-  <div class="row house-num">
-      <ul>
-          <li style="height:35px";>北京在</li>
-          <li style="height:35px";>不在</li>
-          <li style="height:35px";>哇</li>
-      </ul>
-  </div>
-
-  <div class="row">
-        <div class="menu">
-      <ul>
-        <li style="float:left;"><span>找二手房</span></li>
-        <li style="float:left;"><span>找新房</span></li>
-        <li style="float:left;"><span>找租房</span></li>
-        <li style="float:left;"><span>找小区</span></li>
-        <li style="float:left;"><span>搜问答</span></li>
-      </ul>
-      <input type="text">
-      <button>开始找房</button>
-  </div>        
-  </div>
- 
-  <div class="row">
-      <div class="col">
-        <ul>
-          <li width:20%;"><a href="#">找二手房<img src="#"></a></li>
-          <li width:40%;"><a href="#">地图找房<img src="#"></a></li>
-          <li width:60%;"><a href="#">房屋估价<img src="#"></a></li>
-          <li width:80%;"><a href="#">找地铁房<img src="#"></a></li>
-        </ul>
-      </div>
-  </div>
-
-</div>
-<div class="row download-guide">
-    <span></span>
-    <img>
-</div>
-<div class="row sales-erfang">
+    <div class="row">
+        <div class="row">
+        </div>
+            <div style="width: 100% " class="col house-num">
+                <span>北京链家在售新房楼盘 485 个</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row search-chioce">
+            <div style="width: 15%" class="col">找二手房</div>
+            <div style="width: 15%" class="col">找新房</div>
+            <div style="width: 15%" class="col">找租房</div>
+            <div style="width: 15%" class="col">找小区</div>
+            <div style="width: 15%" class="col">搜问答</div>
+        </div>
+        <div class="row search-group">
+            <input type="text" name="" id="">
+            <button>开始找房</button>
+        </div>
+    </div>
+    <div class="row">
+        <div style="width: 100%" class="col">声明保证</div>
+        <a href="#">关于仿冒我公司进行不正当竞争行为的郑重声明</a>
+        <a href="#">房地产中介诚信服务承诺及保证书</a>
+    </div>
+    <div class="row">
+        <div style="width: 25%" class="col">找二手房</div>
         <a href="#"><img></a>
-        <!-- n more-->
-    </div>
-<div class="row sales-xiaoqu">
+        <div style="width: 25%" class="col">地图找房</div>
         <a href="#"><img></a>
-        <!-- n more-->
+        <div style="width: 25%" class="col">房屋估价</div>
+        <a href="#"><img></a>
+        <div style="width: 25%" class="col">找地铁房</div>
+        <a href="#"><img></a>
     </div>
-<div class="row sales-xinfang">
-         <a href="#"><img></a>
-        <!-- n more-->
+  </div>
+  <div class="row download-guide">
+        <a href="#"><img>ipone</a>
+        <a href="#"><img>Android</a>
+  </div>
+  <div class="row">
+    <div class="row top-bar">
+        <div style="width: 50%" class="col left title">
+            <span>二手好房</span>
+        </div>
+        <div style="width: 50%" class="col right link">
+            <span>更多北京二手房</span>
+        </div>
     </div>
-<div class="row truth-search">
-        <div class="search area ">
-                <span>number</span>
-                
-                <input>
-                
-       </div>
-<div class="row infomation">
-        <div class="link-group">
-        <a href="#">text</a>
-        <!-- n more-->
+    <div class="row mid-bar">
+        <div style="width: 25%" class="col">img</div>
+        <div style="width: 25%" class="col">img</div>
+        <div style="width: 25%" class="col">img</div>
+        <div style="width: 25%" class="col">img</div>
     </div>
+    <!-- 2 more-->
+  </div>
+  <div class="row true-search">
+        <input type="text" name="" id="">
+        <button>放大镜img</button>
+
+  </div>
+  <div class="row">
+    <div class="row top-bar">
+        <div style="width: 25%"class="col">其他信息</div>
+        <div style="width: 75%"class="col">客服热线</div>
+    </div>
+    <div class="row mid-bar">
+        <div style="width: 20%" class="col">链接组</div>
+        <!--n more-->
+    </div>
+    <div class="row bottom">
+        <div style="width: 100%" class="col">认证信息</div>
+    </div>
+  </div>
