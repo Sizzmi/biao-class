@@ -4,6 +4,13 @@
     background: rgba(0, 0, 0, .8);
 }/*.main-promote .cat 总体的占宽度比例以及背景色调整*/
 
+.main-promote {
+    background-color: #fae3b5; /*背景色*/
+    background-image: url(slider02.jpg); /*背景图路径*/
+    background-position: center; /*背景图定位*/
+    background-size: contain; /*背景图尺寸限制方式*/
+    background-repeat: no-repeat; /*不重复*/
+}
 .main-promote .slider {
     width: 80%;
 }/*main-promote .slider下的调整*/
@@ -18,4 +25,4 @@
 .main-promote .cat a:hover {
     color: #fff;
     background: rgba(0, 0, 0, .9);
-} /*鼠标移动时的背景颜色*/
+} /*鼠标移动时的背景颜色调整 第四个参数是透明百分比*/
