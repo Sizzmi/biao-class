@@ -3,6 +3,7 @@
     width: 50%;
 }
 
+
 .section-cat .head {
     margin: 20px 0;
 }
@@ -11,13 +12,17 @@
     font-size: 130%;
 }
 
-.card-group .card {
+.card-group .others {
+    width: 80%;
+}
+
+.card-group .card{
     background: #fff;
 }
 
-.card {
-    /*border 1px solid rgba(0,0,0,.12);*/
-}
+/* .card {
+    border 1px solid rgba(0,0,0,.12);
+}  */
 
 .card {
     -webkit-box-shadow:0 0 4px rgba(0,0,0,.1);
@@ -62,4 +67,9 @@
 
 .section-cat .others .row{
     margin-bottom: 5px;
+    
+}
+
+.section-cat .others .{
+    width:80%
 }
