@@ -1,22 +1,22 @@
 .section-cat .head .left,
 .section-cat .head .right {
-    width: 50%;
+    width: 50%; /*.section-cat .head .left 和right的左右宽度*/
 }
 
 .section-cat .head {
-    margin: 20px 0;
+    margin: 20px 0;/*外边距*/
 }
 
 .section-cat .head .title {
-    font-size: 130%;
+    font-size: 130%;/*字体大小*/
 }
 
 .card-group .others {
-    width: 80%;
+    width: 80%;/*宽度面积占比*/
 }
 
 .card-group .card {
-    background: #fff;
+    background: #fff;/*.card-group .card类各个背景颜色*/
 }
 
 .card {
@@ -24,45 +24,45 @@
 }
 
 .card {
-    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .1);
-    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .1);
-    box-shadow: 0 0 4px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .1);/**/
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .1);/**/
+    box-shadow: 0 0 4px rgba(0, 0, 0, .1);/**/
 }
 
 .card .text {
-    text-align: center;
-    padding: 10px;
+    text-align: center;/*.card .text 类 下文字居中*/
+    padding: 10px;/*内边距*/
 }
 
 .card .title {
-    color: #222;
-    font-size: 90%;
+    color: #222;/*颜色*/
+    font-size: 90%;/*字体大小*/
 }
 
 .card .desc {
-    color: #ccc;
-    font-size: 70%;
+    color: #ccc;/*颜色*/
+    font-size: 70%;/*字体大小*/
 }
 
 .card .price {
-    color: #ff6700;
+    color: #ff6700;/*颜色*/
     /*font-weight: bold;*/
 }
 
 .section-cat .card {
-    width: 24%;
-    margin-left: 1%;
+    width: 24%;/*宽度面积占比*/
+    margin-left: 1%;/*外边距面积占比*/
 }
 
 .card-group .leader {
-    width: 20%;
-    margin-left: 0;
+    width: 20%;/*宽度面积占比*/
+    margin-left: 0;/*外边距面积占比*/
 }
 
 .section-cat .card .thumbnail {
-    padding: 10px;
+    padding: 10px;/*内边距面积占比*/
 }
 
 .section-cat .others .row {
-    margin-bottom: 5px;
+    margin-bottom: 5px;/*外底边距*/
 }

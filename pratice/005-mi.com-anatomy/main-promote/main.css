@@ -8,13 +8,13 @@
 }
 
 .main-promote .cat a {
-    font-size: 75%;
-    display: block;
-    padding: 8px 20px;
-    color: #eee;
+    font-size: 75%;/*cat a 类下的字体占框百分比*/
+    display: block;/*每个元素各占整行*/
+    padding: 8px 20px;/*内边距*/
+    color: #eee;/*cat a 类下的字体颜色*/
 }
 
 .main-promote .cat a:hover {
-    color: #fff;
-    background: rgba(0, 0, 0, .5);
+    color: rgb(30, 160, 69);/*cat a 类下 鼠标经过时字体的颜色*/
+    background: rgba(0, 0, 0, .5);/*cat a 类下 鼠标经过时的文字框块内背景颜色*/
 }

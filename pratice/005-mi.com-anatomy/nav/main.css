@@ -7,11 +7,11 @@
 } */
 
 .left,.right {
-    width: 50%;
+    width: 50%;/*left right 两列 面积占比*/
 }
 
 .nav {
-    background: rgba(0,0,0,.8);
+    background: rgba(0,0,0,.8);/*nav 类背景颜色*/
 }
 
 /* 踏实写法
@@ -19,13 +19,13 @@
 .nav .right > a */
 
 .nav a {
-    display: inline-block;
+    display: inline-block;/*nav a 类下的元素每个都缩集一行*/
     padding: 10px 5px;/*内边距*/
     color: #fff; /*文字颜色*/
-    font-size: 80%;
+    font-size: 80%; /*块内占百分比*/
 }
 
 .nav a:hover{
-    color: #fff;
-    background: rgba(0,0,0,.8);
+    color: #fff;/*字体颜色*/
+    background: rgba(0,0,0,.8);/*框内背景颜色*/
 }/*指针上浮动的元素*/

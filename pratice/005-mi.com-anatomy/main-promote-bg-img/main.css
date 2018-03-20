@@ -1,8 +1,8 @@
 
 .main-promote .cat {
-    width: 20%;
-    background: rgba(0, 0, 0, .8);
-}/*.main-promote .cat 总体的占宽度比例以及背景色调整*/
+    width: 20%;/*cat 类下面积占比*/
+    background: rgba(0, 0, 0, .8);/**/
+}/*.main-promote .cat 总体的占面积比例以及背景色调整*/
 
 .main-promote {
     background-color: #fae3b5; /*背景色*/
@@ -14,12 +14,12 @@
 
 .main-promote .cat a {
     font-size: 75%; /*字体大小*/
-    display: block;
-    padding: 8px 20px;
-    color: #eee;
-}/* cat a 下的调整*/
+    display: block;/*元素内每个都分别占成整行*/
+    padding: 8px 20px;/*内边距*/
+    color: #eee;/*字体颜色*/
+}
 
 .main-promote .cat a:hover {
-    color: #fff;
-    background: rgba(0, 0, 0, .9);
+    color: #fff;/*字体颜色*/
+    background: rgba(0, 0, 0, .9);/*背景颜色*/
 } /*鼠标移动时的背景颜色调整 第四个参数是透明百分比*/
