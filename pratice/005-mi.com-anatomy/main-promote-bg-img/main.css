@@ -11,9 +11,6 @@
     background-size: contain; /*背景图尺寸限制方式*/
     background-repeat: no-repeat; /*不重复*/
 }
-.main-promote .slider {
-    width: 80%;
-}/*main-promote .slider下的调整*/
 
 .main-promote .cat a {
     font-size: 75%; /*字体大小*/
