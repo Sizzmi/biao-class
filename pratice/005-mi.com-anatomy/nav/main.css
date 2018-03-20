@@ -1,0 +1,31 @@
+/* .col:nth-child(odd) {
+    background: rgba(0,0,0,.2);
+}
+
+.col:nth-child(even) {
+    background: rgba(0,0,0,.4);
+} */
+
+.left,.right {
+    width: 50%;
+}
+
+.nav {
+    background: rgba(0,0,0,.8);
+}
+
+/* 踏实写法
+.nav .left > a,
+.nav .right > a */
+
+.nav a {
+    display: inline-block;
+    padding: 10px 5px;/*内边距*/
+    color: #fff; /*文字颜色*/
+    font-size: 80%;
+}
+
+.nav a:hover{
+    color: #fff;
+    background: rgba(0,0,0,.8);
+}/*指针上浮动的元素*/
