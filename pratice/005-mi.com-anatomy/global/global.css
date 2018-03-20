@@ -11,35 +11,35 @@ a {
 }
 
 img {
-    max-width: 100%;
+    max-width: 100%;/*控制溢出宽度，保证宽度不溢出*/
 }
 
 body {
-    background: #eee;
-    color: #555;
-    margin: 0;
+    background: #eee;/*整体页面背景颜色*/
+    color: #555;/**/
+    margin: 0;/*0外边距 即导航栏等四周紧贴页面*/
     font-family: sans-serif, 'Microsoft YaHei'; /*字体族*/
 }
 
 .container {
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 900px; /*最大宽度900px*/
+    margin-left: auto;/*auto自适应和right一起为居中*/
+    margin-right: auto;/*auto自适应和left一起为居中*/
 }
 
 .row {
-    font-size: 0;
-    display: block;
+    font-size: 0; /*行内元素同一行*/
+    display: block;/*块级元素*/
 }
 
 .col {
-    display: inline-block;
-    vertical-align: top;
+    display: inline-block; /*列内元素同行*/
+    vertical-align: top;/*垂直对齐文本的顶部*/
     font-size: 15px;
 }
 
 .col.right {
-    text-align: right;
+    text-align: right;/*文本往右靠*/
 }
 
 /*=========全局样式结束==========*/

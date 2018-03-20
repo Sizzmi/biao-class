@@ -1,10 +1,10 @@
 .main-promote .cat {
-    width: 20%;
-    background: rgba(0, 0, 0, .8);
+    width: 20%; /*cat 类 宽度占比*/
+    background: rgba(0, 0, 0, .8);/*前3个是RGB调色，第四个参数是透明度*/
 }
 
 .main-promote .slider {
-    width: 80%;
+    width: 80%;/*slider 类 宽度占比*/
 }
 
 .main-promote .cat a {
