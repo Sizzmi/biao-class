@@ -17,7 +17,7 @@ img {
 body {
     background: #eee;/*整体页面背景颜色*/
     color: #555;/**/
-    margin: 0;/*0外边距 即导航栏等四周紧贴页面*/
+    margin: 0;/*0外边距 即导航栏等四周紧贴页面 可以有四个值，从第一到第四个分别是 上，右，下 ，左*/
     font-family: sans-serif, 'Microsoft YaHei'; /*字体族*/
 }
 
