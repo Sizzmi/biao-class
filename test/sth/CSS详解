@@ -1,0 +1,1354 @@
+css详解笔记
+CSS中的块级元素与行内元素
+
+块级元素特性：
+　　1.占据一整行，总是重起一行并且后面的元素也必须另起一行显示。
+　　2.内联元素特性：
+　　3.和其他内联元素显示在同一行。
+
+块级元素列举如下：
+　　div（文档分区）,article（文章内容）, aside（伴随内容）, audio（音频播放）, blockquote（块引用）, canvas（绘制图形）, dd（定义列表中定义条目描述）, dl（定义列表）, fieldset（表单元素分组）, figcaption（图文信息组标题）, figure（图文信息组）, footer（区段尾或页尾）, form（表单）, h1-h6（标题）, header（区段头或页头）, hgroup（标题组）, hr（水平分割线）, noscript（不支持脚本或禁用脚本时显示的内容）, ol（有序列表）, output（表单输出）, p（段落）, pre（预格式化文本）, section（一个页面区段）, table（表格）, tfoot（表脚注）, ul(无序列表), vidio（视频）。
+
+常见块元素：
+
+　　div,header,footer,nav,article,aside,section,p,h1-h6,ul,ol,li,dl,dt,dd
+
+内嵌标签(行内/内联)(inline)
+
+   1.在一行显示
+
+   2.不支持宽高，对上下的margin和padding支持的也有问题
+
+   3.代码换行会被解析成一个空格
+
+　4.内嵌的宽度，有内容撑开
+
+内联元素列举如下：
+　　b（粗体）, big（大号字体）, i（倾斜）, small（小号字体）, tt（等宽）, abbr（缩写）, cite（引用）, code（计算机代码文本）, dfn（定义项目）, em（强调）, kbd（键盘文本）, strong（语气强调）, samp（样本文本）, var（定义变量）, a（链接）, bdo（元素可覆盖默认的文本方向）, br（换行）, img（图像）, map（图像映射）, object（对象）, q（引用）, script（定义客户端脚本）, span（组合行内元素）, sub（下标）, sup（上标）
+button（按钮）, input（输入）, label（标注）, select（表单控件）, textarea（文本域）。
+
+内嵌元素:
+
+　　span,a,strong,em,time,mark
+
+background 背景（集合样式）
+
+       background-color   背景颜色
+
+       background-image 背景图片 （添加路径 url（））
+
+       同一个元素可以拥有多个背景，用逗号分开，先写的背景在上面
+
+       background-repeat 背景图片平铺方式
+
+              no-repeat（不平铺）
+
+              repeat（平铺）
+
+              repeat-x （水平平铺）
+
+              repeat-y （纵向平铺）
+
+       background-postion 背景定位
+
+              关键字
+
+                    x：left  center  right
+
+                    y：top  center  bottom
+
+              数值
+
+                    x：10px/20%   （像素大小/百分比）
+
+                    y：10px/20%
+
+       background-attachment：fixed 固定图片不动
+
+       background-origin  背景图位置
+
+              border-box
+
+              padding-box （默认）
+
+              content-box   
+
+       background-clip 背景裁切
+
+              -webkit-text （文字背景，只限谷歌）
+
+              border-box （默认）
+
+              padding-box
+
+              content-box   
+
+       background-size 背景图大小（！！！手机端不建议使用）
+
+              等比放大：contain（包含）
+
+                      cover （覆盖）
+
+       线性渐变
+
+       background-image：linear-gradient（red,blue）  （有红色变蓝色 从上到下）
+
+       渐变定位（从什么地方开始到什么地方结束）
+
+       在（red,blue）中加入位置
+
+              如：（red 50px,blue 100px） 也可加入百分比 
+
+       渐变方向 deg
+
+              在开是位置加入角度值 （角度默认180deg）
+
+                     如：background-image：linear-gradient（120deg，red,blue）
+
+       斑马线（就是平铺渐变）
+
+              background-image：repeating-linear-gradient（）
+
+       兼容IE6（方向）
+
+              filter：progid:DXTmageTransform.Microsoft.gradient
+
+                        (starColorstr='red',endColorstr='blue',GradientType='1');或者2
+
+       径向渐变
+
+              background-image：radial-gradient（起点  形状 大小 点）
+
+       起点：可以是关键字（left，top，right，bottom）、具体数值或百分比
+
+       形状：ellipse、aircle
+
+       大小：具体数值或百分比，也可以是关键字
+
+                最近端（closest-side）
+
+                最近角（closest-corner）
+
+                最远端（farthest-side）
+
+                最远角（farthest-side）
+
+                包含 contain      
+
+                覆盖 cover
+
+       ！！！火狐只支持关键字。
+
+ 
+
+font 文字（集合样式）
+
+       color 字体颜色
+
+       font-size 文字大小
+
+       font-family 字体
+
+       font-weight 字体加粗与否
+
+              bold 加粗
+
+              normal 正常
+
+       font-style 字体倾斜
+
+              italic 倾斜
+
+              nomral 正常
+
+       line-height 行高
+
+       字体语法：
+
+              font：font-style  font-weight  font-size/line-height  font-family；
+
+文本
+
+       text-decoration 文本修饰
+
+              line-through 删除线
+
+              overline 上划线
+
+              underline 下划线
+
+              none 没有修饰
+
+       text-algin 文本对齐方式
+
+              Left               center          right
+
+       text-indent 首行缩进
+
+       white-space：nowrap 强制不换行（wrap 换行）
+
+       word-spacing 单词间距
+
+       letter-spacing 字母间距
+
+       direction 文字排列方向
+
+              rtl  右到左          
+
+ltr  左到右
+
+       unicode-bidi：bidi-override  改变文字的书写方式（从右到左）
+
+       在某一元素内文字超出显示省略号
+
+              white-space:nowrap;
+
+              overflow:hidden;
+
+              text-overflow:ellipsis;
+
+ border 边框(复合样式，集合样式)
+
+       border-top
+
+       border-right
+
+       border-bottom
+
+       border-left
+
+       border-top-width 上
+
+       border-right-width 右
+
+       border-bottom-width 下
+
+       border-left-width 左
+
+       border-style 边框样式(solid 实线/dashed 虚线/dotted 点线)
+
+       border-top-style
+
+       border-right-style
+
+       border-bottom-style
+
+       bordder-left-style
+
+       border-color 边框颜色
+
+              关键字
+
+              rgb(0-255,0-255,0-255);
+
+              六位或者三位的一个十六进制的数字;
+
+       border-top-color
+
+       border-right-color
+
+       border-bottom-color
+
+       border-left-color
+
+       border-radius 圆角半径
+
+              列：border-radius:10px 20px 30px 40px           
+
+       border-width 边框宽度
+
+　　 border-image语法 ：
+
+              border-image：border-image-sourceg  border-image-slice  border-image-repeat      
+
+              -webkit-border-image:url(border.png) 27 27 stretch stretch;      
+
+       border-image 给内容加入图片 仅限谷歌 要加如前缀 -webkit-
+
+       border-image-sourceg 引入图片
+
+       border-image-slice 切割图片 两个值（上下或左右）不用加px
+
+       border-image-repeat 图片的排列方式
+
+              round 平铺
+
+              repeat 重复
+
+              streth 拉伸
+
+       border-colors 为边框加颜色（从外层一层层显示）
+
+              只可在火狐下使用，并单独为某个方向上的边框设置
+
+盒模型
+
+       怪异盒模型
+
+              在IE6,7,8,下，没有文档声明会进入怪异盒模型
+
+              box-sizing：
+
+                     border-box（怪异盒模型）
+
+                     content-box （标准盒模型）     
+
+       box-shadow
+
+              inset （可选）内阴影
+
+              x 偏移
+
+              y 偏移
+
+              模糊半径
+
+              扩展半径
+
+              阴影颜色
+
+       阴影先写的在上边，后写的在下边
+
+padding  
+
+       padding 内填充(使元素和它的内容之前有一个空隙)
+
+       padding:30px(上下左右);
+
+       padding:30px(上下) 60px(左右);
+
+       padding:10px(上) 30px(左右) 60px(下);
+
+       padding:10px(上) 30px(右) 60px(下) 80px(左);
+
+       padding-top
+
+       padding-right
+
+       padding-bottom
+
+       padding-left
+
+       padding不算在元素的width里边
+
+       padding在元素的边框以里，并且padding会显示元素的背景
+
+margin
+
+       margin 外边距
+
+       margin:30px(上下左右);
+
+       margin:30px(上下) 60px(左右);
+
+       margin:10px(上) 30px(左右) 60px(下);
+
+       margin:10px(上) 30px(右) 60px(下) 80px(左);
+
+       margin-top
+
+       margin-right
+
+       margin-bottom
+
+       margin-left
+
+       margin在元素的边框以外，并且margin不会显示元素的背景
+
+       同级元素之间的距离用margin，父元素和子元素之间的距离用padding
+
+ a 超链接
+
+           href 页面地址      点击会跳到这个页面来
+
+           href 压缩包        点击会下载这个压缩包
+
+           href id名字    点击跳到这个id的元素的位置
+
+       a 标签不继承父级的字体颜色
+
+              a标签中不能再包含a标签
+
+              span 标签区分样式用
+
+              包含选择 a span{} 找到a标签下的span标签
+
+       base 定义页面上的链接默认的打开方式和默认地址
+
+                  新窗口打开页面 target="_blank"
+
+                  当前窗口打开页面 target="_self"
+
+table 表格
+
+table 设置宽度之后，宽度会自动分配到每一行,设置高度之后也会自动分配到tbody下的每一行
+
+      thead 表格头部
+
+      tbody 表格主体
+
+      tr 行
+
+      th 单元格(加粗，居中)
+
+      td 单元格
+
+      colspan 横向合并单元格
+
+      rowspan 纵向合并单元格        
+
+       td,th 不支持margin
+
+       tr，thead，tbody 不支持margin和padding     
+
+       border-spacing:0; 单元格间距为0（IE6，7不支持）    
+
+       border-collapse:collapse; 合并边框  
+
+        单元格中的内容默认垂直居中,可通过设置vertical-align进行修改
+
+        单元格设置 宽度，一竖列宽度都变，单元格设置 高度，一横行高度都变
+
+       表格清除默认样式：
+
+       table{border-collapse：collapse；}
+
+       td，th{padding：0；border：1px；}
+
+vertical-align 垂直对齐方式(用在两个或多个，内联或者内联块元素垂直方向的对齐)
+
+       值           描述
+
+       baseline          默认。元素放置在父元素的基线上。
+
+       sub         垂直对齐文本的下标。
+
+       super              垂直对齐文本的上标
+
+       top          把元素的顶端与行中最高元素的顶端对齐
+
+       text-top          把元素的顶端与父元素字体的顶端对齐
+
+       middle           把此元素放置在父元素的中部。
+
+       bottom           把元素的顶端与行中最低的元素的顶端对齐。
+
+       text-bottom     把元素的底端与父元素字体的底端对齐。
+
+       length    
+
+       %           使用 "line-height" 属性的百分比值来排列此元素。允许使用负值。
+
+       inherit            规定应该从父元素继承 vertical-align 属性的值。
+
+float(浮动 left/right/none):
+
+       1.使内嵌元素支持宽高
+
+       2.使块元素在一行显示
+
+       3.不设置宽度的时候,宽度由内容
+
+       4.脱离文档流
+
+浮动原理:
+
+使元素脱离文档流,然后按照指定的方向去移动，直到碰到父级的边界，或者另外一个浮动元素停止  
+
+文档流:文档流是文档中可显示对象在排列时所占用的位置。
+
+ 
+
+BFC ( Box Formatting Context) 块级格式化上下文
+
+      inline formatting context 行内格式化上下文
+
+   
+
+    BFC 作用
+
+           1.清除内容浮动
+
+           2.阻止margin向外传递
+
+   
+
+    触发BFC的条件:
+
+           1.根节点
+
+           2.float不为none的情况     
+
+              3.display的值为inline-block、table-cell、table-caption
+
+           4.overflow的值不为visible
+
+           5.position的值为absolute或fixed
+
+    overflow的值
+
+          visible            默认值。内容不会被修剪，会呈现在元素框之外。
+
+          hidden           内容会被修剪，并且其余内容是不可见的。
+
+          scroll             内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。
+
+          auto        如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。
+
+          inherit            规定应该从父元素继承 overflow 属性的值。
+
+          clear            元素的某个方向上不能有浮动元素（left、right、both、none）
+
+清浮动的方法：
+
+              1.给同为父元素设置 float
+
+              2.给父元素设置display：inline-block；         
+
+              3.给父元素设置overflow不为visible（默认值） 一般设为auto；
+
+              4给父元素加个样式（加入clear）{ :after{content:"";display:block; clear:both;}  目前最流行的方法；} 
+
+定位（position）
+
+       position:relative; 相对定位(只加相对定位元素不会有任何变化)
+
+              1.不脱离文档流(元素移走元素的初始位置，还会被保留)
+
+              2.根据自己的原始位置来计算left(right)和top(bottom)值
+
+              3.提升层级
+
+       position:absolute; 绝对定位
+
+              1. 脱离文档流
+
+              2.提升层级
+
+              3.根据自己有定位的父级来计算坐标,如果父级没有定位就会一层一层的向外去找.所有的父级都没      有定位,就根据document来计算
+
+              4.使内嵌元素支持宽高
+
+              5.绝对定位之后不设置宽度，宽度有内容撑开
+
+！！！！元素定位之后，默认情况下，后边的层级高于前边的元素
+
+z-index 层级
+
+       1.数值越大层级越高
+
+       2.层级只在定位元素上起效果
+
+       3.层级最好只在同级元素之间做比较
+
+       document 是html的父级 
+
+form 表单
+
+       action 提交跳转地址
+
+       常用控件-----
+
+       textarea                       输入一段文本
+
+       select                       下拉框  option
+
+       input
+
+              type="text"    文本输入框
+
+              type="password"   密码框
+
+              type="radio" 单选框
+
+              type="checkbox"   复选框
+
+              type="file"     上传控件
+
+              type="submit"       提交按钮
+
+              type="email"  邮箱       必须以@结尾
+
+              type="tell"      电话 （移动设备自动弹出数字输出法）
+
+              type="url"      网址
+
+              type="range"  数值选择
+
+              max="100" min="1" value="50" step(部署控制，每次移动多少)="10"
+
+              type="number"      数字选择
+
+              max="9" min="1" value="3" step="3"
+
+              type="color"   取色器
+
+              type="datetime-local"  时间（年月日小时）
+
+                        time：        只有时间
+
+                        date：        只有年月日
+
+                        week：        第几周/年
+
+                        month：       第几月/年
+
+                 　　 value             值
+
+                       name              数据名称
+
+       常用属性-----
+
+              checked 单选和复选的默认选中
+
+              selected 的默认选中
+
+              disabled 禁止控件的编辑和提交
+
+              for=要辅助input的id           
+
+       pattern：正则验证
+
+              placeholder：提示文字信息（不兼容IE）
+
+              autocomplete：是否保存用户输入值 on（默认）/off
+
+              autofocus：指定表单获取输入焦点
+
+              required：强制用户输入不能为空            
+
+                     <input type="text" name="user" list="valList" required/>
+
+                    <datalist id="valList">（为input中提示选择的内容，下拉框。）
+
+                               <option value="javascript">javascript</option>
+
+                              <option value="html">html</option>
+
+                               <option value="css">css</option>
+
+                  </datalist>
+
+      
+
+表单草稿箱
+
+              当用户想保存草稿箱时
+
+              为submit加入
+
+                     formaction="地址" 新的提交地址
+
+                     formnovalidate 取消验证
+
+       清除表单默认样式
+
+              form{margin：0；}
+
+              input，select，textarea{padding：0；margin：0；border：1px solid #000；}
+
+              textarea{resize：none；overflow：auto；}
+
+ 
+
+resize 属性规定是否可由用户调整元素的尺寸。
+
+       注释：如果希望此属性生效，需要设置元素的 overflow 属性，值可以是 auto、hidden 或 scroll。     
+
+       值           描述
+
+       none              用户无法调整元素的尺寸。
+
+       both        用户可调整元素的高度和宽度。
+
+       horizontal       用户可调整元素的宽度。
+
+       vertical           用户可调整元素的高度。
+
+伪类
+
+       :link{} 此链接未被访问过
+
+       :visited{} 此链接已访问
+
+       :hover{} 鼠标移入
+
+       :active{} 鼠标按下
+
+       L-V-H-A
+
+       ：target 点击后出发hash值 类似锚点a
+
+       ：checked 被选中的单选框或复选框
+
+文本伪类
+
+       p：first-letter 第一个字
+
+       p：first-line 第一行
+
+       p：selection 选中的颜色改变
+
+       p：after 元素末尾
+
+       p：before 元素开始
+
+       p：not（命的名） 排除掉谁     
+
+结构性伪类：
+
+       box h2:nth-child(3){background:Red;}
+
+       找到h2标签的父级下边的第3个子元素,并且标签类型还必须是h2
+
+ 
+
+       p:nth-of-type(3){background:Red;}
+
+       找到p标签的父级下的第3个p标签
+
+      
+
+       :first-child == :nth-child(1)
+
+       :last-child == :nth-last-child(1)
+
+       :first-of-type == :nth-of-type(1)
+
+       :last-of-type == :nth-last-of-type(1)             
+
+       (其中括号里面的值可以是：odd（奇数）、even（偶数）、或者数学里面的数列（n、2n、）！)
+
+鼠标交点
+
+       outline：none；
+
+透明
+
+      opacity 透明 0-1的小数 元素透明它里边所有的内容都会变成透明的
+
+　　IE下透明度的设置
+
+　　filter:alpha(opacity=50);
+
+ 
+
+　　opacity: .5;
+
+黑客
+
+       在结尾加如：
+
+       \0 IE11至IE8的IE浏览器
+
+       \9\0 IE10至IE8的IE浏览器
+
+       \9 IE10及IE10之前的IE浏览器
+
+       在开头加入：
+
+       *,+ IE7及IE7之前的IE浏览器支持
+
+       _IE6及IE6之前的IE浏览器支持
+
+       注释！！！！！！！！！！！！！！！！！！！
+
+       <!-- IE9及IE9之前的IE浏览器支持 -->
+
+       <!--[if IE]>这是IE<![endif]-->
+
+       <!--[if IE 9]>9<![endif]-->
+
+       <!--[if IE 8]>8<![endif]-->
+
+       <!--[if IE 7]>7<![endif]-->
+
+       <!--[if IE 6]>6<![endif]-->
+
+其他 IE 条件判断语句
+
+       <!--[if lt IE 7]> : 小于 IE7 的版本 ( Less than )；
+
+       <!--[if lte IE 7]> : 小于或等于 IE7 的版本 ( Less than or equal )；
+
+       <!--[if gt IE 7]> : 大于 IE7 的版本 ( Greater than )；
+
+       <!--[if gte IE 7]> : 大于或等于 IE7 的版本 ( Greater than or equal )；
+
+       <!--[if !IE 7]> : 不等于 IE7 的版本 ( Not )；<![endif]-->
+
+       IE6下不支持png的透明
+
+</style>
+
+              <!--[if lte IE 8]>
+
+              小于等于IE8
+
+              <![endif]-->
+
+              <!--[if IE 6]>
+
+              <script src="js/png.js"></script>
+
+              <script>
+
+              DD_belatedPNG.fix('.box,img');
+
+              </script>
+
+              <![endif]-->
+
+cursor其他取值    鼠标移入
+
+       auto        ：标准光标 
+
+       default        ：标准箭头 
+
+       pointer       ：手形光标 
+
+       wait           ：等待光标 
+
+       text             ：I形光标 
+
+       vertical-text  ：水平I形光标 
+
+       no-drop       ：不可拖动光标 
+
+       not-allowed  ：无效光标 
+
+       help        ：帮助光标 
+
+       all-scroll       ：三角方向标 
+
+       move         ：移动标 
+
+       crosshair     ：十字标
+
+Html5中标签（包括新增常用）：
+
+       <div>            块
+
+       <span>          区分掩饰
+
+       <a href="#">        超链接
+
+       <header>       页面头部（板块）
+
+       <footer>        页面底部（板块）
+
+       <section>       页面中的板块→代替<div>
+
+       <nav>           导航
+
+       <article>        页面中独立完整的一块内容，可以是一个文章、帖子、博客及回复的内容块
+
+       <aside>         用法一：用来写在<article>中，作为其附属信息
+
+                            用法二：用来写在页面主体当中，作为整个页面的附属信息
+
+       <details>
+
+              <summary>今天天气不错</summary>
+
+       </details>
+
+                     类似于隐藏框 当<details open>是<summary>内容显示出来
+
+       <dialog>        一个对话框 一般隐藏，显示加open
+
+       <h1>~<h6>   标题标签
+
+       <p>               段落
+
+       <mark>        强调标签——加背景色
+
+       <strong>        强调标签——字体加粗
+
+       <em>            强调标签——字体倾斜
+
+       <time>          强调标签——时间
+
+       <ul>              无序列表
+
+       <ol>              有序列表
+
+       <dl>              分为dt dd，dd为dt进行列表的再次分类
+
+       <img src=""/>       图片
+
+       <form>        表单
+
+       <input>        一些框
+
+       <textarea>     输入一段文本框
+
+       <select>        下拉框 选择为<option>
+
+       <table>          表格
+
+       <thead>        表格头部
+
+       <tbody>               表格内容 
+
+IE6 兼容问题
+
+1、  在IE6下子元素会撑开父级设置好的宽高
+
+2、  max-width 最大宽度
+
+       min-width 最小宽度
+
+       max-height 最大高度
+
+       min-height 最小高度    不兼容IE6
+
+3、  在IE6下，不支持1px的点线
+
+4、  元素内，除了内嵌还有其他类型的元素，行高会失效
+
+5、  在IE6，7下，父级有边框,可能会造成子元素的margin值失效
+
+        解决办法:触发父级的haslayout
+
+6、         关于标签兼容问题--------<!-- 引入html5标签支持的js文件来处理 -->
+
+7、  IE6下只支持l-v-h-a这四个伪类,并且支持加给a标签
+
+8、  在IE6下，每行元素宽度和父级的总宽度，相差超过3px，最后一行下margin 失效
+
+9、  在IE6下，不支持给块标签加inline-block
+
+10、在IE6下，块元素有横向的margin和浮动的时候，横向的margin会被放大两倍ss
+
+        解决办法:给元素加display:inline
+
+11、       在IE6下，高度不满19px的元素，高度会被当做19px来处理
+
+        解决办法:加overflow:hidden
+
+12、在IE6，7下，li本身没浮动，但是li里边的内容浮动了，li下边会多出几个像素的间隙      
+
+        解决办法:
+
+             1.给li加浮动（当li下的空隙问题和最小高度问题并存的时候，给li加浮动）
+
+              2.给li设置vertical-align     
+
+13、       在IE6下，两个浮动元素之间有注释或者内嵌元素，并且元素的宽度和父级宽度相差小于3px，最后几个文字 会被复       制
+
+14、       在IE6,7下，浮动元素父级有宽度的情况下不用请浮动
+
+       haslayout（触发）
+
+       元素会根据自己自身内容的大小，或者父级的大小来重新计算自己的宽高 
+
+       （触发条件：）
+
+       display: inline-block
+
+       height: (任何值除了auto)
+
+       float: (left 或 right)
+
+       position: absolute
+
+       width: (任何值除了auto)
+
+       zoom: (除 normal 外任意值) zoom放大或缩小
+
+15、在IE6下，浮动元素和绝对定位元素是并列关系的时候，绝对定位元素会消失掉
+
+        解决办法:用div把绝对定位元素包起来
+
+16、在IE6，7下，子元素有相对定位的话，父级的overflow对它不起作用
+
+        解决办法:给父级也加相对定位
+
+17、在IE6下，父级的宽高是奇数的话，元素的right（bottom）有1px的偏差
+
+18、IE6,7,8不支持opacity
+
+       用filter:alpha(opacity=50);
+
+ 
+
+19、在IE6下，给输入类型的表单控件加border:none无效
+
+        解决办法:重置input背景  
+
+       在IE6下，输入类型的表单控件上下各有1px的空隙
+
+        解决办法:给元素浮动
+
+       在IE6下，输入类型的表单控件输入文字的时候，背景会随着一块移动
+
+        解决办法:把背景加给父级
+
+20、在IE6下，子元素的margin -1px（超出父集边框，） 父集会自动包裹住子元素
+
+        解决办法：给父集加 position：relative  
+
+ 
+
+动画 animation
+
+       @keyframs animate(名称随变起)
+
+       {    
+
+              0%{
+
+                     width=100px;
+
+              }
+
+              10%{
+
+                     width=500px;
+
+              }
+
+       }
+
+       样式内容：.box{animation:animate(名称)  3s（时间）  1s（延迟时间）  infinite（无限循环） altermate（反向运行）； }
+
+ 
+
+transform：变换
+
+       transform-origin：变还原点位置
+
+              （x轴方向   （left  center right  百分比%）
+
+                 y轴方向   （left  center right  百分比%）
+
+                 z轴方向   （left  center right  百分比%）
+
+              ）
+
+ 
+
+       transform-style：preserve-3d  （做3d必须加）
+
+ 
+
+       transform：scale（x，y）
+
+                 scale3d（x，y，z） 缩放
+
+                 rotate（deg角度）
+
+                 rotate（x,y,z,deg角度）    旋转
+
+ 
+
+过渡属性：
+
+       transition: property  duration  timing-function  delay;
+
+ 
+
+       值                  描述
+
+       transition-property         CSS 属性的名称
+
+              width、height
+
+       transition-duration         过度时间
+
+              秒、毫秒
+
+       transition-delay             延迟时间
+
+              秒、毫秒
+
+       transition-timing-function     规定运动形式
+
+              ease 逐渐变慢（默认值）
+
+              linear 匀速
+
+              ease-in 加速
+
+              ease-in-out 先加速后减慢
+
+              cubic-bezier（x1，y1，x1，y1） 贝塞尔曲线
+
+ 
+
+滤镜：
+
+       -webkit-filter:blur(5px);  //模糊，此处为5像素
+
+     -webkit-filter:sepia(0.5);  //叠加褐色，取值范围0-1，此处表示50%的褐色
+
+     -webkit-filter:brightness(0.5);  //亮度，取值范围0-1，5倍亮度（数字为0时为正常样式，为1时表示的    是100%亮度，无    法看       到图片）
+
+     -webkit-filter:hue-rotate(30deg); //色相（按照色相环进行旋转，顺时针方向，红-橙-黄-黄绿-绿-蓝绿-蓝-     蓝紫-紫-紫红-  红）       此处为叠加黄色滤镜
+
+       -webkit-filter:invert(1);  //反色，取值范围0-1,0为原图，1为彻底反色之后，0.5为灰色      
+
+       -webkit-filter:saturate(4);  //饱和度，取值范围0~*,0为无饱和度，1为原图，值越高饱和度越大
+
+       -webkit-filter:contrast(2);  //对比度，取值范围0~*,0为无对比度（灰色），1为原图，值越高对比度越大
+
+       -webkit-filter:opacity(0.8);  //透明度，取值范围0~1,0为全透明，1为原图
+
+       -webkit-filter:drop-shadow(17px 17px 20px black); //阴影
+
+移动端写默认
+
+       宽度适应屏幕大小
+
+                     <meta name="viewport" content="width=device-width,user-scalable=no" />
+
+清除样式:
+
+              a{-webkit-tap-highlight-color:rgba(255,0,0,0);} 点击有暗影
+
+              input{-webkit-appearance:none;} 
+
+              body *{-webkit-text-size-adjust:none;} 字体最小大小
+
+      
+
+       加入JS 使最宽不超过540px  设置rem 为16分之一  
+
+              <script>
+
+                     var oHtml=document.getElementsByTagName("html")[0];
+
+                     var iWidth=document.documentElement.clientWidth;iWidth=iWidth>540?540:iWidth;
+
+oHtml.style.fontSize=iWidth/16+"px";
+
+              </script>       
+
+       解决滑动内容效果；
+
+              <script>
+
+                     var oScroll= new mScroll("wrap");
+
+              </script>                    wrap{指的是内容块}
+
+       处理已给像素边框！！
+
+              <script>
+
+                     var iScale=1/window.devicePixelRatio;
+
+                     document.write('<meta name="viewport" content="width=device-width,initial-                                          scale='+iScale+',minimum-scale='+iScale+',maximum-scale='+iScale+'" />');
+
+              </script>
+
+       处理设备高度固定屏幕高度：
+
+              <script>
+
+                     document.body.style.height=document.documentElement.clientHeight+"px";
+
+              </script>        加入body第一个            
+
+响应式（媒询media）
+
+       媒体类型
+
+                  all 所有的媒体类型
+
+                      screen 彩屏设备
+
+                print 打印设备
+
+                      handheld 手持设备
+
+                      braille 盲文触觉设备
+
+                      embossed 盲文打印机
+
+                      projection 投影
+
+                      speech 听觉设备
+
+                      TTY
+
+                      TV 电视
+
+    关键字
+
+                  and
+
+               not
+
+                only
+
+    媒询三种引入方式
+
+          1.<link href="css/reset.css" rel="stylesheet" type="text/css" media="screen" />
+
+              2.@import url("css/style.css");
+
+          3.直接写入style里面。
+
+              @media all
+
+                 {
+
+                            .box{
+
+                                    width:100px;
+
+                            }
+
+            }
+
+弹性盒模型（需要加前缀）
+
+       display：flex == display：inline-flex
+
+              类似浮动，不用清浮动 
+
+              在改类型的元素内 子元素可以设置margin：auto  auto；
+
+ 
+
+       设置主轴方向（flex-direction：）
+
+              row 从左向右排列（默认值）
+
+              row-reverse 从右向左
+
+              column 从上到下
+
+              column-reverse 向下到上
+
+ 
+
+       主轴内元素对齐方式（justify-content：）
+
+              flex-start 元素在开始位置 富裕空间在另一侧（默认）
+
+              flex-end  元素在末尾位置 富裕空间在起始处
+
+              center     元素居中 富裕空间平分左右两侧
+
+              space-between 富裕空间在元素之间平分
+
+              space-around   富裕空间在元素两侧平分
+
+ 
+
+       侧轴对齐 （align-items：为对齐元素的父集设置）
+
+              flex-start  元素在开始位置 富裕空间在另一侧（默认）
+
+              flex-end   元素在末尾位置 富裕空间在起始处
+
+              center    元素居中 富裕空间平分左右两侧
+
+ 
+
+               注意：align-self 也是侧轴对齐 但是用来写在对齐元素的样式内！！！
+
+ 
+
+       换行 （flex-wrap：）
+
+              nowrap（默认）
+
+              wrap 换行
+
+              wrap-reverse 反向换行
+
+ 
+
+       其中 主轴对齐方式 与 换行可以写集合
+
+              flex-flow：row（主轴对齐方式）  wrap（换行）
+
+ 
+
+       堆栈伸缩行（algin-content：）
+
+              algin-content 会更改 flex-wrap 的行为
+
+              它和 align-items 相似，但是不是对齐伸缩项目，它对齐的是伸缩行。
+
+                     flex-start
+
+                     flex-end 
+
+                     center    
+
+                     space-between
+
+                     space-around  
+
+       oder（在元素的排列位置，给子元素加人）  oder=0（默认）
+
+ 
+
+遮罩（mask）
+
+       -webkit-mask：url（img）
+
+       mask：用背景图片来覆盖掉图片。
+
+删栏（columns）加浏览器前缀
+
+       column-width 栏目宽度
+
+       column-cunt   栏目列数
+
+       column-gap   栏目距离
+
+       column-rule   栏目间隔线
+
+       column-fill   栏目高度是否统一
+
+外联框架
+
+       <iframe src="http://www.baidu.com#form" width="900" height="40" scrolling="no"     frameborder="0"></iframe>
+
+ioc 网页小标
+
+       <head>
+
+       <meta charset="utf-8">
+
+       <title>无标题文档</title>
+
+       <link href="favicon.ico" rel="icon" />
+
+       </head>
+
+ 
+
+热区
+
+       <map name="mt">
+
+             <area shape="rect" coords="923,398,1271,504" href="http://www.baidu.com">
+
+      </map>
+
+       shape="rect" 矩形
+
+                 coords="左上角X,左上角Y,右下角X,右下角Y"
+
+    shape="circle" 圆形
+
+                 coords="圆心的X,圆心的Y,半径" 
+
+      shape="poly" 多边形
+
+               coords="第1个点X,第1个点y,第2个点X,第2个点y,第3个点X,第3个点y......"  
+
+视频（优酷视频）
+
+       <iframe height=400 width=200 src="http://player.youku.com/embed/XMTM0NDEyMTQxNg=="        frameborder=0        allowfullscreen></iframe>
+
+ 
+
+       table 设置宽度之后，宽度会自动分配到每一行,设置高度之后也会自动分配到tbody下的每一行

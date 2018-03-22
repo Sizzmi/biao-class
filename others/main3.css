@@ -4,7 +4,6 @@
 
 /*============ header begin =============*/
 .header {
-    padding: 25px 0;
     background: url(https://s1.ljcdn.com/feroot/pc/asset/img/home/bannerV2.jpg) center no-repeat;
 }
 
@@ -15,6 +14,10 @@
 /*====top-area====*/
 
 /* logo-area */
+.header .top-area {
+    padding-top: 20px;
+}
+
 .header .top-area .logo-area,
 .header .top-area .logo,
 .header .top-area .logo div {
@@ -118,7 +121,7 @@
 
 /*=== middle-area ===*/
 .header .middle-area {
-    margin: 120px 0 145px 0;
+    margin-top: 120px;
 }
 
 .header .middle-area .title,
@@ -203,6 +206,11 @@
 }
 
 /*=== bottom-area ===*/
+.header .bottom-area {
+    margin-top: 115px;
+    padding-bottom: 40px;
+}
+
 .header .bottom-area .declaration,
 .header .bottom-area .warranty {
     margin-left: 5px;
@@ -258,32 +266,6 @@
 
 
 /*============ main begin =============*/
-@keyframes upndown {
-    0% {
-        -webkit-transform: translateY(-8px);
-        -moz-transform: translateY(-8px);
-        -ms-transform: translateY(-8px);
-        -o-transform: translateY(-8px);
-        transform: translateY(-8px);
-    }
-
-    50% {
-        -webkit-transform: translateY(-4px);
-        -moz-transform: translateY(-4px);
-        -ms-transform: translateY(-4px);
-        -o-transform: translateY(-4px);
-        transform: translateY(-4px);
-    }
-
-    100% {
-        -webkit-transform: translateY(-8px);
-        -moz-transform: translateY(-8px);
-        -ms-transform: translateY(-8px);
-        -o-transform: translateY(-8px);
-        transform: translateY(-8px);
-    }
-}
-
 .main-nav .nav-item {
     margin: 20px 0 40px 0;
     padding: 10px 50px;
@@ -477,7 +459,7 @@
 }
 
 .main .verify {
-    padding: 50px 0;
+    padding: 46px 0;
     color: #fff;
     background-image: url(https://s1.ljcdn.com/feroot/pc/asset/img/home/truth-bgV2.jpg);
     background-repeat: no-repeat;
@@ -507,26 +489,27 @@
 
 .main .verify .search-bar {
     margin-top: 20px;
+    padding-left: 15px;
+    background-color: #fff;
 }
-
 
 .main .verify .search-bar input,
 .main .verify .search-bar button {
     vertical-align: middle;
     border-radius: 3px;
-    padding: 14px;
     outline: 0;
     border: 0;
 }
 
 .main .verify .search-bar input {
-    width: 92%;
+    width: 90%;
 }
 
 .main .verify .search-bar button {
+    position: relative;
+    left: 10px;
     width: 43px;
     height: 43px;
-    margin-left: -3px;
 
     cursor: pointer;
     background-image: url(https://s1.ljcdn.com/feroot/pc/asset/img/home/spriteV2_new.png?t=2017052520523424);
@@ -538,7 +521,6 @@
 
 /*============ footer begin =============*/
 .footer {
-    padding: 0 0 90px 0;
     background-image: url(https://s1.ljcdn.com/feroot/pc/asset/img/home/footer-bg.jpg);
     background-repeat: no-repeat;
     background-position: center top;
@@ -603,7 +585,7 @@
 }
 
 .footer .meta {
-    padding: 20px;
+    padding: 20px 0 100px 0;
     font-size: 75%;
     color: #aaa;
 }
@@ -616,4 +598,153 @@
 .footer .meta .icp img {
     position: relative;
     top: 3px;
+}
+
+/*=========== side-bar =============*/
+/* 为什么图片不清晰... */
+.side-bar {
+    position: fixed;
+    top: 0;
+    bottom:0;
+    right: 0;
+    width: 38px;
+
+    background-color: #fff;
+    -webkit-box-shadow:  0 0 8px rgba(0, 0, 0, .3);
+    -moz-box-shadow:  0 0 8px rgba(0, 0, 0, .3);
+    box-shadow:  0 0 8px rgba(0, 0, 0, .3);
+}
+
+.side-bar .wrapper {
+    max-height: 800px;
+    position: absolute;
+    top: 50%;
+
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.side-bar a {
+    display: block;
+    position: relative;
+    margin: 7px 0;
+    width: 38px;
+    height: 38px;
+
+    background-image: url(https://s1.ljcdn.com/feroot/pc/asset/img/home/sidebar_spriteV5.png?v=modifyCompare);
+}
+
+.side-bar a:nth-child(1) {
+    display: inline-block;
+    background-position: -38px -421px;
+}
+
+.side-bar a:nth-child(1):after,
+.side-bar a:nth-child(3):after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -7px;
+    left: calc(50% - 10px);
+    width: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.side-bar a:nth-child(3) {
+    display: inline-block;
+    background-position: -38px -516px;
+}
+
+.side-bar .likes,
+.side-bar .compare,
+.side-bar .sell {
+    margin-top: 2px;
+}
+
+.side-bar .marks-list:hover {
+    background-position: 0 -378px;
+}
+
+.side-bar .likes {
+    background-position: -38px 0;
+}
+
+.side-bar .likes:hover {
+    background-position: 0 0;
+}
+
+.side-bar .compare:hover {
+    background-position: 0 -516px;
+}
+
+.side-bar .sell {
+    height: 50px;
+    background-position: -38px -88px;
+}
+
+.side-bar .sell:hover {
+    background-position: 0 -88px;
+}
+
+.side-bar .tools {
+    height: 50px;
+    background-position: -38px -460px;
+}
+
+.side-bar .tools:hover {
+    background-position: 0 -460px;
+}
+
+.side-bar .insurance {
+    background-position: -38px -186px;
+}
+
+.side-bar .insurance:hover {
+    background-position: 0 -186px;
+}
+
+.side-bar .scan {
+    background-position: -38px -224px;
+}
+
+.side-bar .scan:hover {
+    background-position: 0 -224px;
+}
+
+.side-bar .support {
+    background-position: -38px -265px;
+}
+
+.side-bar .support:hover {
+    background-position: 0 -265px;
+}
+
+.side-bar .phone {
+    background-position: -38px -142px;
+}
+
+.side-bar .phone:hover {
+    background-position: 0 -142px;
+}
+
+.side-bar .feedback {
+    background-position: -38px -302px;
+}
+
+.side-bar .feedback:hover {
+    background-position: 0 -302px;
+}
+
+.side-bar .top {
+    position: absolute;
+    bottom: 8px;
+
+    background-position: -38px -338px;
+}
+
+.side-bar .top:hover {
+    background-position: 0 -338px;
 }
