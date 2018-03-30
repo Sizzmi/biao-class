@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>浮动制作导航栏</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            font-family: SimSun, Arial;
+        }
+
+        #navbg {
+            width: 100%;
+            height: 40px;
+            background: #f54343;
+            clear: both;
+        }
+
+        #nav {
+            width: 1000px;
+            height: 40px;
+            margin: 0px auto;
+        }
+
+        #nav ul li {
+            float: left;
+            height: 40px;
+            width: 98px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        #nav ul li a {
+            text-decoration: none;
+            display: block;
+            color: #fff;
+            font-size: 20px;
+        }
+
+
+        #nav .fengebg {
+            display: block;
+            height: 40px;
+            width: 2px;
+        }
+
+        #nav li a:hover {
+            color: #7f7878;
+            background: url(images/mousebg.png) no-repeat;
+        }
+
+        #top {
+            width: 1000px;
+            height: 60;
+            margin: 0 auto;
+        }
+
+        #header {
+            float: left;
+            width: 160px;
+            height: 66px;
+        }
+
+        .top_right {
+            float: right;
+            width: 212px;
+            height: 14px;
+            margin: 43px 0px 9px 0px;
+        }
+
+        .top_right .right_top {
+            float: left;
+        }
+
+        .top_right .jiange {
+            width: 1px;
+            height: 14px;
+            background: url(images/jiange.png) no-repeat;
+        }
+
+        .top_right #login {
+            width: 66px;
+            height: 14px;
+            background: url(images/login.png) no-repeat;
+        }
+
+        .top_right #search {
+            width: 54px;
+            height: 14px;
+            background: url(images/search.png) no-repeat;
+        }
+
+        .top_right #shewei {
+            width: 90px;
+            height: 14px;
+            background: url(images/shewei.png) no-repeat;
+        }
+
+        .top_right .right_top #denglu {
+            font-size: 12px;
+            padding-left: 32px;
+        }
+
+        .top_right .right_top #sousuo {
+            font-size: 12px;
+            padding-left: 25px;
+        }
+
+        .top_right .right_top #shouye {
+            font-size: 12px;
+            padding-left: 31px;
+        }
+
+        .top_right .right_top a {
+            text-decoration: none;
+            color: #333333;
+        }
+
+        .top_right .right_top a:hover {
+            text-decoration: underline;
+            color: #333333;
+        }
+
+        #nav_sec {
+            width: 989px;
+            height: 38px;
+            margin: 0 auto;
+        }
+
+        #nav_sec ul li {
+            float: left;
+            width: 43px;
+            height: 38px;
+            background: url(images/jiange2.png) no-repeat;
+        }
+
+        #nav_sec ul li a {
+            display: block;
+            text-decoration: none;
+            color: #2b2b2b;
+            text-align: center;
+            line-height: 38px;
+        }
+
+        #nav_sec ul #nav2_firstli {
+            background: none;
+        }
+
+        #advertisement1 {
+            width: 1000px;
+            height: 165px;
+            background-color: #f1f1f1;
+            margin: 0 auto;
+            border-top: 1px solid #dfdfdf;
+            border-bottom: 1px solid #dfdfdf;
+        }
+
+        #advertisement1 #top_ad {
+            width: 980px;
+            height: 100px;
+            margin: 10px 10px 9px 10px;
+        }
+
+        #advertisement1 #top_list {
+            width: 980px;
+            height: 55px;
+            margin: 0px auto;
+        }
+
+        #advertisement1 #top_list li {
+            float: left;
+            width: 145px;
+            height: 22px;
+            font-size: 12px;
+            overflow: hidden;
+        }
+
+        #advertisement1 #top_list a {
+            display: block;
+            color: #6b8295;
+            text-height: 11px;
+            text-decoration: none;
+        }
+
+        #advertisement1 #top_list ul {
+            width: 1050px;
+            height: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="top">
+        <div id="header">
+            <img src="images/logo.gif" alt="凤凰网LOGO" />
+        </div>
+        <div class="top_right">
+            <div class="right_top" id="login">
+                <p id="denglu">
+                    <a href="#">登录</a>
+                </p>
+            </div>
+            <div class="jiange right_top"></div>
+            <div class="right_top" id="search">
+                <p id="sousuo">
+                    <a href="#">搜索</a>
+                </p>
+            </div>
+            <div class="jiange right_top"></div>
+            <div class="right_top" id="shewei">
+                <p id="shouye">
+                    <a href="#">设为首页</a>
+                </p>
+
+            </div>
+
+        </div>
+        <br style="clear:both;" />
+    </div>
+    <div id="navbg">
+        <div id="nav">
+            <ul>
+                <li class="fengebg">
+                    <img src="images/fengebg.gif" />
+                </li>
+                <li>
+                    <a href="#" title="">国际</a>
+                </li>
+                <li class="fengebg">
+                    <img src="images/fengebg.gif" />
+                </li>
+                <li>
+                    <a href="#" title="">亚洲</a>
+                </li>
+                <li class="fengebg">
+                    <img src="images/fengebg.gif" />
+                </li>
+                <li>
+                    <a href="#" title="">非洲</a>
+                </li>
+                <li class="fengebg">
+                    <img src="images/fengebg.gif" />
+                </li>
+                <li>
+                    <a href="#" title="">欧洲</a>
+                </li>
+                <li class="fengebg">
+                    <img src="images/fengebg.gif" />
+                </li>
+                <li>
+                    <a href="#" title="">美国</a>
+                </li>
+                <li class="fengebg">
+                    <img src="images/fengebg.gif" />
+                </li>
+                <li>
+                    <a href="#" title="">中国</a>
+                </li>
+                <li class="fengebg">
+                    <img src="images/fengebg.gif" />
+                </li>
+                <li>
+                    <a href="#" title="">日本</a>
+                </li>
+                <li class="fengebg">
+                    <img src="images/fengebg.gif" />
+                </li>
+                <li>
+                    <a href="#" title="">韩国</a>
+                </li>
+                <li class="fengebg">
+                    <img src="images/fengebg.gif" />
+                </li>
+                <li>
+                    <a href="#" title="">英国</a>
+                </li>
+                <li class="fengebg">
+                    <img src="images/fengebg.gif" />
+                </li>
+                <li>
+                    <a href="#" title="">法国</a>
+                </li>
+                <br style="clear:both;" />
+            </ul>
+
+        </div>
+    </div>

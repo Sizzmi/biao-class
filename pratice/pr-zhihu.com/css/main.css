@@ -1,0 +1,17 @@
+#logo {
+    display: inline-block;
+    width: 1px;
+    height: 1px;
+    
+    background-image: url(G:\biao-class\pratice\pr-zhihu.com\img\zhihu.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.nav a {
+    height: 30px;
+    margin-right: 18px;
+    margin-left: 27px;
+    color: #999;
+    display: inline-block;
+}
