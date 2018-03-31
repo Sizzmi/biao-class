@@ -1,0 +1,45 @@
+<!-- 布局类 单行双列 -->
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    /* 行 */
+    .row {
+        font-size: 0;
+        color: #fff;
+    }
+
+    /* 列 */
+    .col {
+        padding: 15px;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    /* 奇数列 */
+    .col:nth-child(odd) {
+        background: rgba(200,0,0, .8);
+    }
+
+    /* 偶数列 */
+    .col:nth-child(even) {
+        background: rgba(0,0,80, .8);
+    }
+
+    /* 小 */
+    .sm {
+        width: 30%;
+    }
+
+    /* 大 */
+    .lg {
+        width: 70%;
+    }
+</style>
+<div class="row">
+    <div class="col sm">列</div>
+    <div class="col lg">列</div>
+</div>
