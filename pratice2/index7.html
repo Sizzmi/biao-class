@@ -1,0 +1,41 @@
+<style>
+     /*指定背景图片*/
+    .box {
+        background-image: url(https://ws4.sinaimg.cn/large/006tKfTcly1fk4vq6ofpxg30dw0dwwom.gif);
+        position: relative;
+        color: #fff;
+        width: 300px;
+        height: 300px;
+        background-size: cover;
+    }
+
+    /* 在box中插入一个元素，此处用了伪元素，当然也可以用div */
+.mask {
+    display: block;
+    position: absolute;
+
+    /* 拉伸 */
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    background: rgba(200,0,0, .6);
+    /*   height: 100%; */
+}
+
+.title {
+    position: absolute;
+    z-index: 1; /*提升标题的层级*/
+    font-size: 25px;
+    top: 10px;
+    right: 10px;
+}
+</style>
+
+<div class="box">
+    <div class="mask"></div>
+    <div class="title">
+        和哈哈哈啊哈哈
+    </div>
+</div>
