@@ -1,0 +1,16 @@
+@media (max-width: 500px) {
+    .body {
+        background-image: none;
+    }
+
+    #login {
+        width: 100%;
+        margin: 0;
+    }
+
+    .input-area {
+        margin-bottom: 20px;
+    }
+
+
+}
