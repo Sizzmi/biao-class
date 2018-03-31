@@ -1,0 +1,45 @@
+<!-- 单行多列 -->
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .row {
+        font-size: 0;
+        color: #fff;
+    }
+
+    .col {
+        padding: 15px;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .col:nth-child(odd) {
+        background: rgba(200,0,0, .8);
+    }
+
+    .col:nth-child(even) {
+        background: rgba(0,0,80, .8);
+    }
+
+    .sm {
+        width: 10%;
+    }
+
+    .md {
+        width: 40%;
+    }
+
+    .lg {
+        width: 50%;
+    }
+</style>
+<div class="row">
+    <div class="col sm">列</div>
+    <div class="col md">列</div>
+    <div class="col lg">列</div>
+</div>
+
