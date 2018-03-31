@@ -1,0 +1,62 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    img {
+        max-width: 100%;/* 最大宽度撑满母元素 */
+        display: block;/* 去除因baseline产生的下方间隙 */
+    }
+
+    .col {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 16px;
+    }
+
+    .col-md {
+        width: 50%;
+    }
+
+    .col:nth-child(odd) {
+        background: rgba(200, 0, 0, .5);
+    }
+
+    .col:nth-child(even) {
+        background: rgba(0,0,80, .5);
+    }
+
+    .row {
+        font-size: 0;
+        color: #fff;
+    }
+
+    .col-img {
+        width: 60%;
+    }
+
+    .col-text {
+        width: 40%;
+    }
+</style>
+
+<div class="row">
+    <div class="col col-md">
+        <div class="row">
+            <div class="col col-img">
+                <img src="https://ws2.sinaimg.cn/large/006tKfTcly1fk4vjd71edj30dw0dwjrr.jpg" alt="">
+            </div>
+            <div class="col col-text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime minima reiciendis assumenda repellendus.
+            </div>
+        </div>
+    </div>
+    <div class="col col-md">
+        <div class="row">
+            <div class="col col-img">
+                <img src="https://ws2.sinaimg.cn/large/006tKfTcly1fk4vjd71edj30dw0dwjrr.jpg" alt="">
+            </div>
+            <div class="col col-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime minima reiciendis assumend</div>
+        </div>
+    </div>
+</div>
