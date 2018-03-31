@@ -1,0 +1,40 @@
+<!-- 通过relative父级定位absolute子级
+当父级的position为relative时，absolute子级会相对父级进行定位。 -->
+<style>
+    div {
+        background: rgba(0,0,0, .2);
+    }
+
+    .relative {
+        /* 相对定位 */
+        position: relative;
+
+        /* 子级会随父级位置得改变而相应改变 */
+        top: 30px;
+        left: 30px;
+        /* 宽高 */
+        width: 300px;
+        height: 300px;
+    }
+
+    .absolute {
+        /* 绝对定位 */
+        position: absolute;
+        
+        /* 指定以父级位基准的偏移量 */
+        right: 20px;
+        bottom: 20px;
+
+        /* 宽高 */
+        width: 150px;
+        height: 150px;
+        background: rgba(255,0,0, .6);
+    }
+
+
+
+</style>
+<div class="relative">
+    我是爸爸
+    <div class="absolute">我是儿子</div>
+</div>
