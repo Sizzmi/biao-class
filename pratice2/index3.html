@@ -1,0 +1,47 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .row {
+        font-size: 0;
+        color: #fff;
+    }
+
+    .col {
+        display: inline-block;
+        vertical-align: top;
+        /* 装饰属性 */
+        margin: 10px 0;
+        padding: 15px;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .col:nth-child(odd) {
+        background: rgba(200,0,0, .8);
+    }
+
+    .col:nth-child(even) {
+        background: rgba(0,0,80, .8);
+    }
+
+    .sm {
+        width: 30%;
+    }
+
+    .lg {
+        width: 70%;
+    }
+
+
+</style>
+<div class="row">
+    <div class="col sm">列</div>
+    <div class="col lg">列
+        <div class="row">
+            <div class="col sm">子列</div>
+            <div class="col lg">子列</div>
+        </div>
+    </div>
+</div>
