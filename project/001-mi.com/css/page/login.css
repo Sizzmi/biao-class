@@ -4,17 +4,20 @@
     border-bottom: 1px solid rgba(0,0,0, .1);
 }
 
-.nav .logo,
+
 .body {
     background-repeat: no-repeat;
     background-position: center;
 }
+
 
 .nav .logo {
     height: 60px;
     background-image: url(../../img/logo-login.png);
     -webkit-background-size: contain;
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
 }
 
 .body {

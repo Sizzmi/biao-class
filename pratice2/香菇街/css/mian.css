@@ -1,0 +1,22 @@
+.container {
+    display: block;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clear-float:after,
+.clear-float:before {
+    content:"";
+    display: block;
+    clear: both;
+}
+  
+
