@@ -1,18 +1,63 @@
 <!-- 侧栏 -->
-<style>
-    .siderbar,
-    .siderbar-item {
-        display: block;
-    }
+<!DOCTYPE html>
+<html lang="zh-cn">
 
-    .sidebar {
-        background: #444;
-    }
-</style>
-<div class="sidebar">
-    <a class="sidebar-item" href="#">内容管理</a>
-    <a class="sidebar-item" href="#">项目管理</a>
-    <a class="sidebar-item" href="#">财务管理</a>
-    <a class="sidebar-item" href="#">任务管理</a>
-    <a class="sidebar-item" href="#">订单管理</a>
-</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/pratice2/normalize.css">
+
+
+<body>
+
+
+    <style>
+        link {
+            display: block;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        body {
+            display: block;
+        }
+
+        html {
+            line-height: 1.5;
+        }
+
+        .sidebar,.sidebar-item {
+            display: block;
+        }
+
+        .sidebar {
+            background: #444;
+            width: 30%;
+        }
+
+        .sidebar-item {
+            text-decoration: none;
+            color: rgba(255,255,255, .8);
+            padding: 15px;
+        }
+
+        .sidebar-item:hover {
+            background: rgba(0, 0, 0, .2);
+            color: rgba(255,255,255, .1);
+        }
+    </style>
+    </head>
+    <div class="sidebar">
+        <a class="sidebar-item" href="#">内容管理</a>
+        <a class="sidebar-item" href="#">项目管理</a>
+        <a class="sidebar-item" href="#">财务管理</a>
+        <a class="sidebar-item" href="#">任务管理</a>
+        <a class="sidebar-item" href="#">订单管理</a>
+    </div>
+</body>
+
+</html>
