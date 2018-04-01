@@ -23,3 +23,61 @@
     background-size: cover;
     text-align: right;
 }
+
+#login {
+    background: #fff;
+    padding: 20px;
+    display: inline-block;
+    width: 260px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tab-head-group {
+    text-align: center;
+}
+
+.tab-head {
+    font-size: 1.3rem;
+    padding: 10px;
+    position: relative;
+    color: #777;
+}
+
+.tab-head:after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background: #ccc;
+    position: absolute;
+    right: 0;
+    top:12px;
+}
+
+.tab-head:last-child:after {
+    display: none;
+}
+
+.tab-head.active {
+    color:#ff6700;
+}
+
+.social-login {
+    font-size: 80%;
+}
+
+.input-area {
+    margin-bottom: 100px;
+}
+
+.other > * {
+    font-size: .75rem;
+}
+
+.footer {
+    padding: 50px;
+    text-align: center;
+    font-size: .8rem;
+    color: #aaa;
+}
