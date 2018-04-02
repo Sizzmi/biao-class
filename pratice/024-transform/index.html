@@ -1,10 +1,16 @@
 <style>
     .box {
-
+        transform: scale(1.5) translate(100px,100px) rotate(45deg);
         width: 200px;
         height: 200px;
+        
         background: rgba(200,0,0, .2);
-        transform: translateX(100px) translateY(100px) translateZ(100px);
+        display: inline-block;
+        transition:  transform 1s;
+    }
+
+    .box:hover {
+        transform: translate(99px) rotate(90deg);
     }
 </style>
 
