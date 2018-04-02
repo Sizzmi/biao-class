@@ -1,0 +1,86 @@
+.container {
+    width: 1224px;
+}
+
+.col.left .pro-a {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 60px;
+    color:#212121;
+    float: left;
+}
+
+.col.left .pro-b {
+    float: left;
+    margin-left: 5px;
+    font-size: 12px;
+    margin-top: 21px;
+}
+
+.container.clearf .col.right {
+    float: right;
+    margin: 17px 0 0 0 ;
+}
+
+.col.right a {
+    color:#616161;
+}
+
+.pro-pic.left {
+    position: relative;
+    float: left;
+    height: 600px;
+    margin-left: 0;
+
+}
+.pro-desc.right {
+    float: right;
+    margin-left: 12px;
+    width: 606px;
+    min-height: 1px;
+}
+
+.pro-desc.right .sale-desc {
+    color:#b0b0b0;
+    margin: 0;
+    padding: 0;
+    padding-top: 8px;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.container .pro-desc.right .pro-price {
+    display: block;
+    font-size: 14px;
+    line-height: 1;
+    color: #ff6700;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 12px 0 20px;
+}
+
+h1 {
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: normal;
+    color: #212121;
+    display: block;
+}
+
+.pro.gift {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.pro-gift .gift-tag {
+    width: 80px;
+    padding: 2px 0;
+    text-align: center;
+    background: #ff6700;
+    color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
