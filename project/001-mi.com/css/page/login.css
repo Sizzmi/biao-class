@@ -1,3 +1,11 @@
+
+input ,
+button {
+
+    outline :none;
+    
+}
+
 .nav {
     position: relative;
     overflow: auto;
@@ -6,8 +14,7 @@
 
 
 .body {
-    background-repeat: no-repeat;
-    background-position: center;
+    
 }
 
 
@@ -20,42 +27,55 @@
     background-position: left;
 }
 
-.body {
+.bg-max {
     background-image: url(../../img/login-body-bg.jpg);
     -webkit-background-size: cover;
     background-size: cover;
-    text-align: right;
+    height: 650px; 
+    background-repeat: no-repeat;
+    background-position: center;
+    position :relative;
 }
 
 #login {
     background: #fff;
-    padding: 20px;
     display: inline-block;
-    width: 260px;
-    margin-top: 20px;
     margin-bottom: 20px;
+    position: absolute;
+    right: 110px;
+    top: 68px;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-bottom: 40px;
 }
 
 .tab-head-group {
     text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 .tab-head {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     padding: 10px;
     position: relative;
     color: #777;
+    width: 50%;
+    /* line-height: 55px;     */
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
+
 
 .tab-head:after {
     content: "";
     display: inline-block;
-    width: 2px;
-    height: 20px;
+    width: 1px;
+    height: 25px;
     background: #ccc;
     position: absolute;
     right: 0;
-    top:12px;
+    top:17px;
 }
 
 .tab-head:last-child:after {
@@ -67,11 +87,84 @@
 }
 
 .social-login {
-    font-size: 80%;
+    /* font-size: 80%; */
+    display: block;
+    margin-top: 60px;
+    text-align: center;
 }
 
+.social-login .title {
+    font-size: 14px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    position :relative;
+}
+
+.social-login .title:before,
+.social-login .title:after {
+    content : "";
+    display: inline-block;
+    width: 120px;
+    border-top:1px solid #e8e8e8;
+    position: absolute;
+    top: 31px;
+}
+
+.social-login .title:before {
+    left: 11px;   
+}
+
+.social-login .title:after {
+
+    rigth: 11px;   
+}
+
+.social-login .item {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: rgba(0,0,0,0.7);
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.social-login .item:hover {
+    background-color : #0288d1;
+}
+
+.social-login .item .icon {
+    margin-top: 4px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: auto 20px;    
+}
+
+.social-login .item .qq {
+    background-image :url(../../img/icons.png);
+    background-position : 21% center;
+}
+
+.social-login .item .weibo {
+    background-image :url(../../img/icons.png);
+    background-position : 42% center;
+}
+.social-login .item .ali {
+    background-size: auto 15px; 
+    background-image :url(../../img/icons.png);
+    background-position : 68% center;
+}
+.social-login .item .wechat {
+    background-size: auto 15px; 
+    
+    background-image :url(../../img/icons.png);
+    background-position : 100% center;
+}
+
+
 .input-area {
-    margin-bottom: 100px;
 }
 
 .other > * {
@@ -83,4 +176,21 @@
     text-align: center;
     font-size: .8rem;
     color: #aaa;
+}
+
+
+.input-group {
+    margin: 15px 0;
+}
+
+.input-group input {
+    font-size: 13px;
+    color :#666;
+}
+
+
+.input-group input ,
+.input-group button {
+    width: 350px;
+    height: 50px;
 }
