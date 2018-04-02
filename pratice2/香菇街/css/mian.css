@@ -239,3 +239,15 @@ img {
 .cat-promote .content .card-wrap:last-child {
     padding-right: 0;
 }
+
+.footer {
+    margin-top: 30px;
+    padding: 30px;
+    background: #eee;
+    text-align: center;
+    color: #999;
+}
+
+.footer a {
+    color: #999;
+}
