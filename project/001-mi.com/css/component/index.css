@@ -1,0 +1,28 @@
+.cat-promo .others a:hover {
+    color:#ff6700;
+}
+
+.author {
+    color: #c0c0c0;
+}
+
+.review {
+    color:#330;
+}
+
+.header .cat-list,
+.header .shortcuts .link:hover {
+    color: #fff;
+}
+
+.card,
+header {
+    background: #fff;
+}
+
+.main .head,
+header .main-promo,
+.text .review {
+    margin-bottom: 10px;
+}
+
