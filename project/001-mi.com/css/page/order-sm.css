@@ -58,7 +58,6 @@
     font-size: 14px;
     line-height: 1;
     color: #ff6700;
-    border-bottom: 1px solid #e0e0e0;
     padding: 12px 0 20px;
 }
 
@@ -72,9 +71,7 @@ h1 {
     display: block;
 }
 
-.pro.gift {
-    border-bottom: 1px solid #e0e0e0;
-}
+
 
 .pro-gift .gift-tag {
     width: 80px;
@@ -82,5 +79,4 @@ h1 {
     text-align: center;
     background: #ff6700;
     color: #fff;
-    border-bottom: 1px solid #e0e0e0;
 }
