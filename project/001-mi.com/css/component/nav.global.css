@@ -1,0 +1,22 @@
+.nav .global {
+    background-color: #333;
+    color:#b0b0b0;
+}
+
+.nav.global a {
+    padding: 10px 5px;
+}
+
+.nav.global a:hover {
+    color: #fff;
+}
+
+.nav.global .cart {
+    padding: 10px 20px;
+}
+
+.nav.global .cart:hover {
+    background-color: #fff;
+    color:#ff6700;
+}
+

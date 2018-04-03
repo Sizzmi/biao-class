@@ -1,0 +1,62 @@
+.nav.page {
+    padding:20px 0;
+}
+
+.nav.page * {
+    vertical-align: middle;
+}
+
+.nav.page .logo {
+    display: inline-block;
+    background-color: #ff6700;
+}
+
+.nav.page .nav-list a {
+    padding: 0 5px;
+}
+
+.nav.page .nav-list a:hover {
+    color:#ff6700;
+}
+
+.nav.page .search-area {
+    font-size: 0;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.nav.page .search-area:hover * {
+    border-color: #ff6700;
+}
+
+.nav.page .search-area button:hover {
+    background-color: #ff6700;
+    color: #fff;
+}
+
+.nav.page .search-area input,
+.nav.page .search-area button {
+    font-size: 1rem;
+    padding: 10px;
+    border:1px solid #ccc;
+    outline: 0;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.nav.page .search-area input {
+    border-right: 0;
+    width: 75%;
+}
+
+.nav.page .search-area button {
+    width: 20%;
+    cursor: pointer;
+}
+

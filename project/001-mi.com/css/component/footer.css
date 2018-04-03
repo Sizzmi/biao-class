@@ -1,0 +1,121 @@
+.footer,
+.footer .support button {
+    background-color: #fff;
+}
+
+.footer .after-sale,
+.footer .support {
+    text-align: center;
+}
+
+.footer .support,
+.footer .after-sale a {
+    color: #616161;
+}
+
+.footer .link-group a {
+    color: #757575;
+}
+
+.footer .support .phone,
+.footer .support button,
+.footer a:hover {
+    color: #ff6700;
+}
+
+.footer .logo {
+    background-color: #ff6700;
+}
+
+.footer .after-sale {
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.footer .after-sale > .co12,
+.footer .site-info .col8 {
+    border-right: 1px solid #e0e0e0;
+}
+
+.footer .after-sale .col2:last-child {
+    border-right:0;
+}
+
+.footer .after-sale a {
+    font-size: 1.1rem;
+}
+
+.footer .site-info {
+    padding: 25px 0;
+}
+
+.footer .site-info .title {
+    font-weight: 400;
+    color: #424242;
+}
+
+.footer .site-info .link-group a {
+    line-height: 1.8;
+}
+
+.footer .support {
+    margin-top: 20px;
+}
+
+.footer .support > * {
+    margin-bottom: 5px;
+}
+
+.footer .support .phone {
+    font-size: 1.3rem;
+}
+
+.footer .support button {
+    margin-top: 10px;
+    padding: 5px 20px;
+    border: 1px solid #ff6700;
+
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.footer .support button:hover {
+    background: #ff6700;
+    color: #fff;
+}
+
+.footer .meta,
+.footer .logo {
+    vertical-align: middle;
+}
+
+.footer .meta {
+    display: inline-block;
+    font-size: .8rem;
+    line-height: 1.5;
+}
+
+.footer .meta .link-group {
+    font-size: .9rem;
+}
+
+.footer .meta .copyright {
+    color: #b0b0b0;
+}
+
+.footer .bottom-area {
+    padding: 30px 0;
+    background-color: #fafafa;
+}
+
+.footer .bottom-area .container > * {
+    vertical-align: middle;
+}
+
+
+
+

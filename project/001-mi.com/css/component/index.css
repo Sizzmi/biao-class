@@ -26,3 +26,184 @@ header .main-promo,
     margin-bottom: 10px;
 }
 
+.header .sub-promo .card-group,
+.main .card-group {
+    padding: 5px;
+    margin-right: -5px;
+}
+
+.card {
+    line-height: 1.7;
+}
+
+.card,
+.leader {
+    margin-bottom: 15px;
+    -webkit-transition: all .4s linear;
+    -moz-transition: all .4s linear;
+    -ms-transition: all .4s linear;
+    -o-transition: all .4s linear;
+    transition: all .4s linear;
+}
+
+.leader:hover,
+.card:hover {
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
+    transform: translateY(-3px);
+
+    -webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.cat-promo,
+.hot-comment,
+.theme-area {
+    margin-top: 30px;
+}
+
+.cat-promo .card,
+.theme-area .card {
+    text-align: center;
+}
+
+.main .head *,
+.cat-promo .card-half .text,
+.cat-promo .card-half .thumbnail {
+    vertical-align: middle;
+}
+
+.theme-area .card .desc,
+.cat-promo .card .price,
+.hot-comment .card .author {
+    margin-bottom: 5px;
+}
+
+/* end */
+
+.header {
+    padding-bottom: 20px;
+}
+
+.header .main-promo {
+    background-color :rgba(277,218,209,1);
+    background-image: url(G:\biao-class\project\001-mi.com\img\cardG.jpg);
+    background-repeat: no-repeat;
+    -webkit-background-size:contain;
+    background-size: contain;
+}
+
+.header .cat-list {
+    padding: 10px 0;
+    background-color:rgba(0, 0, 0, 0.4);
+}
+
+.header .cat-list a {
+    display: block;
+    padding: 10px 0 10px 25px;
+}
+
+.header .cat-list a:hover {
+    background-color: #ff6700;
+}
+
+.header .shortcuts {
+    background-color: #5f5750;
+}
+
+.header .shortcuts .link {
+    font-size: .9rem;
+    padding: 9px;
+    text-align: center;
+    color:rgba(255,255,255,0.7);
+}
+
+.main {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: #f0f0f0;
+}
+
+.main .head .title {
+    font-size: 1.5rem;
+}
+
+.main .head .others {
+    font-size: 1rem;
+    color:#424242;
+}
+
+.main .head .others a {
+    margin-left: 15px;
+}
+
+.cat-promo .card .thumbnail {
+    display: inline-block;
+    padding: 15px 20px 0;
+    width: 85%;
+}
+
+.cat-promo .card .text {
+    padding: 0 10px 15px;
+}
+
+.cat-promo .card .title,
+.cat-promo .card .price {
+    font-size: .9rem;
+}
+
+.cat-promo .card .desc {
+    font-size: .7rem;
+}
+
+.cat-promo .card .price {
+    padding-top: 5px;
+}
+
+.cat-promo .leader {
+    font-size: 0;
+}
+
+.cat-promo .card-half .thumbnail {
+    width: 50%;
+}
+
+.cat-promo .card-half .text,
+.cat-promo .card-half .thumbnail {
+    padding: 20px 10px;
+}
+
+.hot-comment .card .text {
+    padding: 20px;
+    line-height: 1.7;
+    font-size: .8rem;
+}
+
+.theme-area .card {
+    padding: 30px 0;
+    font-size: .8rem;
+    border-top: 1px solid #ffac13;
+}
+
+.theme-area .card .cat {
+    margin-bottom: 10px;
+    color: #ffca13;
+}
+
+.theme-area .card .desc {
+    font-size: .7rem;
+    padding: 0 35px;
+}
+
+.theme-area .card .title {
+    font-size: 1.1rem;
+}
+
+.theme-area .card .thumbnail {
+    padding: 10px 20px;
+}
+
+

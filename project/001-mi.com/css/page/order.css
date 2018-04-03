@@ -1,0 +1,13 @@
+.col,
+[class^="col-"] {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    font-size: 1rem;
+    min-height: 1px;
+}
+
+.col.left,
+[class^="col-"].right {
+    text-align: right;
+}
