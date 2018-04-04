@@ -17,10 +17,21 @@ body {
     zoom: 80%;
 }
 
+.container .side .me .avatar {
+    margin: 0 auto;
+    margin-top:20px;
+    margin-bottom: 10px;
+    background-image:url("../img/avatar.jpg");
+    background-size: 120%;
+    background-position:center;
+    border-radius:50%;
+    border:5px solid #607d8b;
+    width:160px;
+    height:160px;
+}
 .container {
     position: relative;
     margin: 0 auto;
-
     max-width: 1050px;
     height: 1550px;
     background-color: white;
