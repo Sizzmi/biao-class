@@ -37,8 +37,8 @@ body {
     background-position:center;
     border-radius:50%;
     border:5px solid #607d8b;
-    width:200px;
-    height:200px;
+    width:20vw;
+    height:20vw;
 }
 
 
@@ -80,5 +80,27 @@ hr {
     padding: 20px;
 }
 
+@media (max-width: 500px) {
+    .main {
+        position: relative;;
+        margin-left: 25vw;
+        min-height: 100%;
+        padding: 20px;
+    }
 
+    .side {
+        position: absolute;
+        width: 25vw;
+        height: 100%;
+        background-color: whitesmoke;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .side > * {
+        
+        width: 25vw;
+        
+    }
+ }
 
