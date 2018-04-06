@@ -1,10 +1,3 @@
-a {
-    text-decoration: none;
-}
-
-* {
-    padding: 0;
-}
 
 
 .wrap .avatar {
@@ -118,9 +111,7 @@ nav {
     margin-top: 200px;
 }
 
-a:hover {
-    cursor: pointer;
-}
+
 
 .social-account-link-container {
     padding: 0 7px;
@@ -156,5 +147,4 @@ header {
 .view-container {
     padding:0 15%;
 }
-
 
