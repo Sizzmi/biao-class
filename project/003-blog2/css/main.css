@@ -3,18 +3,6 @@ html {
   display: block;
 }
 
-html::before {
-  content:"";
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: url(https://imgsa.baidu.com/forum/w%3D580/sign=a8ad9e9a4c086e066aa83f4332097b5a/f980582309f79052881645950cf3d7ca7bcbd530.jpg);
-  background-size: cover;
-}
-
 body {
   transition: all .3s cubic-bezier(.3, 1, .5 ,1);
   line-height: 1.6;
@@ -180,9 +168,7 @@ body {
   border-radius: 50%;
 }
 
-img {
-  border-style: none;
-}
+
 
 img {
   max-width: 100%;
@@ -270,6 +256,57 @@ img {
   opacity: 0.7;
 }
 
+#art-box {
+  border-radius: .3125rem;
+  overflow: hidden;
+  background: #fff no-repeat center;
+  background-size: cover;
+  position: relative;
+  margin-top: 3rem;
+}
+#ab-mask {
+  background: rgba(0,0,0,0.25);
+  position: relative;
+  z-index: 10;
+  display: table;
+  vertical-align: middle;
+  width: 100%;
+  height: 15.5rem;
+}
+
+#ab-content {
+  padding: 2rem 2rem;
+  text-align: center;
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+#ab-content p {
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+#ab-content p a {
+  font-weight: 400;
+  color:#fff;
+}
+
+#ab-content span {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #fff;
+}
+
+#ab-content span a {
+  color: #fff;
+}
+
+
+
 #art-box:hover,
 #art-feeling:hover {
   -webkit-box-shadow:0 22px 43px rgba(0,0,0,0.15);
@@ -282,6 +319,44 @@ img {
   transform: translateY(-4px) scale(1.05);
 }
 
+#nextpage {
+  height: 100px;
+  line-height: 100px;
+  border-radius: .5em;
+  font-size: 1.5em;
+  text-align: right;
+}
+
+#left-navigator,
+#right-navigator {
+  padding: .4375rem 2.25rem;
+  border-radius: 100rem;
+  display: inline-block;
+  opacity: 1;
+  font-size: .875rem;
+  line-height: 1.5;
+  font-weight: 500;
+  border: .625rem solid #333;
+}
+
+html::before {
+  content:"";
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* background: url("http://imgsrc.baidu.com/forum/pic/item/5b181ddbb6fd52668e46731fac18972bd507369b.jpg"); */
+  background-size: cover;
+}
+
+.footer {
+  padding: 0.3em;
+  padding-bottom: 0.1em;
+  background: rgba(255,255,255, 0.6);
+  text-align: center;
+}
 /*===============media=================================*/
 
 @media screen and (max-width: 786px) {
@@ -378,5 +453,5 @@ img {
 }
 
 @media screen and (max-width: 786px) {
-  
+
 }
