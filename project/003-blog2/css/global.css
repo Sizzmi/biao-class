@@ -1,0 +1,40 @@
+div {
+    display: block;
+}
+
+p {
+    display: block;
+    -webkit-margin-before:1em;
+    -webkit-margin-after:1em;
+    -webkit-margin-start:0px;
+    -webkit-margin-end:0px;
+}
+
+center {
+    display: block;
+    text-align: -webkit-center;
+}
+
+ul {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+article {
+    display: block;
+}

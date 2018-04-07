@@ -1,0 +1,382 @@
+
+html {
+  display: block;
+}
+
+html::before {
+  content:"";
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(https://imgsa.baidu.com/forum/w%3D580/sign=a8ad9e9a4c086e066aa83f4332097b5a/f980582309f79052881645950cf3d7ca7bcbd530.jpg);
+  background-size: cover;
+}
+
+body {
+  transition: all .3s cubic-bezier(.3, 1, .5 ,1);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.background-img {
+  display: block;
+  width: 100%;
+  height: 105%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  opacity: 1;
+  transition: 1s ease opacity;
+}
+
+* {
+  text-shadow: 0 1px 2px rgba(0,0,0, .15);
+  color:#505050;
+  font-family: sans-serif;
+  transition: all .24s ease;
+}
+
+#welcome {
+  position: relative;
+  display: table;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  color: #fff;
+  background-color: #1e1e1f;
+  transition: all 1s;
+}
+
+#content-me {
+  display: table-cell;
+  position: relative;
+  width: 50%;
+  vertical-align: middle;
+  z-index: 4;
+  text-align: left;
+}
+
+#content-me h1 {
+  margin: 10px 0 10px 0;
+  font-size: 5rem;
+  letter-spacing: -1px;
+  font-weight: 400;
+  text-shadow: 0 3px 6px rgba(0,0,0, .5);
+  color: #fff;
+}
+
+#content-me span {
+  font-size: 1.25rem;
+  font-weight: 400px;
+  color: #fff;
+  text-shadow: 0 3px 6px rgba(0,0,0, .5);
+}
+
+
+
+#nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 888;
+  height: 75px;
+  line-height: 75px;
+  transition: all 1s;
+}
+
+#nav::after,
+#nav:before {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.slideDown {
+  transform: translateY(0);
+}
+
+#trigger-overlay {
+  background: rgba(255,255,255,0);
+  outline: none;
+  border: none;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: (0,0,0, .9);
+}
+
+.overlay-scale {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.9);
+  transition:transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+}
+
+.overlay h2 {
+  text-align: center;
+  color: #fff;
+  margin: 2rem;
+  font-size: 3rem;
+}
+
+.overlay p {
+  text-align: center;
+  color: #fff;
+}
+
+.overlay nav {
+  text-align: center;
+  position: relative;
+  top: 40%;
+  height: 60%;
+  -webkit-transform: translateY(50%);
+  transform:translateY(-50%);
+}
+
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+}
+
+.overlay .overlay-close {
+  width: 80px;
+  height: 90px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  overflow: hidden;
+  border: none;
+  text-indent: 200%; /*第一段段落缩进200px*/
+  color:transparent;
+  outline: none;
+  z-index: 99;
+}
+
+.overlay-close {
+  display: none;
+}
+
+#nav-first img {
+  margin: 1rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+img {
+  border-style: none;
+}
+
+img {
+  max-width: 100%;
+  transition: all .24s ease;
+}
+
+.main {
+  width: 100%;
+  background-color: #fff;
+} 
+
+.content-main {
+  margin: auto;
+}
+
+.content-main::before,
+.content-main::after {
+  clear: both;
+  content:"";
+  display: table;
+}
+
+#arts {
+  width: 50%;
+  line-height: 2em;
+  margin: auto;
+
+}
+#art-feeling {
+  border-radius: .3125rem;
+  overflow: hidden;
+  background-size: cover;
+  position: relative;
+  margin-top: 3rem;
+}
+
+#feeling-content {
+  padding: 0.25rem 1rem;
+}
+
+#feeling-content::after,
+#feeling-content::before {
+  content: "";
+  clear: both;
+}
+
+#feeling-content-left {
+  float: left;
+  width: 15%;
+  text-align: center;
+  height: 7rem;
+  line-height: 10rem;
+}
+
+#feeling-content-left img {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+
+
+#feeling-content::after,
+#feeling-content::bvefore {
+  content: '';
+  clear: both;
+}
+
+#feeling-content-right {
+  float: right;
+  width: 85%;
+  height: 7rem;
+}
+
+#feeling-content-right p {
+  font-size: 1.5rem;
+  color:#fff;
+  opacity: 0.8;
+  overflow: hidden;
+  text-overflow: ellipsis;/*修剪文本*/
+  white-space: nowrap;/*不进行换行*/
+}
+
+#felling-content-right span {
+  color:#fff;
+  opacity: 0.7;
+}
+
+#art-box:hover,
+#art-feeling:hover {
+  -webkit-box-shadow:0 22px 43px rgba(0,0,0,0.15);
+  -moz-box-shadow:0 22px 43px rgba(0,0,0,0.15);
+  box-shadow:0 22px 43px rgba(0,0,0,0.15);
+  -webkit-transform: translateY(-4px) scale(1.05);
+  -moz-transform: translateY(-4px) scale(1.05);
+  -ms-transform: translateY(-4px) scale(1.05);
+  -o-transform: translateY(-4px) scale(1.05);
+  transform: translateY(-4px) scale(1.05);
+}
+
+/*===============media=================================*/
+
+@media screen and (max-width: 786px) {
+#welcome {
+  width: 100%;
+  height: 240px !important;
+}
+}
+
+@media screen and (max-width: 786px) {
+  #content-me {
+    vertical-align: middle;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  #content-me{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  #content-me h1 {
+    font-size: 2rem;
+    text-shadow: 0 3px 6px rgba(0,0,0, .5);
+  }
+}
+
+@media screen and (max-width: 786px) {
+  #content-me span {
+    font-size: 1rem;
+    color: rgba(255,255,255, 0.8);
+    text-shadow: 0 3px 6px rgba(0,0,0, .5);
+    width: 100%;
+    text-overflow: ellipsis;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  #content-me {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  #content-me {
+    vertical-align: middle;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .main {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  #arts {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  #art-feeling {
+    height: 5rem;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  #art-box,
+  #art-feeling {
+    margin: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  #feeling-content-left {
+    width: 25%;
+    height: 5rem;
+    line-height: 8rem;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  #feeling-content-right {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  #feeling-content-right p {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  
+}
