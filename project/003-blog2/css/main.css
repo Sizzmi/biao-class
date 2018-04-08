@@ -42,6 +42,10 @@ body {
   transition: all 1s;
 }
 
+.content-me {
+  margin: auto;
+}
+
 #content-me {
   display: table-cell;
   position: relative;
@@ -67,6 +71,12 @@ body {
   text-shadow: 0 3px 6px rgba(0,0,0, .5);
 }
 
+.content-me::before,
+.content-me::after {
+  clear: both;
+  content: "";
+  display: table;
+}
 
 
 #nav {
@@ -161,7 +171,7 @@ body {
   display: none;
 }
 
-#nav-first img {
+#nav-av img {
   margin: 1rem;
   width: 5rem;
   height: 5rem;
@@ -264,6 +274,7 @@ img {
   position: relative;
   margin-top: 3rem;
 }
+
 #ab-mask {
   background: rgba(0,0,0,0.25);
   position: relative;
@@ -272,6 +283,16 @@ img {
   vertical-align: middle;
   width: 100%;
   height: 15.5rem;
+}
+
+.bk-mask {
+  background: rgba(0,0,0,0.25);
+  position: relative;
+  z-index: 4;
+  display: table;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
 }
 
 #ab-content {
@@ -357,6 +378,96 @@ html::before {
   background: rgba(255,255,255, 0.6);
   text-align: center;
 }
+
+.post {
+  width: 100%;
+  font-size: 1.2em;
+}
+
+.post-a {
+  width: 50%;
+  margin: auto;
+  background: #fff;
+  border-radius: 5px;
+  line-height: 1.75rem;
+}
+
+.post-meta {
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+.post-meta p {
+  color:#fff;
+}
+
+.post-meta p a {
+  color: #fff;
+}
+
+.post-content {
+  padding: 1em;
+  margin: auto;
+}
+
+.blog-bottom-bar {
+  display: block;
+  position: relative;
+  columns: inherit;
+  background: #f9f9f9f9;
+}
+
+.blog-bottom-bar .blog-container .prev,
+.blog-bottom-bar .blog-container .next {
+  display: inline-block;
+  position: relative;
+  padding: 2em 0;
+  width: 50%;
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.125em;
+  font-weight: 500;
+  vertical-align: top;
+}
+
+.blog-bottom-bar .blog-container .prev span,
+.blog-bottom-bar .blog-container .next span {
+  font-size: 0.8em;
+  font-weight: 400;
+}
+
+.blog-bottom-bar .blog-container .next {
+  text-align: right;
+}
+
+.blog-container {
+  width: 50%;
+  margin: auto;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+div#comments {
+  -webkit-font-smoothing:antialiased; /*抗锯齿*/
+}
+
+#comments {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+#comments h2 {
+  margin: 30px 0;
+}
+
+
 /*===============media=================================*/
 
 @media screen and (max-width: 786px) {
