@@ -161,6 +161,7 @@ var c = '我叫' + person.name + ',我老婆有一共有' + (person.wife.balance
 console.log(c);
 /* 打印出“我叫李拴蛋，我丈人有3个朋友” */
 
+
 person = {
     name: '李拴蛋',
     wife: {
@@ -172,6 +173,8 @@ person = {
 }
 var d = '我叫' + person.name + '我丈人的第一个朋友叫' + person.wife.dad.friends[0] + ',第三个朋友叫' + person.wife.dad.friends[2] 
 console.log(d);
+
+
 /* 打印出“我叫李拴蛋，我丈人的第一个朋友叫王一，第三个朋友叫李三” */
 
 person = {
@@ -199,5 +202,7 @@ var e = '我叫' + person.name + '我丈人朋友们的孩子们平均分是' + 
 console.log(e);
 /* 打印出“我叫李拴蛋，我丈人朋友们的孩子们的平均分是85.888888888” */
 
+var g= '我叫' + person.name + ',我丈人有' + (person.wife.dad.friends.length) + '个朋友'
+console.log(g);
 
 
