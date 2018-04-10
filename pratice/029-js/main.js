@@ -157,7 +157,7 @@ person = {
         balance: 1200
     },
 }
-var c = '我叫' + person.name + ',我老婆有一共有' + (person.wife.balance-person.wife.huabei) + '块'
+var c = '我叫' + person.name + ',我老婆有一共有' + (person.wife.balance - person.wife.huabei) + '块'
 console.log(c);
 /* 打印出“我叫李拴蛋，我丈人有3个朋友” */
 
@@ -171,7 +171,7 @@ person = {
         }
     },
 }
-var d = '我叫' + person.name + '我丈人的第一个朋友叫' + person.wife.dad.friends[0] + ',第三个朋友叫' + person.wife.dad.friends[2] 
+var d = '我叫' + person.name + '我丈人的第一个朋友叫' + person.wife.dad.friends[0] + ',第三个朋友叫' + person.wife.dad.friends[2]
 console.log(d);
 
 
@@ -198,11 +198,19 @@ person = {
         }
     },
 }
-var e = '我叫' + person.name + '我丈人朋友们的孩子们平均分是' +  (((person.wife.dad.friends[0].children * person.wife.dad.friends[0].averageScore)+(person.wife.dad.friends[1].children * person.wife.dad.friends[1].averageScore))+(person.wife.dad.friends[2].children * person.wife.dad.friends[2].averageScore))/(((person.wife.dad.friends[1].children)+person.wife.dad.friends[0].children)+person.wife.dad.friends[2].children)
-console.log(e);
-/* 打印出“我叫李拴蛋，我丈人朋友们的孩子们的平均分是85.888888888” */
+// var e = '我叫' + person.name + '我丈人朋友们的孩子们平均分是' +  (((person.wife.dad.friends[0].children * person.wife.dad.friends[0].averageScore)+(person.wife.dad.friends[1].children * person.wife.dad.friends[1].averageScore))+(person.wife.dad.friends[2].children * person.wife.dad.friends[2].averageScore))/(((person.wife.dad.friends[1].children)+person.wife.dad.friends[0].children)+person.wife.dad.friends[2].children)
+// console.log(e);
+// /* 打印出“我叫李拴蛋，我丈人朋友们的孩子们的平均分是85.888888888” */
 
-var g= '我叫' + person.name + ',我丈人有' + (person.wife.dad.friends.length) + '个朋友'
-console.log(g);
+// var g= '我叫' + person.name + ',我丈人有' + (person.wife.dad.friends.length) + '个朋友'
+// console.log(g);
 
+var SumChildren = [person.wife.dad.friends[0].children + person.wife.dad.friends[1].children + person.wife.dad.friends[2].children]
+console.log(SumChildren);
+
+var SumAverageScore = [person.wife.dad.friends[0].averageScore*person.wife.dad.friends[0].children + person.wife.dad.friends[1].averageScore*person.wife.dad.friends[1].children + person.wife.dad.friends[2].averageScore*person.wife.dad.friends[2].children]
+console.log(SumAverageScore);
+
+var AllAverageScore = [SumAverageScore/SumChildren]
+console.log(AllAverageScore);
 
