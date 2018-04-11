@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<input type="text" id="name" placeholder="姓名">
+<script>
+    var name_element = document.querySelector('#name');
+    name_element.addEventListener('change', function () {
+        var name = name_element.value.trim();
+        switch (name) {
+            case '大波波怪':
+                console.log('大波波怪哈哈');
+                break;
+            case '中波波怪':
+                console.log('中波波怪喝喝');
+            // break;  
+            case '小波波怪':
+                console.log('是**');
+                break;
+            default:
+                console.log('你谁啊');
+                break;
+        }
+    });
+</script>
