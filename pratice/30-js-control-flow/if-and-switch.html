@@ -4,9 +4,9 @@
 <input type="text" id="phone" placeholder="手机号">
 
 <script>
-    var phone_element = document.querySelector('#phone');
-    phone_element.addEventListener('change', function () {
-        var phone = phone_element.value.trim();
+    var phoneElement = document.querySelector('#phone');
+    phoneElement.addEventListener('change', function () {
+        var phone = phoneElement.value.trim();
         if (!phone) {
             console.log('号码为必填项');
         } else if (
@@ -22,10 +22,10 @@
 
 
 
-    var age_element = document.querySelector('#age');
+    var ageElement = document.querySelector('#age');
 
-    age_element.addEventListener('change', function () {
-        var age = age_element.value.trim();
+    ageElement.addEventListener('change', function () {
+        var age = ageElement.value.trim();
 
         age = parseInt(age);
 
@@ -43,12 +43,12 @@
 
     });
 
-    var name_element = document.querySelector('#name');
+    var nameElement = document.querySelector('#name');
 
-    name_element.addEventListener('change',
+    nameElement.addEventListener('change',
 
         function () {
-            var name = name_element.value.trim();
+            var name = nameElement.value.trim();
 
             if (!name) {
                 console.log('快输入名字，不能为空哦');
