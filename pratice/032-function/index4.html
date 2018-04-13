@@ -1,5 +1,5 @@
 <script>
-    arr = [2, 4, 6, 8, 10]
+    arr = [2, 4, 5, 6, 7, 8]
         ; (function () {
             'use strict';
 
@@ -14,11 +14,10 @@
 
             var yo = [1, 2, 3];
             array_sum(yo);
+
         })();
 
-
-
-    // 数组内所有元素求和
+    //数组内元素求和
 </script>
 
 <script>
@@ -33,57 +32,57 @@
 
                 sum = sum + item;
             }
+
             console.log(sum);
         }
-        array_join(['y', 'o', 'o', 'o']);
+        array_join(['b', 'b', 'b'])
     })();
 
-    //数组内元素相连
+    //串联数组内元素相连
 </script>
 
 <script>
-    ; (function () {
-        'use strict';
+    ;(function(){
+        'use strict'
 
         function find_event_number(arr) {
-            var arr_even = [];
+            var arr_even =[];
 
-
-            for (var i = 0; i < arr.length; i++) {
-                var item = arr[i];
-                if (item % 2 != 0) {
+            for(var i = 0; i < arr.length;i++){
+                var item =arr[i];
+                if(item % 2 !=0){
                     continue;
                 }
                 arr_even.push(item);
             }
-
             console.log(arr_even);
 
         }
 
-        find_event_number([1, 3, 2, 7, 6]);
+        find_event_number([88,44,1,2,5,]);
     })();
-
-    // 查找打印出数组内偶数
 </script>
 
-
 <script>
-    function make_arr(max) {
-        var arr = [];
+    ; (function () {
+        'use strict'
 
-        for (var i = 1; i <= max; i++) {
-            arr.push(i);
-        }
-        console.log(arr);
+        function make_arr(max) {
+            var arr = [];
+
+            for (var i = 1; i <= max; i++) {
+                arr.push(i);
+            }
+            console.log(arr);
         }
 
         make_arr(10);
-
-        // 遍历数组
+    })();
 </script>
 
 <script>
+    ; (function () {
+        'use strict'
         function search(keyword) {
             var list = [
                 {
@@ -99,6 +98,7 @@
                     playing: ['QQ堂', 'QQ飞车'],
                 },
             ];
+
             var result = [];
 
             for (var i = 0; i < list.length; i++) {
@@ -112,7 +112,52 @@
             }
             console.log(result);
         }
-        search('QQ飞车');
 
-    //查询
+        search('QQ飞车');
+    })();
+
+//查询
+
+
 </script>
+
+<script>
+        ; (function () {
+            'use strict'
+            function search(keyword) {
+                var list = [
+                    {
+                        name: '王花花',
+                        salary: 100,
+                    },
+                    {
+                        name: '大波波怪',
+                        salary: 200,
+                    },
+                    {
+                        name: '小波波怪',
+                        salary: 300,
+                    },
+                ];
+    
+                var result = [];
+    
+                for (var i = 0; i < list.length; i++) {
+                    var item = list[i];
+    
+                    var salary = item.salary;
+    
+                    if (salary.indexOf(keyword) > 200 ) {
+                        result.push(item.name);
+                    }
+                }
+                console.log(result);
+            }
+    
+            search('QQ飞车');
+        })();
+    
+    //查询
+    
+    
+    </script>
