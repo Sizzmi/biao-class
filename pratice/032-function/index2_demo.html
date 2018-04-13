@@ -1,0 +1,154 @@
+<!-- <script>
+  <!--;(function () {-->
+    <!--'use strict';-->
+
+    <!--function array_sum(arr) { // 2 定义函数结构-->
+      <!--// 3 实现函数体-->
+      <!--// 一开始我们不知道和是多少，所以默认为0-->
+      <!--var sum = 0;-->
+      <!--// 迭代传进来的数组arr-->
+      <!--for(var i = 0; i < arr.length; i++) {-->
+        <!--var item = arr[i];-->
+        <!--// 将每一项相加-->
+        <!--sum = sum + item;-->
+      <!--}-->
+      <!--// 打印他们的和-->
+      <!--console.log(sum);-->
+    <!--}-->
+
+    <!--var yo = [1, 2, 3];-->
+
+    <!--array_sum(yo); // 1 这个函数得有什么功能-->
+  <!--})();-->
+</script>
+
+<!--===================================-->
+
+<!--<script>-->
+  <!--;(function () {-->
+    <!--'use strict';-->
+
+    <!--/*-->
+    <!--* 将数组中的字符串连接起来-->
+    <!--* @param arr array 字符串组成的数组-->
+    <!--* @return undefined-->
+    <!--* */-->
+    <!--function array_join(arr) { // 2. 定义函数结构-->
+      <!--// 3. 实现函数体-->
+
+      <!--// 由于我们不知道每一项字符串分别是什么，所以默认为空字符串-->
+      <!--var sum = '';-->
+
+      <!--// 遍历数组arr中所有的字符串-->
+      <!--for(var i = 0; i < arr.length; i++) {-->
+        <!--var item = arr[i];-->
+
+        <!--// 将每一个字符串跟之前的字符串连接起来-->
+        <!--sum = sum + item;-->
+      <!--}-->
+
+      <!--console.log(sum);-->
+    <!--}-->
+
+    <!--// 1. 这个函数要干嘛（定义它的功能）-->
+    <!--array_join(['y', 'o', 'oo']);-->
+  <!--})();-->
+<!--</script>-->
+
+<!--===================================-->
+
+<!--<script>-->
+  <!--/*找到所有的偶数-->
+  <!--* @param arr array 数字组成的数组-->
+  <!--* @return undefined*/-->
+  <!--function find_event_number(arr) {  // 2.定义函数结构-->
+    <!--// 3. 实现函数体-->
+
+    <!--var arr_even = [];-->
+
+    <!--for(var i = 0; i < arr.length; i++) {-->
+      <!--var item = arr[i];-->
+      <!--// 判断正在迭代的数字是否为偶数-->
+      <!--if(item % 2 != 0) {-->
+        <!--// 如果除2除不尽就说明不是偶数-->
+        <!--continue;-->
+      <!--}-->
+
+      <!--// 程序能跑到这里，说明一定是偶数（因为与2相除后余数为零）-->
+      <!--arr_even.push(item);-->
+    <!--}-->
+
+     <!--console.log(arr_even);-->
+  <!--}-->
+
+  <!--// 1. 这个函数要干嘛（定义它的功能）-->
+  <!--find_event_number([1, 3, 2, 7, 6]);-->
+  <!--find_event_number([1, 2, 4, 7, 8]);-->
+  <!--find_event_number([3, 5, 8, 9, 2]);-->
+  <!--find_event_number([2, 1]);-->
+<!--</script>-->
+
+<!--===================================-->
+
+<!-- <script>-->
+  <!--/*-->
+  <!--* 通过指定最大值生成长度相等的数组-->
+  <!--*-->
+  <!--* @max number 数组中元素的最大值，-->
+  <!--* 最小值只能从1开始；make_arr(3) => [1, 2, 3]-->
+  <!--*-->
+  <!--* @return undefined-->
+  <!--* */-->
+  <!--function make_arr(max) {-->
+    <!--var arr = [];-->
+
+    <!--for (var i = 1; i <= max; i++) {-->
+      <!--arr.push(i);-->
+    <!--}-->
+
+    <!--console.log(arr);-->
+  <!--}-->
+
+  <!--make_arr(500);-->
+<!--</script> -->
+
+
+<script>
+  /*
+  * 看哪些玩家正在玩搜索的游戏
+  * @keyword string 游戏名关键词
+  * @return undefined
+  * */
+  function search(keyword) {
+    var list = [
+      {
+        name: '王花花',
+        playing: ['CS', '红警'],
+      },
+      {
+        name: '李拴蛋',
+        playing: ['守望屁股', '吃鸡', 'CS'],
+      },
+      {
+        name: '牛备备',
+        playing: ['红警', '吃鸡'],
+      },
+    ];
+    /*不知道能不能搜到，所以默认为空数组*/
+    var result = [];
+    /*遍历每个用户*/
+    for(var i = 0; i < list.length; i++) {
+      /*缓存当前用户*/
+      var item = list[i];
+      /*拿到当前用户的游戏列表（数组）*/
+      var playing = item.playing;
+      /*如果游戏列表中有搜索的游戏，也就是只要indexOf方法没有返回-1*/
+      if(playing.indexOf(keyword) !== -1) {
+        /*就将其推到搜索结果中*/
+        result.push(item.name);
+      }
+    }
+    console.log(result);
+  }
+  search('吃鸡');
+</script> -->
