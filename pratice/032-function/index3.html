@@ -12,7 +12,7 @@
                 console.log(sum);
             }
 
-            var yo = [1, 2, 3];
+            var yo = [1,1,1,1,1,1,1,1,1,1,1,1];
             array_sum(yo);
         })();
 
@@ -22,6 +22,9 @@
 </script>
 
 <script>
+
+Eg1 = ['y', 'o', 'o', 'o']
+
     ; (function () {
         'use strict'
 
@@ -35,13 +38,15 @@
             }
             console.log(sum);
         }
-        array_join(['y', 'o', 'o', 'o']);
+        array_join(Eg1);
     })();
 
     //数组内元素相连
 </script>
 
 <script>
+
+Eg2 = [1, 3, 2, 7, 6]
     ; (function () {
         'use strict';
 
@@ -61,7 +66,7 @@
 
         }
 
-        find_event_number([1, 3, 2, 7, 6]);
+        find_event_number(Eg2);
     })();
 
     // 查找打印出数组内偶数
@@ -76,43 +81,145 @@
             arr.push(i);
         }
         console.log(arr);
-        }
+    }
 
-        make_arr(10);
+    make_arr(10);
 
         // 遍历数组
 </script>
 
 <script>
-        function search(keyword) {
-            var list = [
-                {
-                    name: '王花花',
-                    playing: ['CS', '红警'],
-                },
-                {
-                    name: '大波波怪',
-                    playing: ['诛仙', '热血江湖'],
-                },
-                {
-                    name: '小波波怪',
-                    playing: ['QQ堂', 'QQ飞车'],
-                },
-            ];
-            var result = [];
+    var arr = [
+        'a1',
+        'a2',
+        ['b1', 'b2', ['c1', 'c2', 'c3'], 'b3'],
+        'a3'
+    ];
+    var tmp;
 
-            for (var i = 0; i < list.length; i++) {
-                var item = list[i];
-
-                var playing = item.playing;
-
-                if (playing.indexOf(keyword) !== -1) {
-                    result.push(item.name);
-                }
-            }
-            console.log(result);
+    for (var i = 0; i < arr.length; i++) {
+        var l1 = arr[i];
+        if (typeof l1 == 'string') {
+            console.log(l1);
+        } else {
+            tmp = l1;
         }
-        search('QQ飞车');
+    }
+
+    var tmp2;
+    for (var i = 0; i < tmp.length; i++) {
+        var l1 = tmp[i];
+        if (typeof l1 == 'string') {
+            console.log(l1);
+        } else {
+            tmp2 = l1;
+        }
+    }
+
+    for (var i = 0; i < tmp2.length; i++) {
+        var l1 = tmp2[i];
+        if (typeof l1 == 'string') {
+            console.log(l1);
+        } else {
+            tmp2 = l1;
+        }
+    }
+ //遍历多重数组
+</script>
+
+<script>
+    var list = [
+        {
+            name: '王花花',
+            salary: 100,
+        },
+        {
+            name: '大波波怪',
+            salary: 200,
+        },
+        {
+            name: '小波波怪',
+            salary: 300,
+        },
+    ]
+
+    var rich = [];
+
+    for (var i = 0; i < list.length; i++) {
+        var item = list[i];
+
+        if (item.salary <= 100)
+            continue;
+
+        rich.push(item);
+    }
+    console.log(rich);
+    // 找出工资大于100的人
+</script>
+
+
+<script>
+    var list = [
+        {
+            name: '王花花',
+        },
+        {
+            name: '李拴蛋',
+        },
+        {
+            name: '牛备备',
+        },
+    ];
+    var result = [];
+
+    for (var i = 0; i < list.length; i++) {
+        var item = list[i];
+
+        if (!item.name.startsWith('王'))
+            continue;
+
+        result.push(item);
+
+    }
+
+    console.log(result);
+
+    //找出姓王的并放到一个数组里
+
+</script>
+
+
+<script>
+    function search(keyword) {
+        var list = [
+            {
+                name: '王花花',
+                playing: ['CS', '红警'],
+            },
+            {
+                name: '大波波怪',
+                playing: ['诛仙', '热血江湖'],
+            },
+            {
+                name: '小波波怪',
+                playing: ['QQ堂', 'QQ飞车'],
+            },
+        ];
+        var result = [];
+
+        for (var i = 0; i < list.length; i++) {
+            var item = list[i];
+
+            var playing = item.playing;
+
+            if (playing.indexOf(keyword) !== -1) {
+                result.push(item.name);
+            }
+        }
+        console.log(result);
+    }
+    search('QQ飞车');
 
     //查询
 </script>
+
