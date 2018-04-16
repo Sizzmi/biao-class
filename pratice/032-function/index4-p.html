@@ -1,0 +1,56 @@
+<script>
+    var list = [
+        {
+            name: '王花花',
+            salary: 100,
+        },
+        {
+            name: '大波波怪',
+            salary: 200,
+        },
+        {
+            name: '小波波怪',
+            salary: 300,
+        },
+    ]
+
+    var rich = [];
+
+    for (var i = 0; i < list.length; i++) {
+        var item = list[i];
+
+        if (item.salary <= 100)
+            continue;
+
+        rich.push(item);
+    }
+    console.log(rich);
+</script>
+
+<script>
+    var list = [
+        {
+            name: '王花花',
+        },
+        {
+            name: '李拴蛋',
+        },
+        {
+            name: '牛备备',
+        },
+    ];
+
+    var result = [];
+
+    for (var i = 0; i < list.length; i++) {
+        var item = list[i];
+
+        if (!item.name.endsWith('备'))
+            continue;
+
+        result.push(item);
+    }
+
+    console.log(result);
+</script>
+

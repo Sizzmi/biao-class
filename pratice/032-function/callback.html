@@ -1,0 +1,196 @@
+<script>
+    function make_meal(attach) {
+        console.log('========');
+
+        console.log('买菜');
+        if (attach)
+            attach();
+
+        console.log('洗菜');
+        console.log('炒菜');
+    }
+
+    function buy_pen() {
+        console.log('捎纸笔');
+    }
+
+    make_meal(buy_pen);
+</script>
+
+<script>
+    function make_meal(attach) {
+        console.log('============');
+
+        console.log('买菜');
+        if (attach)
+            attach();
+
+        console.log('洗菜');
+        console.log('炒菜');
+    }
+
+    function buy_pen() {
+        console.log('捎纸笔');
+    }
+
+    make_meal(buy_pen);
+</script>
+<script>
+    ; (function () {
+        'use strict';
+
+        function make_meal(attach, eat_raw, pref) {
+            console.log('========');
+
+            console.log('买菜');
+            if (attach)
+                attach();
+
+            console.log('洗菜');
+            if (eat_raw)
+                eat_raw();
+
+            console.log('炒菜');
+            if (pref)
+                pref();
+        }
+
+        function buy_pen() {
+            console.log('捎纸笔');
+        }
+
+        make_meal(
+            buy_pen,
+            function () {
+                console.log('给我个西红柿');
+            },
+            function () {
+                console.log('少放盐');
+            }
+        );
+    })();
+</script>
+
+<script>
+    ; (function () {
+        'use strict'
+        function make_mael(attach, eat_raw, jump, view, steal) {
+            console.log('========');
+            console.log('买菜');
+            if (attach)
+                attach();
+            console.log('洗菜');
+            if (eat_raw)
+                eat_raw()
+            console.log('跳菜');
+            if (jump)
+                jump();
+            console.log('看菜');
+            if (view)
+                view();
+            console.log('偷菜');
+            if (steal)
+                steal();
+        }
+        function buy_pen() {
+            console.log('带根笔');
+        }
+
+
+        make_mael(
+            buy_pen,
+            function () {
+                console.log('给我点水');
+            },
+            function () {
+                console.log('给我点火');
+            }
+        )
+
+    })();
+</script>
+
+<script>
+    function sleep(before) {
+        if (before)
+            before();
+        console.log('睡觉咯');
+    }
+    /*
+    * 刷牙
+    * */
+    function brush_teeth() {
+        console.log('牙牙乐');
+    }
+    sleep(brush_teeth);
+</script>
+
+<script>
+    function buy(money, success, fail) {
+        if (money > 0) {
+            console.log('下单成功');
+            if (success)
+                success();
+        } else {
+            console.log('下单失败');
+            if (fail)
+                fail();
+        }
+
+    }
+
+    function on_game_order_success() {
+        console.log('下单成功，游戏虚拟订单不发货。');
+    }
+
+    function on_tshirt_order_success() {
+        console.log('下单成功，服饰单');
+        console.log('通知仓库中。。。。');
+        console.log('已通知仓 发货中');
+    }
+
+    function on_order_fail() {
+        console.log('钱呢');
+    }
+
+    buy(100, on_game_order_success, on_order_fail);
+    buy(0, on_tshirt_order_success, on_order_fail);
+</script>
+
+<script>
+    function buy(money,success,fail) {
+        if(money > 0) {
+            console.log('下单成功');
+            if(success)
+            success();
+        }else{
+            console.log('下单失败');
+            if(fail)
+            fail();
+        }
+    }
+
+    function on_game_order_success(){
+        console.log('下单成功，虚拟订单不发货');
+    }
+
+    function on_tshirt_order_success(){
+        console.log('下单成功。实体订单');
+        console.log('通知仓库中');
+        console.log('发货中');
+    }
+
+    function on_order_fail() {
+        console.log('没钱');
+    }
+
+    buy(100,on_game_order_success,on_order_fail);
+    buy(-5,on_tshirt_order_success,on_order_fail);
+
+</script>
+
+<script>
+    setTimeout(function(){
+console.log(":+1s");
+    },1000);
+</script>
