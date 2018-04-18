@@ -1,0 +1,20 @@
+<script>
+  var login = document.querySelector('.login');
+  var close = document.querySelector('.close');
+  var mask = document.querySelector('.mask');
+  var modal = document.querySelector('.modal');
+
+  function show() {
+    mask.classList.add('show');
+    modal.classList.add('show');
+  }
+
+  function hide() {
+    modal.classList.remove('show');
+    modal.classList.remove('show');
+  }
+
+  login.addEventListener('click', show);
+  close.addEventListener('click', hide);
+  mask.addEventListener('click', hide);
+</script>

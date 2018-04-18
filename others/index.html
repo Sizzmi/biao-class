@@ -1,32 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
+<script>
+  var mask = document.querySelector('.mask')
+  var modal = document.querySelector('.modal')
+  var close = document.querySelector('.close')
+  var login = document.querySelector('.login')
+    ;
 
+  function show() {
+    mask.classList.add('show');
+  }
 
+  function hide() {
+    mask.classList.remove('show');
+  }
 
-<style>
-  .father {
-    border: 1px solid #444;
-    overflow: hidden;
-}
-.father > img {
-    width: 60px; height: 64px;
-    float: left;
-}
-.girl {
-    /* 环绕和自适应的区别所在 */
-    margin-left: 70px;
-}
-</style>
-<body>
-  <div class="father">
-    <img src="zxx.jpg">
-    <p class="girl">美女1，美女2，美女3，美女4，美女5，美女6，后宫1，后宫2，后宫3，后宫4，后宫5，后宫6</p>
-</div>
-</body>
-</html>
+login.addEventListener('click',show);
+mask.addEventListener('click',function(e){
+  if(e.target ===close||e.target ===mask) {
+    hide();
+  }
+});
+
+document.addEventListener('keyup',function(e){
+  if(e.code !=="Escape")
+  return;
+
+  hide();
+})
+</script>

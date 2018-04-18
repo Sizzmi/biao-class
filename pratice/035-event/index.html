@@ -1,0 +1,23 @@
+<button id="yo">Yo</button>
+<!--<script src="biao.js"></script>-->
+<script>
+  var el =document.querySelector('#yo');
+
+  var on_click = function() {
+    console.log(1);
+  }
+
+  el.addEventListener('click',on_click);
+
+  el.addEventListener('click',function(){
+    console.log(2);
+  });
+
+  el.removeEventListener('click',on_click);
+    // el.addEventListener('click', function () {
+  //   console.log(2);
+  // });
+  // ['click', 'click', 'click']
+</script>
+
+

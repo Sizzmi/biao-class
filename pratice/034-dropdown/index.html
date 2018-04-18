@@ -1,119 +1,161 @@
 <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-    }
-    a {
-      text-decoration: none;
-      display: inline-block;
-    }
-    .container {
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .row {
-      font-size: 0;
-    }
-    .col {
-      display: inline-block;
-      vertical-align: top;
-      font-size: 15px;
-    }
-    .col.left,
-    .col.right {
-      width: 50%;
-    }
-    .left {
-      text-align: left;
-    }
-    .right {
-      text-align: right;
-    }
-    /*========================*/
-    .nav {
-      line-height: 1;
-    }
-    .nav .container {
-      position: relative;
-    }
-    .nav a {
-      padding: 5px;
-    }
-    .nav,
-    #menu-content {
-      background: pink;
-    }
-    #menu-content {
-      display: none;
-      font-size: 15px;
-      width: 100px;
-      position: absolute;
-      right: 0;
-      top: 24px;
-      text-align: center;
-    }
-    #menu-content a {
-      display: block;
-    }
-  </style>
-  
-  <div class="row nav">
-    <div class="container">
-      <div class="col left">
-        <a href="#">Item</a>
-        <a href="#">Item</a>
-        <a href="#">Item</a>
-        <a href="#">Item</a>
-        <a href="#">Item</a>
-      </div>
-      <div class="col right">
-        <a href="#">Item</a>
-        <a id="menu-trigger" href="#">MENU</a>
-      </div>
-      <div id="menu-content">
-        <a href="#">Item</a>
-        <a href="#">Item</a>
-        <a href="#">Item</a>
-        <a href="#">Item</a>
-      </div>
+  body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .container {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .row {
+    font-size: 0;
+  }
+
+  .col {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+  }
+
+  .col.left,
+  .col.right {
+    width: 50%;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  /*========================*/
+
+  .nav {
+    line-height: 1;
+  }
+
+  .nav .container {
+    position: relative;
+  }
+
+  .nav a {
+    padding: 5px;
+  }
+
+  .nav,
+  #menu-content {
+    background: pink;
+  }
+
+  #menu-content {
+    display: none;
+    font-size: 15px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 24px;
+    text-align: center;
+  }
+
+  #menu-content a {
+    display: block;
+  }
+</style>
+
+<div class="row nav">
+  <div class="container">
+    <div class="col left">
+      <a href="#">Item</a>
+      <a href="#">Item</a>
+      <a href="#">Item</a>
+      <a href="#">Item</a>
+      <a href="#">Item</a>
+    </div>
+    <div class="col right">
+      <a href="#">Item</a>
+      <a id="menu-trigger" href="www.baidu.com">MENU</a>
+    </div>
+    <div id="menu-content">
+      <a href="#">Item</a>
+      <a href="#">Item</a>
+      <a href="#">Item</a>
+      <a href="#">Item</a>
     </div>
   </div>
+</div>
 
-  <script>
-    //选中菜单触发器
-    var menu_trigger = document.querySelector('#menu-trigger')
-    var menu_content = document.querySelector('#menu-content');
-    //当触发器被点击时
-    menu_trigger.addEventListener('click', function(e){
-      //防止跳转 （因为触发器是<a>所以有默认跳转的行为）
-      e.preventDefault();
-      //当用户点击menu_trigger 的时候将其聚焦(为了方便之后点击别的地方触发blur事件)
-      menu_trigger.focus();
+<script>
+  // //选中菜单触发器
+  // var menu_trigger = document.querySelector('#menu-trigger')
+  // var menu_content = document.querySelector('#menu-content');
+  // //当触发器被点击时
+  // menu_trigger.addEventListener('click', function(e){
+  //   //防止跳转 （因为触发器是<a>所以有默认跳转的行为）
+  //   e.preventDefault();
+  //   //当用户点击menu_trigger 的时候将其聚焦(为了方便之后点击别的地方触发blur事件)
+  //   menu_trigger.focus();
 
-      //如果当前菜单可见(如果是inline-block说明可见)
-      if(is_visible()){
-        hide();
-      }else{
-        show();
-      }
-    });
+  //   //如果当前菜单可见(如果是inline-block说明可见)
+  //   if(is_visible()){
+  //     hide();
+  //   }else{
+  //     show();
+  //   }
+  // });
 
-    //当menu_trigger 失焦的时候，将menu_content隐藏
-    menu_trigger.addEventListener('blur',function(){
+  // //当menu_trigger 失焦的时候，将menu_content隐藏
+  // menu_trigger.addEventListener('blur',function(){
+  //   hide();
+  // })
+
+  // function show(){
+  //   menu_content.style.display = 'inline-block';
+  // }
+
+  // function hide() {
+  //   menu_content.style.display = "none";
+  // }
+
+  // function is_visible() {
+  //   return menu_content.style.display == 'inline-block';
+  // }
+
+  var menu_trigger = document.querySelector('#menu-trigger'),
+    menu_content = document.querySelector('#menu-content');
+
+  menu_trigger.addEventListener('click', function (e) {
+    e.preventDefault();
+    menu_trigger.focus();
+    if (is_visible()) {
       hide();
-    })
-
-    function show(){
-      menu_content.style.display = 'inline-block';
+    } else {
+      show();
     }
+  });
 
-    function hide() {
-      menu_content.style.display = "none";
-    }
+  menu_trigger.addEventListener('blur', function () {
+    hide();
+  })
 
-    function is_visible() {
-      return menu_content.style.display == 'inline-block';
-    }
-  </script>
-  
+  function show() {
+    menu_content.style.display = 'inline-block';
+  }
+
+  function hide() {
+    menu_content.style.display = 'none';
+  }
+
+  function is_visible() {
+    return menu_content.style.display == "inline-block";
+  }
+</script>
