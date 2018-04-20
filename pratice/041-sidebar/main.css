@@ -1,0 +1,177 @@
+/* 以下是导航栏 */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+input {
+  max-width: 100%;
+}
+.container {
+  max-width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.row {
+  font-size: 0;
+}
+.col {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 15px;
+}
+.col.left,
+.col.right {
+  width: 50%;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+/*========================*/
+.nav {
+  line-height: 1;
+}
+.nav .container {
+  position: relative;
+}
+.nav a {
+  padding: 5px;
+}
+.nav,
+#menu-content {
+  background: #aaa;
+}
+#menu-content {
+  display: none;
+  font-size: 15px;
+  width: 240px;
+  position: absolute;
+  right: 0;
+  top: 24px;
+  text-align: center;
+}
+
+
+#menu-content a {
+  display: block;
+}
+#menu-content.show {
+  display: inline-block;
+}
+
+/* 以下是左侧栏 */
+
+[hidden] {
+  display: none;
+}
+
+nav {
+  background: #777;
+}
+nav > * {
+  padding: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+#menu-content-l {
+  display: block;
+  background: #444;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  color: #fff;
+  transition: left 1s;
+}
+#menu-content-l > * {
+  padding: 15px 20px;
+}
+#menu-content-l > div:hover {
+  background: rgba(0, 0, 0, .1);
+}
+#menu-content-l[hidden] {
+  left: -100%;
+}
+
+/* 以下是下拉栏 */
+#menu-content-dropdown {
+  display: none;
+  font-size: 15px;
+  width: 100px;
+  position: absolute;
+  right: 65px;
+  top: 24px;
+  text-align: center;
+  background: #aaa;
+}
+
+#menu-content-dropdown  a {
+  display: block;
+}
+
+/* 以下是弹出登录框 */
+
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+button {
+  font-size: 12px;
+  padding: 5px 20px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  outline: 0;
+  color: #555;
+}
+
+button,
+.modal {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.mask,
+.modal {
+  position: fixed;
+}
+
+.mask {
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .5);
+}
+
+.modal {
+  top: 100px;
+  bottom: 100px;
+  left: 100px;
+  right: 100px;
+  overflow: auto;
+  padding: 20px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+}
+
+.modal .toolbar {
+  float: right;
+}
+
+.show {
+  display: block;
+}

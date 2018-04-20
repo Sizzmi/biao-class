@@ -1,0 +1,163 @@
+<style>
+  body {
+    font-family: sans-serif;
+    font-size: 20px;
+  }
+
+  label {
+    display: block;
+    padding: 5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  label:hover {
+    background: rgba(189, 111, 159, 0.781);
+  }
+</style>
+
+<div>
+  <button id="all">全选</button>
+  <button id="none">全不选</button>
+  <button id="reverse">倒置</button>
+</div>
+
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+
+<script>
+  // 选择所有checkbox
+  var list = document.querySelectorAll('[type=checked]');
+
+  // 全不选
+  // @param Element except 例外的元素
+  function uncheck_all(except) {
+    // 迭代所有元素
+    list.forEach(function (item) {
+      /*如果正在迭代的元素是传进来的例外元素，那么就不要管，直接放弃本次迭代*/
+      if (item === except)
+        return;
+      /*否则取消打钩*/
+      item.checked = false;
+    });
+  }
+
+  list.forEach(function (item) {
+    /*给每一个checkbox绑定点击事件*/
+    iten.addEventListener('click', function (e) {
+      if (e.ctrlKey || e.metaKey || e.shitfKey)
+        return;
+    });
+  });
+
+  /*有任何一个元素被点击了就清掉所有元素的勾，除了被点击的这个元素≈*/
+  uncheck_all(this);
+
+
+</script>
+
+<script>
+  var all = document.querySelector('#all');
+  var list = document.querySelectorAll('[type=checkbox]');
+
+  all.addEventListener('click', function () {
+    list.forEach(function (item, index) {
+      item.checked = true;
+    });
+  });
+</script>
+
+<script>
+  var none = document.querySelector('#none');
+  var list = document.querySelectorAll('[type=checkbox]');
+
+  none.addEventListener('click', function () {
+    list.forEach(function (item) {
+      item.checked = false;
+    });
+  });
+</script>
+
+<script>
+  var reverse = document.querySelector('#reverse');
+  var list = document.querySelectorALL('[type=checkbox]');
+
+  reverse.addEventListener('click', function () {
+    list.forEach(function (item) {
+      item.checked = !item.checked;
+    });
+  });
+</script>
+
+<script>
+  var list = document.querySelector('[type=checkbox]');
+  var start
+    , start_index //起点的索引
+    , end_index //终点的索引
+    ;
+
+  function toggle_between() {
+    /*迭代所有选项*/
+    list.forEach(function (item, i) {
+      if (start_index < end_index) {
+        /*先点上后点下*/
+        /*如果当前选项的索引大于等于起点的索引而且
+        小于等于终点的索引就应用起点选项的状态*/
+        if (i >= start_index && i <= end_index) {
+          item.checked = start.checked;
+        }
+      } else {/*先点下后点上*/
+        /*如果当前选项的索引小于等于起点的索引而且
+        * 大于等于终点的索引就应用起点选项的状态*/
+        if (i <= start_index && i >= end_index) {
+          item.checked = start.checked;
+        }
+      }
+    });
+  }
+
+  /*迭代所有选项并且绑定点击事件*/
+  list.forEach(function (item, i) {
+    item.addEventListener('click', function (e) {
+      /*如果没有按下shift说明这个选项是起点，否则就是终点*/
+      if (e.shiftKey) {
+        end_index = i;// 记录终点的索引
+        toggle_between(); // 批量处理中间所有的选项
+
+      } else {
+        start = this;// 记录起点的元素
+        start_index = i;// 记录起点的索引
+      }
+    })
+  })
+</script>
