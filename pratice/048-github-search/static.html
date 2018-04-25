@@ -1,0 +1,46 @@
+<div id="user-list"></div>
+
+<script>
+  /*取到用户的根元素*/
+  var el_user_list = document.getElementById('user-list');
+  /*用户数据*/
+  var user_list = [
+    {
+      name: '王花花',
+      age: 28
+    },
+    {
+      name: '李伯伯',
+      age: 21
+    },
+    {
+      name: '啊啊啊',
+      age: 22
+    },
+  ];
+
+  init();
+  /*
+ * 通过用户数据生成HTML
+ * */
+
+  function render() {
+    /*由于数据是动态的所以在这个阶段肯定不知道，
+     具体的HTML是什么样的，所以html默认为空字符串*/
+    var html = '';
+    /*遍历用户列表*/
+    user_list.forEach(function (user) {
+      /*得到每个用户的数据后就可以动态的生成每个用户的HTML代码，
+      *每次循环都将本次的HTML和上一次生成的HTML拼接上*/
+      html = html + `<div>姓名: ${user.name},年龄: ${user.age}</div>`;
+    });
+
+    /*将最终生成的HTML写入#user-list元素中*/
+    el_user_list.innerHTML = html;
+  }
+
+  function init() {
+    render();
+  }
+</script>
+

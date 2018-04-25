@@ -1,0 +1,40 @@
+<script>
+  var ticket = 0;
+  var mood = 2;
+
+  function buy_ticket(on_soldout, burn,) {
+    console.log('去车站');
+    console.log('进站');
+    console.log('买票');
+    if (!ticket) {
+      console.log('没票了');
+      on_soldout();
+    }
+    if (!mood) {
+      console.log('心情度是0');
+      burn();
+    } else{
+      console.log('变成黄牛');
+    }
+    console.log('出站');
+    if(hungry){
+      hungry();
+    }
+  }
+
+function hungry(){
+  console.log('买个肉夹馍');
+}
+  function burn() {
+    console.log('烧了');
+  };
+
+  buy_ticket(function () {console.log('找黄牛');}, burn,);
+
+ 
+
+
+
+
+
+</script>

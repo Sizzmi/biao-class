@@ -1,0 +1,38 @@
+<script>
+  //函数声明表达式
+  function calcRectArea(width, height) {
+    return width * height;
+  }
+
+  console.log(calcRectArea(5, 6));//30
+
+</script>
+
+<script>
+  //function操作符
+  var getRectArea = function (width, height) {
+    return width * height;
+  }
+
+  console.log(getRectArea(3, 4)); //12
+
+</script>
+
+<script>
+  //function构造函数
+  var sum = new Function('a', 'b','return a +b');
+
+  console.log(sum(2,6));//8
+</script>
+
+<script>
+// ES6:arrow function
+  var materials = [
+  'Hydrogen',
+  'Helium',
+  'Lithium',
+  'Beryllium'
+  ];
+
+  console.log(materials.map(material => material.length));
+</script>

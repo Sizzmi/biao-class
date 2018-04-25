@@ -1,0 +1,108 @@
+<a name="one"></a>
+<!-- ### 一、初识函数 -->
+
+<script>
+  function diff(a, b) {
+    console.log(a - b);
+  }
+
+  diff(10, 5);//输出5
+  diff(20, 2)//输出18
+
+//函数可以通过它的函数名来调用，后面加()，就可以执行了；上面的diff分别输出的是5和18；a和b是函数的两个参数，最终的结果是打印在控制台的；
+
+</script>
+
+<script>
+  function diff(a, b) {
+    return a - b;
+  }
+
+  var diffNumber = diff(10, 5);
+  console.log(diffNumber);
+  // 任何函数在任何时候都可以通过return语句返回的值来实现把值返回给外部变量；
+  // - 函数的返回值只能通过return来返回,除了return以外，没有任何声明可以表示返回值
+
+    // > return的特性：无论return在哪里，只要有执行了return同一条的代码后，函数立即停止，并且立即退出，因此位于return语句之后的人和代码都永远不会执行； 
+</script>
+
+<script>
+  function diff(a, b) {
+    return a - b;
+    console.log("测试的代码");//这条语句，永远不会执行；
+  }
+  var diffNumber=diff(10,5);
+  console.log(diffNumber);
+
+</script>
+
+<script>
+  // > 一个函数可以多条return；
+  function diff(a,b) {
+    if(a > b) {
+      return a -b;
+    }else{
+      return b -a;
+    }
+  }
+
+  var diffNumber1=diff(10,5);//5
+  var diffNumber2=diff(5,10);//5
+  console.log(diffNumber1);
+  console.log(diffNumber2);
+  
+  // 这个函数diff用来计算两个数之间才差值；如果a比b小，则用b-a；否则a-b；函数中用if分为两个分支，分别具有自己的return语句来执行正确的计算逻辑；
+</script>
+
+<script>
+  // - return语句可以不带任何返回值，这种情况下，函数返回值是undefined；这种写法，一般用在需要提前停止函数又不需要返回值的情况；
+function testReturn (arg) {
+  console.log("arg的值是:"+arg);
+  if(arg ===""){return}////如果传的值是空字符串，参数不对， 没必要处理了，直接return停止函数了，可以优化性能；；
+  console.log("一些处理参数的代码");
+}
+testReturn(""); //arg的值是:
+
+// - ** return的总结 **
+//     - 1、任何一个函数都有return关键字，用来导出函数内部的值；（闭包的思路）；
+//     - 2、return是非必须的，可以写也可以不写；如果不写，或者return后面没有值，函数的返回结果都是undefined；
+//     - 3、无论return写在哪里，只要函数执行到了return这条代码了，执行完以后，立即停止执行并且跳出函数；return下面的代码将不会执行；
+//     - 4、推荐的做法是要么让函数始终都返回一个值，要么永远不要返回值，；否则函数有时候有返回值，有时候没有返回值，调试起来不方便；
+
+</script>
+
+<a name="two"></a>
+<!-- ### 一、函数的定义 -->
+
+<script>
+  //function语句的定义方法
+  function test1(arg1,arg2) {
+    console.log("function语句的定义方法:",agr1+arg2);
+    return;
+  }
+
+  //函数直接量的定义方法
+  var test2 = function(arg1,arg2) {
+    console.log("函数直接量的定义方法:",arg1+arg2);
+    return;
+  }
+
+  //构造函数的定义方法
+  var test3 = new Function("arg1","arg2","console.log('构造函数的定义方法:',arg1+arg2)");
+</script>
+
+<a name="three"></a>
+<!-- ### 三、函数的调用 -->
+<script>
+  //  直接调用： 函数名(实参列表)
+  function test1(arg1,arg2){
+    console.log("function语句的定义方法:",arg1+arg2);
+    return;
+  }
+  	//直接调用
+	test1(1,2);//function语句的定义方法: 3
+
+  
+</script>
+
+

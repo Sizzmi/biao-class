@@ -1,0 +1,239 @@
+<style>
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    width: 2000px;
+    height: 2000px;
+    position: relative;
+    color: #aaa;
+    font-size: 30px;
+  }
+
+  .tip,
+  .trigger {
+    display: inline-block;
+    padding: 1px 2px;
+    background: rgba(0, 0, 0, .1);
+    color: #333;
+  }
+
+  .tip {
+    position: absolute;
+    background: rgba(0, 0, 0, .7);
+    color: #fff;
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+    -webkit-transition: opacity 300ms;
+    -moz-transition: opacity 300ms;
+    -ms-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    transition: opacity 300ms;
+    max-width: 400px;
+  }
+
+  .tip a {
+    color: cornflowerblue;
+  }
+</style>
+
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aperiam enim id illum in ipsum itaque laudantium Lorem
+  ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aperiam enim id illum in ipsum itaque laudantium Lorem ipsum
+  dolor sit amet, consectetur adipisicing elit. Ad alias aperiam enim id illum in ipsum itaque laudantium Lorem ipsum dolor
+  sit amet, consectetur adipisicing elit. Ad alias aperiam enim id illum in ipsum itaque laudantium Lorem ipsum dolor sit
+  amet, consectetur adipisicing elit. Ad alias aperiam enim id illum in ipsum itaque laudantium Lorem ipsum dolor sit amet,
+  consectetur adipisicing elit. Ad alias aperiam enim id illum in ipsum itaque laudantium Lorem ipsum dolor sit amet, consectetur
+  adipisicing elit. Ad alias aperiam enim id illum in ipsum itaque laudantium Lorem ipsum dolor sit amet, consectetur adipisicing
+  elit. Ad alias aperiam enim id illum in ipsum itaque laudantium Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Ad alias aperiam enim id illum in ipsum itaque laudantium Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+  alias aperiam enim id illum in ipsum itaque laudantium mollitia nesciunt obcaecati, odio optio perferendis porro quisquam
+  quod repudiandae sapiente vel?
+  <span data-placement="bottom" data-tip="Yoooooo" class="trigger">Yo</span>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aperiam enim id illum in ipsum itaque laudantium mollitia
+  nesciunt obcaecati, odio optio perferendis porro quisquam quod repudiandae sapiente vel? Lorem ipsum dolor sit amet, consectetur
+  adipisicing elit. Ad alias aperiam enim id illum in ipsum itaque laudantium mollitia nesciunt obcaecati, odio optio perferendis
+  porro quisquam quod repudiandae sapiente vel? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aperiam
+  enim id illum in ipsum itaque laudantium mollitia nesciunt obcaecati, odio optio perferendis porro quisquam quod repudiandae
+  sapiente vel?
+  <span data-placement="top" data-tip="Muhaha" class="trigger">Ha</span>
+
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aperiam enim id illum in ipsum itaque laudantium mollitia
+  nesciunt obcaecati, odio optio perferendis porro quisquam quod repudiandae sapiente vel? mollitia nesciunt obcaecati, odio
+  optio perferendis porro quisquam quod repudiandae sapiente vel? mollitia nesciunt obcaecati, odio optio perferendis porro
+  quisquam quod repudiandae sapiente vel? mollitia nesciunt obcaecati, odio optio perferendis porro quisquam quod repudiandae
+  sapiente vel? mollitia nesciunt obcaecati, odio optio perferendis porro quisquam quod repudiandae sapiente vel? mollitia
+  nesciunt obcaecati, odio optio perferendis porro quisquam quod repudiandae sapiente vel? mollitia nesciunt obcaecati, odio
+  optio perferendis porro quisquam quod repudiandae sapiente vel? mollitia nesciunt obcaecati, odio optio perferendis porro
+  quisquam quod repudiandae sapiente vel? mollitia nesciunt obcaecati, odio optio perferendis porro quisquam quod repudiandae
+  sapiente vel? mollitia nesciunt obcaecati, odio optio perferendis porro quisquam quod repudiandae sapiente vel? mollitia
+  nesciunt obcaecati, odio optio perf Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus earum eligendi
+  explicabo molestias, nostrum possimus. Alias commodi delectus eveniet neque, nobis voluptatibus voluptatum! Animi aperiam
+  asperiores, consectetur inventore ratione ullam!erendis porro quisquam quod repudiandae sapiente vel? mollitia nesciunt
+  obcaecati, odio optio perf Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus earum eligendi explicabo
+  molestias, nostrum possimus. Alias commodi delectus eveniet neque, nobis voluptatibus voluptatum! Animi aperiam asperiores,
+  consectetur inventore ratione ullam!erendis porro quisquam quod repudiandae sapiente vel? mollitia nesciunt obcaecati,
+  odio optio perf Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus earum eligendi explicabo molestias,
+  nostrum possimus. Alias commodi delectus eveniet neque, nobis voluptatibus voluptatum! Animi aperiam asperiores, consectetur
+  inventore ratione ullam!erendis porro quisquam quod repudiandae sapiente vel? mollitia nesciunt obcaecati, odio optio perf
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus earum eligendi explicabo molestias, nostrum possimus.
+  Alias commodi delectus eveniet neque, nobis voluptatibus voluptatum! Animi aperiam asperiores, consectetur inventore ratione
+  ullam!erendis porro quisquam quod repudiandae sapiente vel? mollitia nesciunt obcaecati, odio optio perferendis porro quisquam
+  quod repudiandae sapiente vel? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aperiam enim id illum
+  in ipsum itaque laudantium
+  <span data-placement="top" data-tip data-template="yo" class="trigger">HTML</span>
+  mollitia nesciunt obcaecati, odio optio perferendis porro quisquam quod repudiandae sapiente vel? mollitia nesciunt obcaecati,
+  odio optio perferendis porro quisquam quod repudiandae sapiente vel? mollitia nesciunt obcaecati, odio optio perferendis
+  porro quisquam quod repudiandae sapiente vel? mollitia nesciunt obcaecati, odio optio perferendis porro quisquam quod repudiandae
+  sapiente vel? mollitia nesciunt obcaecati, odio optio perferendis porro quisquam quod repudiandae sapiente vel?
+</p>
+
+<template id="yo">
+  <h4 style="margin: 0;">我是个标题</h4>
+  <p>
+    <a href="http://baidu.com" target="_blank">我是个链接</a>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit temporibus, unde veniam, vero voluptatum!</p>
+</template>
+
+<script>
+  var config = {
+    placement: 'top',// tip的位置，也可通过data-placement属性指定；(top|bottom|left|right|top-left|top-right|bottom-left|bottom-right)
+    animate: true,//是否开启动画
+    animation_duration: .3,// 动画时长，秒
+    smart_move: true,// 边界检测，确保tip不溢出
+    enter_delay: .2,// 显示延迟，秒
+    leave_delay: .2,// 隐藏延迟，秒
+    selectable: true,// 内容可选（鼠标悬浮在tip上tip不隐藏）
+    constant: false,// 持续显示
+    click: false,// 点击触发
+    gap: 5,// tip与触发元素间的距离
+    viewport_shift: 5,// 浏览器窗口气场
+    class: '',// 自定义类名
+  };
+
+  var tip_list = document.querySelectorAll('[data-tip]');
+
+  tip_list.forEach(function (trigger) {
+    BiaoTip(trigger);
+  });
+
+  function BiaoTip(trigger) {
+    var tip
+      , placement = trigger.dataset.placement
+      , directions = ['left', 'right', 'top', 'bottom']
+      , gap = config.gap || 4
+      , constant = false
+      , tip_overflow_h
+      , tip_overflow_v
+      , enter_trigger_timer
+      , leave_trigger_timer
+      ;
+
+    init();
+
+    function init() {
+      if (config.constant)
+        show_tip();
+
+      smart_move();
+      if (config.click) {
+        document.addEventListener('click', function (e) {
+          if (e.target === trigger)
+            toggle_tip();
+          else
+            hide_tip();
+        });
+      } else {
+        trigger.addEventListener('mouseenter', on_enter_trigger);
+        trigger.addEventListener('mouseleave', on_leave_trigger);
+      }
+      window.addEventListener('scroll', smart_move);
+      window.addEventListener('resize', smart_move);
+    }
+
+    function toggle_tip() {
+      if (tip)
+        hide_tip()
+      else {
+        show_tip();
+        smart_move();
+      }
+    }
+
+    function on_enter_trigger() {
+      enter_trigger_timer = setTimeout(function () {
+        show_tip();
+        smart_move();
+      }, config.enter_delay * 1000);
+    }
+
+    function on_leave_trigger() {
+      clearTimeout(enter_trigger_timer);
+
+      leave_trigger_timer = setTimeout(function () {
+        if (constant)
+          return;
+
+        hide_tip();
+      }, config.leave_delay * 1000);
+    }
+
+    function on_enter_tip() {
+      if (!config.selectable || config.click)
+        return;
+      constant = true;
+    }
+
+    leave_trigger_timer = setTimeout(function () {
+      constant = false
+      hide_tip();
+    }, config.leave_delay * 1000);
+  }
+
+  function smart_move() {
+    if (!tip)
+      return;
+  }
+
+  if (config.smart_move)
+    detect_tip_overflow();
+
+  move_to(placement);
+
+  if (tip_overflow_v) {
+    move_to(opposite(tip_overflow_v))
+  }
+
+if(tip_overflow_h) {
+  move_to(opposite(tip_overflow_h))
+}
+
+function opposite(placement) {
+  var i =directions.indexOf(placement);
+  if(i % 2)
+  return directions[i - 1];
+  else
+  return directions[i + 1];
+}
+
+function render_html_tip(id) {
+  id = id ||trigger.dataset.template;
+  tip.innerHTML = document.getElementById(id).innerHTML;
+}
+
+
+
+
+</script>

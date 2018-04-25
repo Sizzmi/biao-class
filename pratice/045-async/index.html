@@ -1,0 +1,58 @@
+<!--&lt;!&ndash;============ 计时器 ===============&ndash;&gt;-->
+<!--<script>-->
+  <!--/*倒计时*/-->
+  <!--var timer = setTimeout(function () {-->
+    <!--console.log('yo');-->
+  <!--}, 3 * 1000);-->
+
+  <!--/*清除倒计时*/-->
+  <!--clearTimeout(timer);-->
+
+
+  <!--/*每隔多久执行一次*/-->
+  <!--var count = 0;-->
+  <!--var timer = setInterval(function () {-->
+    <!--console.log(count);-->
+    <!--count++;-->
+
+    <!--if (count > 3) {-->
+      <!--/*清除间隔执行*/-->
+      <!--clearInterval(timer);-->
+    <!--}-->
+  <!--}, 500);-->
+<!--</script>-->
+
+<!--&lt;!&ndash;============ 事件 ===============&ndash;&gt;-->
+
+<!--<button id="x">Yo</button>-->
+<!--<script>-->
+  <!--function on_click() {-->
+    <!--console.log('Yo');-->
+    <!--/*停止监听事件*/-->
+    <!--x.removeEventListener('click', on_click);-->
+  <!--}-->
+
+  <!--/*监听事件*/-->
+  <!--x.addEventListener('click', on_click);-->
+<!--</script>-->
+
+<!--============ 异步请求 ===============-->
+<script>
+  /*fetch接口*/
+  // fetch('https://api.github.com/users/biaoyansu')
+  //   .then(function (res) {
+  //     res
+  //       .json()
+  //       .then(function (d) {
+  //         console.log(d);
+  //       });
+  //   });
+  /*XMLHttpRequest接口*/
+  var http = new XMLHttpRequest();
+  http.open('get', 'https://www.bilibili.com/widget/getSearchDefaultWords');
+  http.send();
+  http.addEventListener('load', function () {
+    var obj = JSON.parse(this.responseText);
+    console.log(obj);
+  });
+</script>

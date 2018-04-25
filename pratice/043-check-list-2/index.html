@@ -1,0 +1,174 @@
+<style>
+  * {
+    vertical-align: middle;
+  }
+
+  .toolbar {
+    margin-bottom: 10px;
+  }
+
+  label {
+    display: block;
+    padding: 5px 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  label:hover {
+    background: rgba(0, 0, 255, 0.1);
+  }
+</style>
+
+<div class="toolbar">
+  <button id="all">全选</button>
+  <button id="none">全不选</button>
+  <button id="reverse">反选</button>
+</div>
+
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+
+<script>
+  var none = document.querySelector('#none');
+  var list = document.querySelector('[type=checkbox]');
+
+  none.addEventListener('click', function () {
+    list.forEach(function (item) {
+      item.checked = false;
+    });
+  });
+</script>
+
+<!-- <script>
+  var reverse = document.querySelector('#reverse');
+  var list = document.querySelector('[type=checkbox]');
+
+  reverse.addEventListener('click', function () {
+    list.forEach(function (item) {
+
+    });
+  });
+</script> -->
+
+<!--<script>-->
+<!--/*思路*/-->
+
+<!--/*任何一个checkbox被点击都应该清掉所有checkbox的状态，除了被点击的那个*/-->
+
+<!--/*-->
+<!--首先肯定要让每个checkbox都监听点击事件，不然点了也不知道他被点了。-->
+<!--当她被点击的时候，应该让所有的checkbox的checked为false-->
+<!--*/-->
+
+<!--/*-->
+<!--选中所有的checkbox，不然你给谁绑事件去。-->
+<!--要让每个checkbox都监听点击事件，就要遍历他们，然后一个一个绑事件。-->
+<!--当其中任何一个被点击的时候又要遍历所有checkbox。-->
+<!--然后将每一个的checked属性设为false。除了被点击的那个checkbox，或者按着Ctrl点的checkbox（因为用户想多选）-->
+<!--*/-->
+
+<!--/* 选中所有的checkbox，不然你给谁绑事件去。*/-->
+<!--var 所有的 = document.querySelectorAll('[type=checkbox]');-->
+
+<!--/* 要让每个checkbox都监听点击事件，就要遍历他们，然后一个一个绑事件。*/-->
+<!--所有的.forEach(function (被点的) {-->
+
+<!--/*当其中任何一个被点击的时候又要遍历所有checkbox。*/-->
+<!--被点的.addEventListener('click', function (e) {-->
+
+<!--/*然后将每一个的checked属性设为false。*/-->
+<!--所有的.forEach(function (每一个) {-->
+<!--/*除了被点击的那个checkbox，或者按着Ctrl点的checkbox（因为用户想多选）*/-->
+<!--if (每一个 == 被点的 || e.ctrlKey || e.metaKey)-->
+<!--return;-->
+<!--/*然后将每一个的checked属性设为false。*/-->
+<!--每一个.checked = false;-->
+<!--})-->
+<!--});-->
+<!--});-->
+<!--</script>-->
+
+
+<script>
+  /*思路*/
+  /*可以通过按着Shift批量多选或多不选*/
+  /*
+    批量操作是有范围的。凡是涉及到范围，一定是有边界的。
+    起点：任何最近的一次没有按Shift的点击。
+    终点：按了Shift的点击。
+    批量操作的值：取决于起点的状态。
+  */
+  /*
+    列表中所有的checkbox都有可能被作为起点或终点，所以首先就要选中所有checkbox。
+    选中要分别让他们监听点击事件，如果其中任何一个checkbox被点击了，就要检测是否是按着Shift点的。
+    如果没按shift，那就是起点，同时记录起点是列表中的第几个。
+    如果按着shift，那就是终点，同时记录终点是列表中的第几个。
+      既然已经有了终点，那几意味着两个边界都确定了，而且当终点确定时，起点要能看的见，也就是说起点和终点要分开存，不能被终点给覆盖掉，因为我们要确定两个边界都是正确的。
+      然后遍历所有的元素，看他们是否在选择范围内
+        检查当前正在遍历的元素是否大于起点，小于终点。
+  */
+  /*列表中所有的checkbox都有可能被作为起点或终点，所以首先就要选中所有checkbox。*/
+  var 列表 = document.querySelectorAll('[type=checkbox]')
+    , 起点打钩没
+    , 起点
+    , 终点
+    , 从上往下选的
+  ;
+  /* 要分别让他们监听点击事件，如果其中任何一个checkbox被点击了，就要检测是否是按着Shift点的。*/
+  列表.forEach(function (被点的, 当前索引) {
+    被点的.addEventListener('click', function (e) {
+      if (e.shiftKey) { // 如果按着shift，那就是终点，同时记录终点是列表中的第几个。
+        终点 = 当前索引;
+        从上往下选的 = 起点 < 终点;
+        列表.forEach(function (每一个, 当前索引2) {
+          var 小于起点大于终点 = 当前索引2 < 起点 || 当前索引2 > 终点;
+          var 大于起点小于终点 = 当前索引2 > 起点 || 当前索引2 < 终点;
+          var 不在选择范围内 = (从上往下选的 && 小于起点大于终点) || (!从上往下选的 && 大于起点小于终点);
+          if (不在选择范围内)
+            return;
+          每一个.checked = 起点打钩没;
+        });
+      } else { // 如果没按shift，那就是起点，同时记录起点是列表中的第几个。
+        起点 = 当前索引;
+        起点打钩没 = 被点的.checked;
+      }
+    });
+  });
+</script>
+

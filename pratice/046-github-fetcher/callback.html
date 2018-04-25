@@ -1,0 +1,23 @@
+<script>
+  var arr = [1, 2, 3, 4, 5];
+
+  /**
+  遍历数组
+  *每次遍历都执行传进来的each_do
+  **/
+
+  function each(list, each_do) {
+    for (var i = 0; i < list.length; i++) {
+      var item = list[i]; //取到正在遍历的元素
+      each_do(item);//喂给传进来的函数
+    }
+  }
+
+  each(arr, function (item) {
+    console.log(item * 2);
+  });
+
+  each(arr, function (item) {
+    console.log(item + 'hehe');
+  });
+</script>

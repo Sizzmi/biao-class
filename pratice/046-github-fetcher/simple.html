@@ -1,0 +1,22 @@
+<script>
+  var username = "Sizzmi"
+
+  /*准备发射*/
+  var http = new XMLHttpRequest();
+  /*怎么发射往哪里发射*/
+  http.open('get', 'http://api.github.com/users/' + username);
+  /*发射*/
+  http.send();
+
+  /*一旦触发load时间就说明请求结束了，数据返回了*/
+  http.addEventListener('load',function(){
+ /*在这一步我们拿到的仅仅是字符串*/
+ var text = this.resopnseText;
+  });
+
+  /*转换数据*/
+  var data = JSON.parse(text);
+  console.log(data);
+
+  
+</script>
