@@ -1,0 +1,55 @@
+<!-- ##### 常见操作数组的 -->
+<!-- # 数组去重； -->
+<!-- -  **第一种方法**：每一次拿出数组中的当前项和后面的所有项进行比较，如果相同的话，删除即可； -->
+
+<script>
+  var ary = [1, 2, 34, 56, 6, 7, 45, 3, 2, 2, 12, 4, 9, 8, 6, 7, 4];
+  function deleteRepeat(ary) {
+    for (var i = 0, len = ary.length - 1; i < len; i++) {//比较length-1次；
+      var temp = ary[i];
+      for (var j = i + 1; j < ary.length; j++) {
+        if (temp == ary[j]) {
+          ary.splice(j, 1);
+          j--;//删除以后需要把j重置下，避免数组塌陷；
+        }
+      }
+    }
+    return ary;
+  }
+  var newAry = deleteRepeat(ary);
+  console.log(newAry);//(12) [1, 2, 34, 56, 6, 7, 45, 3, 12, 4, 9, 8]
+
+</script>
+<script>
+  // > 这种处理方法，处理少量数据的时候没有问题的，但是做很多数组的时候，性能就是一个很大的问题了，双重循环毕竟还是有优化的空间的，通常用第二种方法；
+
+  // **第二种方法**：利用对象的属性名和属性值不能重复的原理，把数组中每一项的值当作对象的属性名属性值进行储存，在每一次储存之前进行判断，如果对象中已经存在这一项，我们就删除数组中这项，不存在我们就把这一项储存到我们的新的对象中，（注意对象在这里只是一个临时储存的作用），在处理完成后最好置为null；养成好习惯 ；
+  var ary = [1, 2, 34, 56, 6, 7, 45, 3, 2, 2, 12, 4, 9, 8, 6, 7, 4];
+  function deleteRepeat(ary) {
+    var obj = {};
+    for (var i = 0, len = ary.length; i < len; i++) {
+      var temp = ary[i];
+      if (obj[temp] == temp && temp != undefined) {
+        ary.splice(i, 1);
+        i--;
+        continue;
+      }
+      obj[temp]=temp;
+    }
+    obj=null;
+    return ary;
+  }
+  var newAry=deleteRepeat(ary);
+  console.log(newAry);
+</script>
+
+<script>
+//   # 从一个长度10万的数组中，随机取出100条数据（取出的数据不能重复）;
+
+// 原理：随机获取100个索引，每一次获取的时候，都把对应的项获取，为了避免数组中的项重复，每获取一个就把原有数组中的这一项删除；
+
+// 为了方便掩饰从20个里取5个随机数；
+var ary=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+
+
+</script>

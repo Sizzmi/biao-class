@@ -1,0 +1,30 @@
+<!-- **基本思想**：首先从数组ary选取一个基准点（通常我们取中间项作为基准点），然后遍历数组，把小于基准项放到基准点左边集合，把大于基准项放在基准点右边集合；然后对左边和右边两个集合分别再重复前面的操作；（直到每个集合就剩下一个元素的时候），其实就是一个**递归的思想**； -->
+<script>
+  var ary = [11, 2, 31, 45, 6, 78, 37, 33, 21];
+
+  var pivot = ary[Math.floor(ary.length / 2)];
+  console.log(pivot);
+
+  // 然后我们循环数据中的剩余项，把小于6的放在数组left中，把大于等于56的数组项放在数组right中，第一轮操作结束后left=[2],right=[11,31,45,78,37,33,21]
+  // 然后对left重复以上的操作，直到left和right仅剩一项或者空时候结束，最终返回left+pivot+right;
+
+  function quickSort(ary) {
+    var aryLen = ary.length;//获取ary的长度；
+    if (aryLen <= 1) {//如果ary小于等于1的长度，就直接返回了;这一步非常重要，是判断是否循环完的标志；
+      return ary;
+    }
+    var pINdex = Math.floor(ary.length / 2);//基准项的所引值,floor()：一律舍去，仅保留整数。
+    var pivot = ary.splice(pINdex, 1);//删除基准项，并把基准项赋值给pivot；splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。
+    var left = [], right = [];
+    for (var i = 0, len = ary.length; i < len; i++) {
+      if (ary[i] < pivot[0]) {
+        left.push(ary[i]);//push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。
+      } else {
+        right.push(ary[i]);
+      }
+    }
+    return quickSort(left).concat(pivot,quickSort(right));
+  }
+  var newAry=quickSort(ary);
+  console.log(newAry);//(9) [2, 6, 11, 21, 31, 33, 37, 45, 78]
+</script>
