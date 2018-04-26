@@ -143,8 +143,8 @@
 
   init();
   /*通过用户名搜Github用户
-* @param String keyword 关键词
-* */
+  * @param String keyword 关键词
+  * */
   function search() {
     /*禁用按钮（防止疯狂点）*/
     el_next.disabled = true;
@@ -220,8 +220,8 @@
   }
 
   /**
- * 通过数据生成HTML
- */
+  * 通过数据生成HTML
+  */
   function render() {
     /*初始化HTML*/
     var html = el_user_list.innerHTML;
@@ -231,16 +231,16 @@
     res.items.forEach(function (user) {
       /*每个用户都追加到HTML后面*/
       html = html + `
-       <div class="user">
-    <a class="avatar" target="_blank" href="${user.html_url}">
-      <img src="${user.avatar_url}">
-    </a>
-    <div class="info">
-      <div class="username">${user.login}</div>
-      <div><a target="_blank" href="${user.html_url}">${user.html_url}</a></div>
-    </div>
+  <div class="user">
+  <a class="avatar" target="_blank" href="${user.html_url}">
+  <img src="${user.avatar_url}">
+  </a>
+  <div class="info">
+  <div class="username">${user.login}</div>
+  <div><a target="_blank" href="${user.html_url}">${user.html_url}</a></div>
   </div>
-    `;
+  </div>
+  `;
     });
 
     /*将生成的HTML写入模板床*/
