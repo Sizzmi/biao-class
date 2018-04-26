@@ -49,6 +49,10 @@
     width: 20%;
   }
 
+  [hidden] {
+    display: none!important;
+  }
+
   .block {
     display: block;
     width: 100%;
@@ -136,7 +140,9 @@
     , el_next = document.getElementById('next')
     , el_top = document.getElementById('top')
     , keyword
+    ,no
     , page = 1
+    ,limit = 15
 
   /*返回的数据*/
   var res;
