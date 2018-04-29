@@ -1,0 +1,65 @@
+<script>
+  /*往冰箱存数据*/
+  var data = ['whh','lsd','zsk'];
+  /*加保鲜膜（JSON化）*/
+  var json = JSON.stringify(data);
+  /*存冰箱（状态稳定不轻易改变）*/
+  localStorage.setItem('history_list',json);
+</script>
+
+<script>
+  /*从冰箱取到带保鲜膜的数据*/
+  var json = localStorage.getItem('history_list');
+  /*撕膜（将数据转化为JS可以理解的数据类型）*/
+  data = JSON.parse(json);
+  console.log(data);
+</script>
+
+<script>
+  var data = ['whh','lsd','zsk'];
+  var json = JSON.stringify(data);
+  localStorage.setItem('history_list',json);
+</script>
+
+<script>
+  var json = localStorage.getItem('history_list');
+  data = JSON.parse(json);
+  console.log(data);
+</script>
+
+<script>
+  var data = ['whh','lsd','zsk'];
+  var json=JSON.stringify(data);
+  localStorage.setItem('history_list',json);
+</script>
+
+<script>
+  var json = localStorage.getItem('history_list');
+  data = JSON.parse(json);
+  console.log(data);
+</script>
+
+<script>
+  var data =  ['whh','lsd','zsk'];
+  var json = JSON.stringify(data);
+  localStorage.setItem('history_list',json);
+
+</script>
+<script>
+  var json = localStorage.getItem('history_list');
+  data = JSON.parse(json);
+  console.log(data);
+</script>
+
+<script>
+  var data = ['whh','lsd','zsk'];
+  var json = JSON.stringify(data);
+  localStorage.setItem('history_list',json);
+</script>
+
+<script>
+  var json = localStorage.getItem('history_list');
+  data = JSON.parse(json);
+  console.log(data);
+</script>
+

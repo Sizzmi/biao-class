@@ -71,6 +71,15 @@
     margin-bottom: 10px;
   }
 
+  .tac {
+    text-align: center;
+  }
+
+  #palceholder {
+    font-size: 80%;
+    opacity: .7;
+  }
+
   #amount {
     font-size: 80%;
     color: #aaa;
@@ -125,7 +134,8 @@
   </form>
   <div id="amount"></div>
   <div id="user-list"></div>
-  <button id="next" class="block">加载更多</button>
+  <button id="next" class="block" hidden>加载更多</button>
+  <div class='tac' id="placeholder" hidden>没有更多了</div>
 </div>
 
 <div class="toolbar">
@@ -133,110 +143,118 @@
 </div>
 
 <script>
-  /*模板床*/
-  var el_user_list = document.getElementById('user-list')
-    , el_form = document.getElementById('search-form')
-    , el_input = document.getElementById('search-input')
-    , el_next = document.getElementById('next')
-    , el_top = document.getElementById('top')
-    , keyword
-    , no
-    , page = 1
-    , limit = 15
+  ; (function () {
+    'use strict';
+    /*模板床*/
+    var el_user_list = document.getElementById('user-list')
+      , el_form = document.getElementById('search-form')
+      , el_input = document.getElementById('search-input')
+      , el_next = document.getElementById('next')
+      , el_top = document.getElementById('top')
+      , el_placeholder = document.getElementById('placeholder')
+      , keyword
+      , no_more
+      , amount
+      , page = 1
+      , limit = 15
 
-  /*返回的数据*/
-  var res;
+    /*返回的数据*/
+    var res;
 
-  init();
-  /*通过用户名搜Github用户
-  * @param String keyword 关键词
-  * */
-  function search() {
-    /*禁用按钮（防止疯狂点）*/
-    el_next.disabled = true;
-    el_next.innerText = '加载中...';
-    /*准备发射*/
-    var http = new XMLHttpRequest();
-    http.open('get', 'https://api.github.com/search/users?q=' + keyword + '&page=' + page);
-    http.setRequestHeader('Authorization', 'Basic' + btoa('Sizzmi:cfda5f875834b280f9cb9e4b4d2acbe7d9c16562'));
+    init();
+    /*通过用户名搜Github用户
+    * @param String keyword 关键词
+    * */
+    function search() {
+      /*禁用按钮（防止疯狂点）*/
+      el_next.disabled = true;
+      el_next.innerText = '加载中...';
+      /*准备发射*/
+      var http = new XMLHttpRequest();
+      http.open('get', 'https://api.github.com/search/users?q=' + keyword + '&page=' + page + '&per_page=' + limit);
+      http.setRequestHeader('Authorization', 'Basic' + btoa('Sizzmi:cfda5f875834b280f9cb9e4b4d2acbe7d9c16562'));
 
-    /*发射*/
-    http.send();
+      /*发射*/
+      http.send();
 
-    /*返回后*/
-    http.addEventListener('load', function () {
-      /*解析（将JSON格式的字符串转换为JS能理解的数据）返回数据*/
-      res = JSON.parse(http.responseText);
+      /*返回后*/
+      http.addEventListener('load', function () {
+        /*解析（将JSON格式的字符串转换为JS能理解的数据）返回数据*/
+        res = JSON.parse(http.responseText);
+        /*拿到搜索结果总数*/
+        amount = res.total_count;
+        //渲染
+        render();
+        /*当若干秒后数据返回就重新启用按钮*/
+        el_next.disabled = false;
+        el_next.innerText = '加载更多';
+      });
+}
 
-      render();
+    /*初始化*/
+    function init() {
+      detect_submit();
+      detect_next_page();
+      detect_click_top();
+    }
 
-      el_next.disabled = false;
-      el_next.innerText = '加载更多';
-    });
+    /*绑定表单提交事件*/
+    function detect_submit() {
+      el_form.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-  }
+        /*获取输入的关键词*/
+        keyword = el_input.value;
 
-  /*初始化*/
-  function init() {
-    detect_submit();
-    detect_next_page();
-    detect_click_top();
-  }
+        if (!keyword) {
+          alert("不能为空");
+          return;
+        }
+        /*重置页码*/
+        reset_page();
+        /*重置用户列表HTML*/
+        reset_user_list();
+        /*隐藏两个只有得到结果才有意义的组件*/
+        el_placeholder.hidden = el_next.hidden = true;
+        search(keyword);
+      });
+    }
+    /*重置页码为1*/
+    function reset_page() {
+      page = 1;
+    }
 
-  /*绑定表单提交事件*/
-  function detect_submit() {
-    el_form.addEventListener('submit', function (e) {
-      e.preventDefault();
+    /*清空已渲染内容*/
+    function reset_user_list() {
+      el_user_list.innerHTML = '';
+    }
 
-      /*获取输入的关键词*/
-      keyword = el_input.value;
+    /*监听翻页*/
+    function detect_next_page() {
+      el_next.addEventListener('click', function () {
+        page++;
+        search();
+      });
+    }
 
-      if (!keyword) {
-        alert("不能为空");
-        return;
-      }
-      /*重置页码*/
-      reset_page();
-      /*重置用户列表HTML*/
-      reset_user_list();
-      search(keyword);
-    });
-  }
+    /*监听点击回到顶部*/
+    function detect_click_top() {
+      el_top.addEventListener('click', function () {
+        window.scrollTo(0, 0);
+      });
+    }
 
-  function reset_page() {
-    page = 1;
-  }
+    /**
+    * 通过数据生成HTML
+    */
+    function render() {
+      /*初始化HTML*/
+      var html = el_user_list.innerHTML;
 
-  function reset_user_list() {
-    el_user_list.innerHTML = '';
-  }
-
-  /*监听翻页*/
-  function detect_next_page() {
-    el_next.addEventListener('click', function () {
-      page++;
-      search();
-    });
-  }
-
-  function detect_click_top() {
-    el_top.addEventListener('click', function () {
-      window.scroll(0, 0);
-    });
-  }
-
-  /**
-  * 通过数据生成HTML
-  */
-  function render() {
-    /*初始化HTML*/
-    var html = el_user_list.innerHTML;
-
-    console.log(res);
-    /*遍历用户列表*/
-    res.items.forEach(function (user) {
-      /*每个用户都追加到HTML后面*/
-      html = html + `
+      /*遍历用户列表*/
+      res.items.forEach(function (user) {
+        /*每个用户都追加到HTML后面*/
+        html = html + `
   <div class="user">
   <a class="avatar" target="_blank" href="${user.html_url}">
   <img src="${user.avatar_url}">
@@ -247,13 +265,34 @@
   </div>
   </div>
     `;
-    });
+      });
 
-    /*将生成的HTML写入模板床*/
-    el_user_list.innerHTML = html;
-    document
-      .getElementById('amount')
-      .innerHTML = `共有${res.total_count}条结果`;
-    el_next.hidden = false;
-  }
+      /*将生成的HTML写入模板床*/
+      el_user_list.innerHTML = html;
+      document
+        .getElementById('amount')
+        .innerHTML = `共有${res.total_count}条结果`;
+      el_next.hidden = false;
+
+      /*如果每页的数量乘以页数大于总数就说明当前页就是最后一页*/
+      no_more = page * limit >= amount;
+
+      // el_next.hidden = no_more;
+      // el_placeholer.hidden = !no_more;
+
+      /*如果没有更多*/
+      if (no_more) {
+        /*隐藏翻页按钮*/
+        el_next.hidden = true;
+        /*显示"谋了"*/
+        el_placeholder.hidden = false;
+      } else { // 否则正好相反
+        el_next.hidden = false;
+        el_placeholder.hidden = true;
+      }
+    }
+
+  })();
+
+
 </script>

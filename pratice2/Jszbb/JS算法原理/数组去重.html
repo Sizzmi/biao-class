@@ -34,22 +34,39 @@
         i--;
         continue;
       }
-      obj[temp]=temp;
+      obj[temp] = temp;
     }
-    obj=null;
+    obj = null;
     return ary;
   }
-  var newAry=deleteRepeat(ary);
+  var newAry = deleteRepeat(ary);
   console.log(newAry);
 </script>
 
 <script>
-//   # 从一个长度10万的数组中，随机取出100条数据（取出的数据不能重复）;
+  //取出数组内的随机数字
+  //   # 从一个长度10万的数组中，随机取出100条数据（取出的数据不能重复）;
 
-// 原理：随机获取100个索引，每一次获取的时候，都把对应的项获取，为了避免数组中的项重复，每获取一个就把原有数组中的这一项删除；
+  // 原理：随机获取100个索引，每一次获取的时候，都把对应的项获取，为了避免数组中的项重复，每获取一个就把原有数组中的这一项删除；
 
-// 为了方便掩饰从20个里取5个随机数；
-var ary=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+  // 为了方便掩饰从20个里取5个随机数；
+  var ary = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+  function selectOption(ary, optionNumber) {
+    var targetAry = [];
+    if (!optionNumber) {
+      console.log("请指定需要删选的数量!");
+    }
+    for (var i = 0; i < optionNumber; i++) {
+      var ran = Math.round(Math.random() * (ary.length - 1));//获取0-数组最大索引的一个随机数；
+      targetAry.push(ary[ran]);//按照获取的随机索引，把对应的值取出来，放到新书组中；
+      ary[ran] = ary[ary.length - 1];//把数组最后一项放到当前要删除索引的这一项；
+      ary.length = ary.length - 1;//删除最后一项；
+    }
+    return targetAry;
+  }
+  var newAry = selectOption(ary,10);
+  console.log(newAry);
 
+// > 这种的写法，是操作数组的常用处理方式；借助数组length可修改的性能；
 
 </script>
