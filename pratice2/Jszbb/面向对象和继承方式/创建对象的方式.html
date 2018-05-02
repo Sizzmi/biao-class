@@ -1,27 +1,59 @@
-# 创建对象的方式 创建对象的方式，最基本的有5种模式：**单例模式**、**工厂模式**、**构造函数模式**、**原型模式**、**构造函数+原型模式**; 其它的就是在原型模式，或者构造函数模式的基础上再次改造的模式； - 知识点一：单例模式
-- 知识点二：工厂模式 - 知识点三：构造函数模式 - 知识点四：原型模式 - 知识点五：构造函数+原型模式 - 知识点六：其它扩展模式 - 知识点六.1：动态原型模式（利用原型的动态性） - 知识点六.2：寄生构造函数模式（构造函数模式+工厂模式）
-# 知识点一：单例模式 单例模式：就是对象类型; Object构造函数或对象字面量都可以用来创建单个对象,下面是字面量的单例模式;(原生的Object构造函创建对象的方式，在某种意义上也是属于单例模式)
-<script>
-  var person1 = {
-    name: '巴巴',
-    age: 18,
-    say: function () {
-      console.log("我是person1的say方法");
-    }
-  };
+<!-- # 面向对象的概念：
 
-  var person2 = {
-    name: '巴巴a',
-    age: 18,
-    say: function () {
-      console.log("我是person2的say方法");
-    }
-  };
-  console.dir(person1);//person1是一个单例模式
-  console.dir(person2);//person2是一个单例模式
+- 对象:JS中万物皆对象,它是一个泛指,（类似生活中的世界）
+- 类:对象的具体的细分,（类似生活中的人类，动物类）
+- 实例:某一个类别中具体的一个事物（类似人的个体）
+
+> 转换成生活中的比喻就是：对象是一个抽象的概念,类似于我们的自然界,世界这种概念；我们自然界中分为了 人类、动物类、植物类...,而我们每一个人都是人类中的一个实例
+
+JS中有一个内置的类 Array(数组类),每一个数组都是这个类的一个实例,我们拿出一个数组(拿出一个实例)来进行研究,研究出来的知识,我们可以说所有的数组都具备这些知识
+
+内置类:
+
+- Number,String,Boolean,Null,Undefined
+- Object、Array、RegExp、Date、Function...
+- HTMLCollection(元素集合类),通过getElementsByTagName等获取的元素集合都是它的一个实例
+- NodeList(节点集合类),通过getElementsByName等获取的节点集合都是它的一个实例
+- HTMLDivElement(每一个HTML标签都有一个自己对应的类) HTMLElement Element Node EventTarget ...
+
+
+# 创建对象的方式
+
+创建对象的方式，最基本的有5种模式：**单例模式**、**工厂模式**、**构造函数模式**、**原型模式**、**构造函数+原型模式**;
+
+其它的就是在原型模式，或者构造函数模式的基础上再次改造的模式； -->
+<!-- # 知识点一：单例模式 -->
+
+<!-- 单例模式：就是对象类型; Object构造函数或对象字面量都可以用来创建单个对象,下面是字面量的单例模式;(原生的Object构造函创建对象的方式，在某种意义上也是属于单例模式). -->
+
+<script>
+  	var person1 = {
+	  name: "大",
+	  age: 18,
+	  say:function(){
+	    console.log("我是person1的say方法");
+	  }
+	};
+	var person2 = {
+	  name: "波波",
+	  age: 28,
+	  say:function(){
+	    console.log("我是person2的say方法");
+	  }
+	};
+	console.dir(person1);//person1是一个单例模式
+	console.dir(person2);//person2是一个单例模式
 </script>
 
-<!-- ##### 单例模式的优点 
+<!-- 把描述同一个事物(同一个对象)的属性和方法放在一个内存空间下,起到了分组的作用,这样不同事物之间的属性即使属性名相同,相互也不会发生冲突
+
+我们把这种分组编写代码的模式叫做"单例模式"
+
+在单例模式中我们把person1或者person2也叫做"命名空间"
+
+单例模式，因为简单易用的原因，是封模块和日常写代码中，最常用的创建方式；
+
+##### 单例模式的优点 
 
 直观，易用，对象的可塑性非常强；
 
@@ -30,162 +62,36 @@
 单例模式是一种项目开发中经常使用的模式,项目中使用单例模式来进行"模块化"开发也是很常见的；
 
 "模块化":对于一个相对来说比较大的项目,需要多人协作的开发的,我们一般情况下会根据当前项目的需求划分成几个功能版块,每个人负责一部分,同时开发，在需要用到的某个功能的时候，直接引用该模块即可；简单，易用，拆卸方便； -->
-
 <script>
   //公共模块
   var utils = {
-    select: function () {
+    select:function(){
       console.log("utils.select");
     }
   };
-
   //pageUtilitly的一个主文件
   var pageUtilitly = {
-    init: function () {
+    init:function() {
       console.log("现在开始运行bind和select中的代码");
-      this.bind();//运行绑定相关的方法;
+      this.bind();//运行绑定相关的方法；
       this.select();//运行选择相关的方法，如果暂时不需要，直接注释本行代码即可
     },
-    bind: function () {
+    bind:function() {
       var self = this;
       self.clickEven();//在自己的命名空间下调用自己命名空间的方法
     },
-    select: function () {
+    select:function() {
       utils.select();//在自己的命名空间下调用其他命名空间的方法
     },
-    clickEven: function () {
+    clickEven:function() {
       console.log("pageUtilitly.clickEven");
     }
   };
   pageUtilitly.init();
-
-</script> ##### 单例模式的缺点 面向对象，创建对象，有点类似做衣服，单例模式的优点是可定制性非常强，有点类似手工做衣服；虽然可塑性非常强，但是缺点就是如果批量做衣服的时候，效率就非常差；如下，tShirt1和tShirt2里面的方法和属性可以随意的改变，可塑性非常强；
-
-<script>
-  var tShirt1 = {
-    name: "t-shirt-1",
-    size: "xl",
-    color: "红",
-    hasEffect: function () {
-      console.log("这件T恤:" + this.name + "," + this.size + "," + this.color + ",自带装逼效果！");
-    }
-  };
-
-  var tShirt2 = {
-    name: "t-shirt-2",
-    size: "xxxl",
-    color: "黑",
-    hasEffect: function () {
-      console.log("这件T恤:" + this.name + "," + this.size + "," + this.color + ",自带撩妹效果！");
-    }
-  };
-  tShirt1.hasEffect();
-  tShirt2.hasEffect();
-
-//   > 单例模式虽然解决了分组和创造对象的作用,但是不能实现批量的生产,属于手工作业模式;
-// > 假设我要100件tShirt2这种自带撩妹效果的T恤，就需要重复写100次；var tShirt2 这里的代码
-// // > 这就引申到另外的一种模式："工厂模式"
-</script> # 知识点二：工厂模式 虽然 Object 构造函数或对象字面量都可以用来创建单个对象，但这些方式有个明显的缺点：使用同一个接口创建很多对象，会产生大量的重复代码。为解决这个问题，人们开始使用工厂模式的一种变体。 工厂模式是软件工程领域一种广为人知的设计模式，考虑到在
-ECMAScript 中无法创建类，开发人员就发明了一种函数，用函数来封装特定接口的对象， 工厂模式：说白了就是一种函数类型； - 把实现同一件事情的相同的代码放到一个函数中，以后如果在想实现这个功能，不需要从新的编写这些代码来了，只需要执行当前的函数即可
-- "函数的封装" -->**"高内聚低耦合":减少页面中的冗余代码,提高代码的重复利用率；**（工厂模式的优点就是函数模式的特点）
-<script>
-  function createTshirt(name, size, color) {
-    var o = new Object();
-    o.name = name;
-    o.size = size;
-    o.color = color;
-    o.sayName = function () {
-      console.log("这件T恤:" + this.name + "," + this.size + "," + this.color + ",自带撩妹效果！");
-
-    }
-    return o;
-  };
-  var tShirt1 = createTshirt("tShirt1", "xl", "红");
-  var tShirt2 = createTshirt("tShirt2", "xxxl", "黑");
-  var tShirt3 = createTshirt("tShirt3", "xxxl", "黑");
-  var tShirt4 = createTshirt("tShirt4", "xxxl", "黑");
-  console.log(tShirt3);
-</script> 函数 createTshirt() 能够根据接受的参数来构建一个包含所有必要信息的 T恤 对象。可以无数次地调用这个函数，而每次它都会返回一个包含三个属性一个方法的对象。工厂模式虽然解决了创建多个相似对象的问题； JS是一门轻量级的脚本"编程语言"(HTML+CSS不属于编程语言,属于标记语言)
-.net C# php Java c c++ vb vf object-c ....;所有的编程语言都是面向对象开发的->类的继承、封装、多态
-<script>
-  function sum(num) {
-    if (typeof num === "undefined") {
-      console.log("您没有传参啊，请仔细检查");
-      return;
-    }
-    console.log(num);
-  }
-  sum(100);
-  sum();
 </script>
-<!-- > 继承:子类继承父类中的属性和方法
-> 多态:当前方法的多种形态->后台语言中:多态包含重载和重写
-
-> “JS中不存在重载”,方法名一样的话,后面的会把前面的覆盖掉,最后只保留一个
-> "JS中有一个操作类似重载但是不是重载":我们可以根据传递参数的不一样的,实现不同的功能，属于函数的多态性； -->
-<!-- #####工厂模式的缺点;
-
-工厂模式虽然解决了重复创建相似对象的问题,但却没有解决对象识别的问题（即怎样知道一个对象的类型）,也就是某个对象属于什么类。随着 JavaScript的发展，又一个新模式出现了。 -->
-
-# 知识点三：构造函数模式 构造函数模式的意义：构造函数模式的目的就是为了创建一个自定义类,并且创建这个类的实例
-
-<script>
-  function CreateJsPerson(name, age) {
-    //浏览器默认创建的对象就是我们的实例p1 -> this
-    this.name = name;//->变量p1实例化的时候，那么this就是p1，相当于p1.name=name
-    this.age = age;
-    this.writeJs = function () {
-      console.log("my name is " + this.name + ",i can write js 啦!!");
-    };
-    //浏览器在把创建的实例默认的进行返回,无需return
-  }
-
-  var p1 = new CreateJsPerson("zhu", 18);//CreateJsPerson->this p1  用的时候需要new一下；创造一个构造函数的实例；
-  var p2 = new CreateJsPerson("nnnn", 28);
-  p1.writeJs();//writeJs->this p1
-  console.log(p1);//顺着原型，可以看到他的__proto__指向CreateJsPerson这个构造函数;	
-
-  console.log(p1.constructor == CreateJsPerson); //true
-  console.log(p2.constructor == CreateJsPerson); //true
-  console.log(p1.constructor == CreateJsPerson); //true
-  console.log(p1.constructor == CreateJsPerson); //true
-
-  console.log(p1.__proto__.constructor == CreateJsPerson); //true
-  console.log(p1.__proto__.constructor == CreateJsPerson); //true
-
-  console.log(p1.__proto__ == CreateJsPerson.prototype); //true
-  console.log(p1.__proto__ == CreateJsPerson.prototype); //true
-
-</script> > 错误的写法 var res = CreateJsPerson("zhu", 17);//这样写不是构造函数模式执行而是普通的函数执行 由于没有写return所以res=undefined 并且CreateJsPerson这个方法中的this是window
-console.log(res); **构造函数与其他函数的区别** 构造函数与其他函数的唯一区别，就在于调用它们的方式不同。不过，构造函数毕竟也是函数，不存在定义构造函数的特殊语法。任何函数，只要通过 new 操作符来调用，那它就可以作为构造函数；而任何函数，如果不通过
-new 操作符来调用，那它跟普通函数也不会有什么两样。
-
-<script>
-  function CreateJsPerson(name, age) {
-    //浏览器默认创建的对象就是我们的实例p1 -> this
-    this.name = name;//->变量p1实例化的时候，那么this就是p1，相当于p1.name=name
-    this.age = age;
-    this.writeJs = function () {
-      console.log("my name is 【" + this.name + "】,i can write js 啦!!");
-    };
-    //浏览器在把创建的实例默认的进行返回,无需return
-  }
-  // 当作构造函数使用
-  var p1 = new CreateJsPerson("zhu", 18);
-  var p2 = new CreateJsPerson("an", 28);
-  p1.writeJs();
-  // 作为普通函数调用
-  CreateJsPerson("hehe", 27); // 属性和方法都被添加给 window对象了
-  window.writeJs(); //"hehe"
-
-  //在另外一个对象的作用域中调用
-	var o = new Object();
-	CreateJsPerson.call(o, "haha", 25);
-	o.writeJs(); //"haha"
-
-// 当在全局作用域中调用一个函数时， this 对象总是指向 Global 对象（在浏览器中就是 window 对象）。因此，在调用完函数之后，可以通过 window 对象来调用 writeJs() 方法，并且还返回了 "hehe" 。最后，也可以使用 call() （或者 apply() ）在某个特殊对象的作用域中调用 CreateJsPerson() 函数。这里是在对象 o 的作用域中调用的，因此调用后 o 就拥有了所有属性和 writeJs()方法。
-
-// ##### 构造函数模式的缺点;
 
 
-</script>
+##### 单例模式的缺点
+
+面向对象，创建对象，有点类似做衣服，单例模式的优点是可定制性非常强，有点类似手工做衣服；虽然可塑性非常强，但是缺点就是如果批量做衣服的时候，效率就非常差；如下，tShirt1和tShirt2里面的方法和属性可以随意的改变，可塑性非常强；
+

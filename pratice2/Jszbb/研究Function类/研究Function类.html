@@ -175,13 +175,143 @@
     }
   }
   var trueFactorial = factorial;
-  factorial = function() {
+  factorial = function () {
     return 0;
   };
-  
-  console.log(trueFactorial(5));//120 1执行return1，2执行2*1，并存到arguments内用作下次，3执行3*2，4执行4*6，5执行5*24最终是120
+
+  console.log(trueFactorial(5));//120 1执行return1，2执行2*1，并存到arguments内用作下次，3执行3*2，4执行4*6，5执行5*24最终是120(5*4*3*2)
   console.log(factorial(5));//0
 
   // 在这个重写后的 factorial() 函数的函数体内，没有再引用函数名 factorial 。这样，无论引用函数时使用的是什么名字，都可以保证正常完成递归调用。
 </script>
 
+<!-- ##### this -->
+
+<!-- this引用的是函数据以执行的环境对象——或者也可以说是 this 值（当在网页的全局作用域中调用函数时，this 对象引用的就是 window ） -->
+<script>
+  window.color = "red";
+  var o = { color: "blue" };
+  function sayColor() {
+    console.log(this.color);
+  }
+  sayColor();//red 继承的是window.color = "red";
+  o.sayColor = sayColor;//函数的名字仅仅是一个包含指针的变量而已。因此，即使是在不同的环境中执行，全局的 sayColor() 函数与 o.sayColor() 指向的仍然是同一个函数。
+  o.sayColor();//"blue" 当把这个函数赋给对象 o 并调用 o.sayColor()时， this 引用的是对象 o ，因此对 this.color 求值会转换成对 o.color 求值，结果就返回了 "blue" 
+</script>
+<!-- **this是当前的执行主体，谁执行的函数，this就是谁；** -->
+
+<!-- 上面这个函数 sayColor() 是在全局作用域中定义的，它引用了 this 对象。由于在调用函数之前，this 的值并不确定，因此 this 可能会在代码执行过程中引用不同的对象。当在全局作用域中调用sayColor() 时， this 引用的是全局对象 window ；换句话说，对 this.color 求值会转换成对window.color 求值，于是结果就返回了 "red" 。而当把这个函数赋给对象 o 并调用 o.sayColor()时， this 引用的是对象 o ，因此对 this.color 求值会转换成对 o.color 求值，结果就返回了 "blue" 。 -->
+<!-- ##### arguments.caller -->
+
+<!-- 这个属性中保存着调用当前函数的函数的引用，如果是在全局作用域中调用当前函数，它的值为 null 。 -->
+<script>
+  function outer() {
+    inner();
+  }
+  function inner() {
+    console.log(inner.caller);
+  }
+  outer();
+  // 以上代码会输出 outer() 函数的源代码。因为 outer() 调用了 inter() ，所以inner.caller 就指向 outer() 。为了实现去耦合，也可以通过arguments.callee.caller来访问相同的信息。
+</script>
+
+<script>
+  function outer() {
+    inner();
+  }
+  function inner() {
+    console.log(inner.caller);
+    console.log(arguments.callee.caller);
+  }
+  outer();
+  // 当函数在严格模式下运行时，访问 arguments.callee 会导致错误。ECMAScript 5 还定义了arguments.caller 属性，但在严格模式下访问它也会导致错误，而在非严格模式下这个属性始终是undefined 。定义这个属性是为了分清 arguments.caller 和函数的 caller 属性。以上变化都是为了加强这门语言的安全性，这样第三方代码就不能在相同的环境里窥视其他代码了。严格模式还有一个限制：不能为函数的 caller 属性赋值，否则会导致错误。
+</script>
+
+<!-- ### 六、函数的属性和方法 -->
+<!--  -->
+<!-- 前面曾经提到过，ECMAScript 中的函数是对象，因此函数也有属性和方法。每个函数都包含两个属性： length 和 prototype 。其中， length 属性表示函数希望接收的命名参数的个数，如下面的例子所示 -->
+<script>
+  function sayName(name) {
+    console.log(name);
+  }
+  function sum(num1, num2) {
+    return num1 + num2;
+  }
+  function sayHi() {
+    console.log("hi");
+  }
+  console.log(sayName.length);//1
+  console.log(sum.length);//2
+  console.log(sayHi.length);//0
+
+  // 以上代码定义了 3 个函数，但每个函数接收的命名参数个数不同。首先， sayName() 函数定义了一个参数，因此其 length 属性的值为 1。类似地， sum() 函数定义了两个参数，结果其 length 属性中保存的值为 2。而 sayHi() 没有命名参数，所以其 length 值为 0。
+</script>
+
+<!-- 在 ECMAScript 核心所定义的全部属性中，最耐人寻味的就要数 prototype 属性了。对于ECMAScript 中的引用类型而言， prototype 是保存它们所有实例方法的真正所在。换句话说，诸如toString() 和 valueOf() 等方法实际上都保存在 prototype 名下，只不过是通过各自对象的实例访问罢了。在创建自定义引用类型以及实现继承时， prototype 属性的作用是极为重要的（第 6 章将详细介绍）。在 ECMAScript 5 中， prototype 属性是不可枚举的，因此使用 for-in 无法发现。 -->
+
+<!-- 每个函数都包含两个非继承而来的方法： apply() 和 call() 。这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内 this 对象的值。首先， apply() 方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是 Array 的实例，也可以是arguments 对象。 -->
+
+<script>
+  var name = "window name"
+  function sum(num1, num2) {
+    var name = "sum name"
+    console.log(this.name, num1, num2);
+  }
+  function callSum1(num1, num2) {
+    var name = "callSum1 name"
+    sum.apply(this, arguments);// 传入 arguments 对象
+  }
+  function callSum2(num1, num2) {
+    var name = "callSum2 name"
+    sum.apply(this, [num1, num2]);// 传入数组
+  }
+  callSum1(10, 20);//window name 10 20
+  callSum2(10, 30);//window name 10 30
+
+  // 在上面这个例子中， callSum1() 在执行 sum() 函数时传入了 this 作为 this 值（因为是在全局作用域中调用的，所以传入的就是 window 对象）和 arguments 对象。而 callSum2 同样也调用了sum() 函数，但它传入的则是 this 和一个参数数组。这两个函数都会正常执行并返回正确的结果。
+</script>
+
+<script>
+  var name = "window name"
+  function sum(num1, num2) {
+    var name = "sum name"
+    console.log(this.name, num1, num2);
+  }
+  function callSum2(num1, num2) {
+    var name = "callSum2 name"
+    sum.call(this, num1, num2);// 传入单个的参数
+  }
+  callSum2(10, 30);//window name 10 30
+  // 至于是使用 apply() 还是 call() ，完全取决于你采取哪种给函数传递参数的方式最方便。如果你打算直接传入 arguments 对象，或者包含函数中先接收到的也是一个数组，那么使用 apply()肯定更方便；否则，选择 call() 可能更合适。（在不给函数传递参数的情况下，使用哪个方法都无所谓。）
+
+  // apply() 和 call() 真正的用武之地；它们真正强大的地方是能够扩充函数赖以运行的作用域。
+
+  window.color = "red";
+  var o = { color: "blue" };
+  function sayColor() {
+    console.log(this.color);
+  }
+  sayColor();//red
+  sayColor.call(this);//red
+  sayColor.call(window);//red
+  sayColor.call(o);//blue
+
+  // 这个例子是在前面说明 this 对象的示例基础上修改而成的。这一次， sayColor() 也是作为全局函数定义的，而且当在全局作用域中调用它时，它确实会显示 "red" ——因为对 this.color 的求值会转换成对 window.color 的求值。而 sayColor.call(this) 和 sayColor.call(window) ，则是两种显式地在全局作用域中调用函数的方式，结果当然都会显示 "red" 。但是，当运行 sayColor.call(o)时，函数的执行环境就不一样了，因为此时函数体内的 this 对象指向了 o ，于是结果显示的是 "blue" 。
+</script>
+ <!-- > 使用 call() （或 apply() ）来扩充作用域的最大好处，就是对象不需要与方法有任何耦合关系 -->
+
+ <!-- ##### bind() -->
+ <!-- ECMAScript 5 还定义了一个方法： bind() 。这个方法会创建一个函数的实例，其 this 值会被绑定到传给 bind() 函数的值。
+ -->
+
+ <script>
+   window.color = "red";
+   var o = {color:"blue"};
+   function sayColor() {
+     console.log(this.color);
+   }
+   var objectSayColor = sayColor.bind(o);
+   objectSayColor();//blue
+  //  在这里， sayColor() 调用 bind() 并传入对象 o ，创建了 o bjectSayColor() 函数。 object-SayColor() 函数的 this 值等于 o ，因此即使是在全局作用域中调用这个函数，也会看到 "blue" 。这种技巧的优点后面总结。
+ </script>
+<!-- 每个函数继承的 toLocaleString() 和 toString() 方法始终都返回函数的代码。返回代码的格式则因浏览器而异——有的返回的代码与源代码中的函数代码一样，而有的则返回函数代码的内部表示，即由解析器删除了注释并对某些代码作了改动后的代码。由于存在这些差异，我们无法根据这两个方法返回的结果来实现任何重要功能；不过，这些信息在调试代码时倒是很有用。另外一个继承的valueOf() 方法同样也只返回函数代码。 -->
