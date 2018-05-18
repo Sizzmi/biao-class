@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function trueOrFalse(val) {
+    return val?console.log(val+"is true"):console.log(val+" is false")
+  }
+  trueOrFalse(null);//null is false
+    trueOrFalse(undefined);//undefined is false
+    trueOrFalse(0);//0 is false
+    trueOrFalse(NaN);//NaN is false
+    trueOrFalse(-0);//0===-0 0 is false
+    trueOrFalse(false);//false is false
+    trueOrFalse("");// is false
+    trueOrFalse(" ");// is true
+    trueOrFalse({});//[object Object]is true
+    trueOrFalse([]);//is true
+    trueOrFalse(1);//1is true
+</script>
+</body>
+</html>

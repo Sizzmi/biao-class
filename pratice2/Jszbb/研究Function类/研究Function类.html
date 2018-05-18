@@ -109,7 +109,7 @@
     return "Hello" + name;
   }
   var result2 = callSomeFunction(getGreeting, "Word");
-  console.log(result2);
+  console.log(result2); //HelloWord
 
   // 这里的 callSomeFunction() 函数是通用的，即无论第一个参数中传递进来的是什么函数，它都会返回执行第一个参数后的结果。要访问函数的指针而不执行函数的话，必须去掉函数名后面的那对圆括号。因此上面例子中传递给 callSomeFunction() 的是 add10 和 getGreeting ，而不是执行它们之后的结果。
 

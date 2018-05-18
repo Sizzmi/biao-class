@@ -1,0 +1,74 @@
+<meta charset="utf-8">
+<form id = "todo-form" action="http://baidu.com">
+  <input name="title" type="text" value="yo"><br>
+  <label>
+    <input name="completed" type="checkbox">完成
+  </label><br>
+  <input type="color" name="color">
+  <textarea name="desc">
+    aklsdjlkasjdkasdj
+  </textarea>
+  <button type="submit">添加任务</button>
+</form>
+
+<form id="login-form" action="http://baidu.com">
+  <input type="text" name="username" value="whh">
+  <input type="text" name="paseword" value="123">
+  <button type="submit">添加任务</button>
+</form>
+
+<script>
+  ;(function(){
+    'use strict';
+    var row = {};
+
+    // var name = document.querySelector('[name=name]');
+    // var completed = document.querySelector('[name=completed]');
+
+    // row.name = name.value;
+    // row.completed = completed.value;
+
+    // console.log(row);
+
+    function get_form_data(form_selector){
+      var data= {};
+      var form = document.querySelector(form_selector);
+      var list = form.querySelectorAll('[name]');
+
+      list.forEach(function(input){
+          switch(input.nodeName) {
+
+            case 'INPUT':
+            switch(input.type){
+              case 'text':
+              case 'search':
+              case 'number':
+              case 'password':
+
+              /*如果是字符类数据，使用用户输入的值*/
+              data[input.name] = input.value;
+              break;
+              case 'radio':
+              case 'checkbox':
+              /*如果是打勾类数据，使用打勾的状态（打|没打）*/
+              data[input.name] = input.checked;
+              break;
+            }
+            //console.log(input);
+            break;
+            case 'TEXTAREA':
+            data[input.name] = input.value;
+            break;
+          }
+      });
+
+      return data;
+    }
+
+    var todo_row = get_form_data('#todo-form');
+    console.log(todo_row);// {title: eat, completed: false, remind_at: 2018-...}
+
+ 
+  })();
+</script>
+

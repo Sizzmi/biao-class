@@ -1,0 +1,81 @@
+<meta charset="utf-8">
+<form id="todo-form" action="http://baidu.com">
+  <input name="title" type="text">
+  <br>
+  <input name="completed" type="checkbox"> 完成
+  <br>
+  <textarea name="desc"></textarea>
+  <button type="submit">添加任务</button>
+</form>
+
+<script>
+  ; (function () {
+    'use strict';
+
+    function set_form_data(form_selector, data) {
+      /*选中要插入数据的表单*/
+      var form = document.querySelector(form_selector);
+
+      /*遍历数据对象*/
+      for (var key in data) {
+        /*缓存当前属性的值*/
+        var value = data[key];
+        /*找到当前属性在表单中对应的input*/
+        var input = form.querySelector(`[name=${key}]`);
+
+        if (!input)
+          continue;
+
+        /*获取当前属性的数据类型*/
+        var data_type = typeof value;
+
+        switch (data_type) {
+          /*如果是字符串或者数字，就默认其为input[type=number|text|url|...]*/
+          case 'string':
+          case 'number':
+            input.value = value;
+            break;
+          /*如果是布尔值,就默认其为input[type=radio|checkbox]*/
+          case 'boolean':
+          input.checked = value;
+          break;
+        }
+
+
+      }
+    }
+    var row = {
+      title: '吃饭',
+      completed: true,
+      desc: 'mia mia mia...',
+    };
+
+    set_form_data('#todo-form',row);
+  }) ();
+</script>
+
+<script>
+  ;(function(){
+    'use strict'
+
+    function set_form_data(form_selector,data) {
+
+      var form = document.querySelector(form_selector);
+
+      for(var key in data) {
+
+        var value= data[key];
+
+        var input = form.querySelector(`[name=${key}]`);
+
+        if(!input)
+        continue;
+
+        var data_type = typeof value;
+
+        
+      }
+    }
+
+  })();
+</script>

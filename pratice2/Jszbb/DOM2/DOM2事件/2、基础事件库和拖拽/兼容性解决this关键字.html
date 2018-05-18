@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>this关键字</title>
+  <style>
+    #div1 {
+      width: 100px;
+      height: 100px;
+      background: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="div1"></div>
+</body>
+
+</html>
+<script>
+  var oDiv = document.getElementById("div1");
+
+  function bind1(ele, type, fn) {
+    if (ele.addEventListener) {
+      ele.addEventListener(type, fn);
+    } else {
+      //解决关键字，与call，apply有关
+      //ele.attachEvent("on"+type,fn.call(ele));这样不可以的，因为会直接执行：
+      ele.attachEvent("on" + type, function () { fn.call(ele) });//改变fn的this关键字；
+    }
+  };
+
+  function unbind1(ele, type, fn) {
+    if (ele.removeEventListener) {
+      ele.removeEventListener(type, fn, false);
+    } else {
+      ele.detachEvent("on" + type, fn)
+    }
+  }
+
+  /*改1的，解决了this关键字问题，但是解绑的时候，解除不掉了*/
+  /*改2*/
+  function bind2(ele, type, fn) {
+    if (ele.addEventListener) {
+      ele.addEventListener(type, fn);
+    } else {
+      var fnTemp = function () { fn.call(ele) };//解决fn的this关键字
+      var oBind = ele.myBind;
+      if (!oBind) {//避免多次创建，防止覆盖原来第一次创建的数组；
+        oBind = [];
+      }
+      for (var i = 0; i < oBind.length; i++) {//防止重复绑定的；
+        if (oBind[i].flag == fn) {
+          return;
+        }
+      }
+      oBind.push(fnTemp);
+    }
+  }
+</script>

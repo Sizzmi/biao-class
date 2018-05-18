@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  console.dir(new Boolean());// 观察Boolean
+  /*toString()
+  valueOf()  都是重写Object的方法
+  */
+  var falseObject = new Boolean(false);
+  var result = falseObject && true;
+  console.log(falseObject,result);  //true 因为falseObject会被转为true;
+  
+  var falseValue = false;
+  result = falseValue && true;
+  console.log(falseValue,result);//false
+
+  console.log(typeof falseObject);//object
+  console.log(typeof falseValue);//boolean
+  console.log(falseObject instanceof Boolean);//true
+  console.log(falseValue instanceof Boolean);//false
+  // 理解基本类型的布尔值与 Boolean 对象之间的区别非常重要——当然，我们的建议是永远不要使用 Boolean 对象。
+  </script>
+</body>
+</html>

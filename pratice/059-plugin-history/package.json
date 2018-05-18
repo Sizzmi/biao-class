@@ -1,0 +1,19 @@
+{
+  "name": "059-plugin-history",
+  "version": "1.0.0",
+  "description": "",
+  "main": "history.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.8.1",
+    "webpack-cli": "^2.1.3"
+  }
+}
