@@ -54,28 +54,3 @@
   }) ();
 </script>
 
-<script>
-  ;(function(){
-    'use strict'
-
-    function set_form_data(form_selector,data) {
-
-      var form = document.querySelector(form_selector);
-
-      for(var key in data) {
-
-        var value= data[key];
-
-        var input = form.querySelector(`[name=${key}]`);
-
-        if(!input)
-        continue;
-
-        var data_type = typeof value;
-
-        
-      }
-    }
-
-  })();
-</script>
