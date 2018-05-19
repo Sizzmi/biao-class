@@ -1,0 +1,40 @@
+js中，每次想知道一个对象是否为空时，首先想到的判断条件是"o==null"，但转念一想，感觉还不大安心，又加上“||o== undefined”，这样终于
+
+心满意足了！这就侧面表现出我对null和undefined认知的不足及不自信。而每次查了资料，看过之后又给忘了，所以这里姑且做个笔记！
+
+1.null表示一个对象不存在，即“没有对象”；undefined表示基本类型或对象的值没被定义，也就“缺少值”！所以要判断一个值是否存在可以这样：
+
+[javascript] view plain copy
+objA.valueA === undefined  
+
+而要判断一个对象是否为空可以：
+[javascript] view plain copy
+objA.valueA == null  
+
+
+2. null和undefined在js中其实没多少区别，比如：
+
+[javascript] view plain copy
+var a = null;  
+var b = undefined;  
+if (a == b) {  
+   alert("一般来说null和undefined在if语句中是相等的");  
+}  
+if (!a) {  
+   alert("null会转为false");  
+}  
+if (!undefined) {  
+  alert("undefined会转为false")  
+}<pre name="code" class="javascript">alert(typeof undefined);//undefined  
+alert(typeof null);//object  
+
+
+3.我们写js时，可以设置一个值为null，但不可设置一个值为undefined，即
+[javascript] view plain copy
+objA.valueA = undefined;//valueA已存在，再给它设置为undefined肯定不合理嘛。  
+咱们回过头再看这一句：
+[javascript] view plain copy
+if (o == null || o == undefined) {  
+  
+}  
+这一句就是说，如果对象o为空或其值没定义的话，就执行代码块中的内容，所以这样判断也是可以的。

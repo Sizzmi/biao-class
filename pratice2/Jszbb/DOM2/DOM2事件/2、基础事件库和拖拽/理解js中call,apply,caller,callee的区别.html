@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" id="idTxt" value="input text">
+  <script>
+    // function cat(){}
+    // cat.prototype={
+    //   food:"fish",
+    //   say:function(){
+    //     console.log("I love "+this.food);
+    //   }
+    // }
+    // var blackCat =new cat;
+    // blackCat.say();//I lovefish
+
+    // 我们有一个对象whiteDog = {food:”bone”},我们不想对它重新定义say方法,那么我们可以通过call或apply用blackCat的say方法：blackCat.say.call(whiteDog);
+
+    // fun.call(thisArg[, arg1[, arg2[, …]]])
+    // call()作用都是改变当前作用域，即改变this的指向，将函数对象从初始的上下文改变为由thisArg指定的新对象。
+    // thisArg：可选项，将被当做当前对象。如果没有thisArg，那么global对象将被用作thisArg.
+    // arg1,arg2：可选项，将被传递方法参数序列。
+
+
+    //=================== demo1
+    // var value = "global var";
+    // function mFunc(){
+    //   this.value="member var";
+    // }
+
+    // function gFunc(){
+    //   console.log(this.value);//global var
+    // }
+    // window.gFunc();//global var
+    // gFunc.call(window);//global var
+    // gFunc.call(new mFunc());//member var
+    // gFunc.call(document.getElementById('idTxt'));//input text
+
+    //==============================
+
+    //demo2
+    // var func = new function(){
+    //   this.a="func";
+    // }
+
+    // var func2 = function(x){
+    //   var a = "func2"
+    //   console.log(this.a);//func
+    //   console.log(x);//func2
+    // }
+    // func2.call(func,"func2");
+
+    // 这个例子中，func调用的作用域是func，那么this指向func，this.a就等于func,对于第二个alert(x)，func2()的参数为func2,所以alert(x)=>’func2’
+
+    //demo3==============
+    // var animals =[
+    // { species: 'Lion', name: 'King' },
+    // { species: 'Whale', name: 'Fail' }
+    // ];
+    // for(var i =0;i<animals.length;i++){
+    //   (function(i){
+    //     this.print=function(){
+    //       console.log('#'+ i +" "+this.species+ ': ' + this.name);
+    //     }
+    //     this.print();
+    //   }).call(animals[i],i);
+    // }
+
+    var animals = [
+      { species: 'Lion', name: 'King' },
+      { species: 'Whale', name: 'Fail' }
+    ];
+    for (var i = 0; i < animals.length; i++) {
+      var callFunc = function (i) {
+        this.print = function () {
+          console.log('#' + i + ' ' + this.species
+            + ': ' + this.name);
+        }
+        this.print();
+      };
+      callFunc.call(animals[i], i)
+    }
+
+// callFunc()当前作用域对象是animals[i],i是callFunc()参数
+// 结果如下
+// => #0 Lion: King
+// => #1 Whale: Fail
+
+
+  //==================================
+  //apply
+//   fun.apply(thisArg, [arg1,arg2,…argN])
+// 从api上可以看出apply()区别于call()是第二个参数，apply()传入的是一个数组。
+  
+  
+  /*定义一个人类*/
+  function Person(name,age){
+    this.name=name;
+    this.age=age;
+  }
+  /*定义一个学生类*/
+  function Student(name,age,grade){
+    //让Student()方法拥有(调用)Person()方法的属性
+    Person.apply(this,arguments);//=>等价于this.name = name;this.age = age;
+    this.grade=grade;
+  }
+//创建一个学生类
+var student = new Student("bobo",24,"三年级");
+//test
+console.log("name:"+student.name+"\n"+"age:"+student.age+"\n"+"grade:"+student.grade);
+//输出结果
+// name:bobo
+// age:24
+// grade:三年级
+
+//============================================
+// caller
+
+  </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
