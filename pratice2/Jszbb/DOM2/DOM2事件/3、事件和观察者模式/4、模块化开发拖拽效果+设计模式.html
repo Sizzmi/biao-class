@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>拖拽的图片</title>
+    <style>
+        div{width: 100px;height: 100px;position: absolute;background: orange;top:0;left: 0;cursor: move;}
+        #div2{  top:100px;left: 160px;background: blueviolet;}
+        #div3{  top:30px;left: 360px;background: chocolate;}
+    </style>
+</head>
+<body>
+<div id="div1"><img src="logo.jpg" alt="logo"/></div>
+<div id="div2"></div>
+<div id="div3"></div>
+</body>
+</html>
+<script src="event3.js"></script>
+<script>
+var eles=document.getElementsByTagname("div");
+for(var i=0;i<eles.length;i++){
+    on(eles[i],"mousedown",down);
+    selfOn(eles[i],"selfDragStart",zIndexplus);
+    selfOn(eles[i])
+}
+</script>

@@ -1,0 +1,39 @@
+<script>
+  /*
+  二级继承，仅继承原型
+  要求是Kid继承Dad的所有prototype
+  (new Kid()).姓 可以收到"王
+  */
+
+  function Dad() {}
+
+  Dad.prototype.姓 ='王';
+
+  function Kid(){}
+
+/*通过Object.create创建新对象，同时指定这个新对象的原型对象为Dad.prototype*/
+  Kid.prototype = Object.create(Dad.prototype);
+
+  console.log(new Kid());
+</script>
+
+<script>
+/*多级继承，仅继承原型
+  * C继承B，B继承A
+  * */
+ function A(){}
+
+ A.prototype.a1='我是a1';
+
+
+ function B(){}
+ B.prototype=Object.create(A.prototype);
+ B.prototype.b1="我是b1";
+
+ 
+
+ function C(){}
+ C.prototype.c1='我是c1';
+
+
+</script>

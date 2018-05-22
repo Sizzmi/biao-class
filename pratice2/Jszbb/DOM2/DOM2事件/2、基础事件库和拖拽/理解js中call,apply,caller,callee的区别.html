@@ -73,20 +73,20 @@
     //   }).call(animals[i],i);
     // }
 
-    var animals = [
-      { species: 'Lion', name: 'King' },
-      { species: 'Whale', name: 'Fail' }
-    ];
-    for (var i = 0; i < animals.length; i++) {
-      var callFunc = function (i) {
-        this.print = function () {
-          console.log('#' + i + ' ' + this.species
-            + ': ' + this.name);
-        }
-        this.print();
-      };
-      callFunc.call(animals[i], i)
-    }
+    // var animals = [
+    //   { species: 'Lion', name: 'King' },
+    //   { species: 'Whale', name: 'Fail' }
+    // ];
+    // for (var i = 0; i < animals.length; i++) {
+    //   var callFunc = function (i) {
+    //     this.print = function () {
+    //       console.log('#' + i + ' ' + this.species
+    //         + ': ' + this.name);
+    //     }
+    //     this.print();
+    //   };
+    //   callFunc.call(animals[i], i)
+    // }
 
 // callFunc()当前作用域对象是animals[i],i是callFunc()参数
 // 结果如下
@@ -101,20 +101,20 @@
   
   
   /*定义一个人类*/
-  function Person(name,age){
-    this.name=name;
-    this.age=age;
-  }
-  /*定义一个学生类*/
-  function Student(name,age,grade){
-    //让Student()方法拥有(调用)Person()方法的属性
-    Person.apply(this,arguments);//=>等价于this.name = name;this.age = age;
-    this.grade=grade;
-  }
-//创建一个学生类
-var student = new Student("bobo",24,"三年级");
-//test
-console.log("name:"+student.name+"\n"+"age:"+student.age+"\n"+"grade:"+student.grade);
+//   function Person(name,age){
+//     this.name=name;
+//     this.age=age;
+//   }
+//   /*定义一个学生类*/
+//   function Student(name,age,grade){
+//     //让Student()方法拥有(调用)Person()方法的属性
+//     Person.apply(this,arguments);//=>等价于this.name = name;this.age = age;
+//     this.grade=grade;
+//   }
+// //创建一个学生类
+// var student = new Student("bobo",24,"三年级");
+// //test
+// console.log("name:"+student.name+"\n"+"age:"+student.age+"\n"+"grade:"+student.grade);
 //输出结果
 // name:bobo
 // age:24
@@ -122,7 +122,58 @@ console.log("name:"+student.name+"\n"+"age:"+student.age+"\n"+"grade:"+student.g
 
 //============================================
 // caller
+// caller返回一个对函数的引用，该函数调用了当前函数。
+// 对于函数来说，caller 属性只有在函数执行时才有定义。 如果函数是由 Javascript 程序的顶层调用的，那么 caller 包含的就是 null 。
+  
+// function callerDemo(){
+//   if(arguments.caller){
+//     var a = callerDemo.caller.toString();
+//     console.log(a);
+//   }else{
+//     console.log("this is a top function");
+//   }
+// }
 
+// function handleCaller(){
+//   callerDemo();
+// }
+// handleCaller();
+// function calleeDemo(){
+//   console.log(arguments.callee);
+// }
+
+// calleeDemo();
+  //this is a top function
+  //ƒ calleeDemo(){
+//   console.log(arguments.callee);
+// }
+
+///////////==============================
+//callee()
+// 返回正被执行的 Function 对象，也就是所指定的 Function 对象的正文。
+//arguments.length是实参长度，arguments.callee.length是形参长度
+
+//callee可以打印其本身
+function calleeDemo() {
+alert(arguments.callee);
+}
+//用于验证参数
+function calleeLengthDemo(arg1, arg2) {
+if (arguments.length == arguments.callee.length) {
+window.alert("验证形参和实参长度正确！");
+return;
+} else {
+console.log("实参长度：" + arguments.length);
+console.log("形参长度： " + arguments.callee.length);
+}
+}
+//递归计算
+var sum = function (n) {
+if (n <= 0)
+return 1;
+else
+return n +arguments.callee(n - 1)
+}
   </script>
 
 
