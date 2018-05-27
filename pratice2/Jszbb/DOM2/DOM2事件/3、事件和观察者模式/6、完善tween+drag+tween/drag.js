@@ -21,7 +21,7 @@ function down(e){//把down发布为一个事件，让别人能够约定的标识
 
 function move(e){
   this.style.left=this.x+(e.pageX-this.mouseX)+"px";
-  this.style.top=this.y_(e.pageY-this.mouseY)+"px";
+  this.style.top=this.y+(e.pageY-this.mouseY)+"px";
   fire.call(this,"selfDragMove",e);//接口
 }
 
