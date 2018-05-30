@@ -5,35 +5,62 @@
   (new Kid()).姓 可以收到"王
   */
 
-  function Dad() {}
+  function Dad() { }
 
-  Dad.prototype.姓 ='王';
+  Dad.prototype.姓 = '王';
 
-  function Kid(){}
+  function Kid() { }
 
-/*通过Object.create创建新对象，同时指定这个新对象的原型对象为Dad.prototype*/
+  /*通过Object.create创建新对象，同时指定这个新对象的原型对象为Dad.prototype*/
   Kid.prototype = Object.create(Dad.prototype);
 
   console.log(new Kid());
 </script>
 
 <script>
-/*多级继承，仅继承原型
-  * C继承B，B继承A
-  * */
- function A(){}
+  /*多级继承，仅继承原型
+    * C继承B，B继承A
+    * */
+  function A() { }
 
- A.prototype.a1='我是a1';
-
-
- function B(){}
- B.prototype=Object.create(A.prototype);
- B.prototype.b1="我是b1";
-
- 
-
- function C(){}
- C.prototype.c1='我是c1';
+  A.prototype.a1 = '我是a1';
 
 
+  function B() { }
+  B.prototype = Object.create(A.prototype);
+  B.prototype.b1 = "我是b1";
+
+
+
+  function C() { }
+  C.prototype.c1 = '我是c1';
+
+
+</script>
+
+<script>
+  /*继承原型及显性属性
+  *B继承A
+  */
+
+  function A() {
+    this.name = 'a';
+    this.age = 10;
+  }
+
+  A.prototype.a1 = '我是a1';
+
+  //=====================================
+
+
+  function B() {
+    /*将A的this与B合并，这样就可以继承A的显性属性*/
+    A.call(this);
+  }
+
+  B.prototype = Object.create(A.prototype);
+  B.prototype.b1 = "我是b1";
+
+  var b = new B();
+  console.log(b);
 </script>

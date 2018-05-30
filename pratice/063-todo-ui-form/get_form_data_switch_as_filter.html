@@ -1,0 +1,70 @@
+<meta charset="utf-8">
+<from id="todo-form" action="http://baidu.com">
+  <input type="hidden" name="id" value="1">
+  <input name="title" type="text" value="yo">
+  <br>
+  <input type="checkbox" name="completed">完成
+  <br>
+  <textarea name="desc">我是一段描述</textarea>
+  <button type="submit">添加任务</button>
+</from>
+
+<script>
+  ;(function () {
+    'use strict';
+
+    function get_form_data(form_selector) {
+      var data = {};
+      var form = document.querySelector(form_selector);
+      var list = form.querySelectorAll('[name]');
+
+      list.forEach(function (input) {
+
+        var type = input.type
+          , value = input.value
+          , name = input.name;
+
+        if (name == 'id')
+          value = parseInt(value);
+
+        /*过滤数据，保证数据类型和格式是正确的*/
+        switch (input.nodeName) {
+          case 'INPUT':
+            switch (type) {
+              case 'text':
+                break;
+              case 'search':
+                value = value.trim();
+                break;
+              case 'number':
+                value = parseFloat(value);
+                break;
+              case 'password':
+              case 'hidden':
+                /*如果是字符类数据，使用用户输入的值*/
+                // data[name] = value;
+                break;
+              case 'radio':
+              case 'checkbox':
+                /*如果是打钩类数据，使用打钩的状态（打|没打）*/
+                value = input.checked
+                // data[name] = input.checked;
+                break;
+            }
+            // console.log(input);
+            break;
+          case 'TEXTAREA':
+            // data[name] = value;
+            break;
+        }
+
+        data[name] = value;
+      });
+
+      return data;
+    }
+
+    var todo_row = get_form_data('#todo-form');
+    console.log(todo_row);
+  })();
+</script>

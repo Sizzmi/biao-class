@@ -1,11 +1,11 @@
 class Base {
-  constructor(max_id, list) {
+  constructor(max_id, list) {//当这个类实例化的一瞬间就执行
     this.max_id = max_id || 1;
     this.list = list;
   }
 
   yo() {
-    console.log();
+    console.log("yo!");
   }
   $add() {
     console.log('base add')

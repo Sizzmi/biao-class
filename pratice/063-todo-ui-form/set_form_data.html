@@ -12,6 +12,7 @@
   ; (function () {
     'use strict';
 
+
     function set_form_data(form_selector, data) {
       /*选中要插入数据的表单*/
       var form = document.querySelector(form_selector);
@@ -25,32 +26,30 @@
 
         if (!input)
           continue;
-
         /*获取当前属性的数据类型*/
         var data_type = typeof value;
 
         switch (data_type) {
-          /*如果是字符串或者数字，就默认其为input[type=number|text|url|...]*/
+          /*如果是字符串或者数字。就默认其为input[type=number|text|url|...]*/
           case 'string':
           case 'number':
             input.value = value;
             break;
-          /*如果是布尔值,就默认其为input[type=radio|checkbox]*/
+          /*如果是布尔值，就默认其为input[type=radio|checkbox]*/
           case 'boolean':
-          input.checked = value;
-          break;
+            input: checked = value;
+            break;
         }
-
 
       }
     }
+
     var row = {
       title: '吃饭',
       completed: true,
       desc: 'mia mia mia...',
     };
 
-    set_form_data('#todo-form',row);
-  }) ();
+    set_form_data('#todo-form', row);
+  })();
 </script>
-
