@@ -1,0 +1,119 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 10px;
+}
+
+td {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+th {
+  border-bottom: 2px solid rgba(0, 0, 0, .1);
+}
+
+tbody tr:hover {
+  background: rgba(0, 0, 0, .05);
+}
+
+td img {
+  max-width: 100px;
+}
+
+.input-wrap {
+  margin-bottom: 10px;
+}
+
+.input-wrap label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.admin .nav {
+  background: #143c67;
+  color: #fbf9f1;
+}
+
+.admin .nav a {
+  display: block;
+  padding: 10px;
+  color: inherit;
+}
+
+.admin .nav a:hover {
+  background: rgba(0, 0, 0, .4);
+  color: #fff;
+}
+
+.main {
+  padding: 10px;
+}
+
+.error {
+  background: pink;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.tool-set {
+  margin-bottom: 10px;
+}
+
+.tool-set .sub-set {
+  margin-bottom: 10px;
+}
+
+.empty-holder {
+  opacity: .5;
+  text-align: center;
+  font-size: .8rem;
+}
+
+.dish-list {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.dish {
+  border: 2px solid rgba(0, 0, 0, .4);
+  margin-bottom: 10px;
+}
+
+.dish .detail .name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.dish .detail .description {
+  opacity: .7;
+}
+
+.cart-trigger,
+.order-detail {
+  position: fixed;
+  right: 10px;
+  padding: 10px;
+}
+
+.cart-trigger {
+  bottom: 10px;
+  background: gold;
+}
+
+.order-detail {
+  background: #fff;
+  border: 2px solid #000;
+  left: 10px;
+  bottom: 0;
+}
+
+.close:after {
+  content: 'x';
+  position: relative;
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+}
