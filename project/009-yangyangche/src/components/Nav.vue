@@ -49,12 +49,19 @@
   .nav-item {
     display: inline-block;
     padding: 12px;
+
   }
 
   .nav-item {
     color: #555;
     text-decoration: none;
   }
+
+  .nav-item:hover{
+    background-color:pink;
+
+}
+
 
   .tel {
     font-weight: bold;
