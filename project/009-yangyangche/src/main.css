@@ -42,6 +42,15 @@ fieldset {
   border: 0;
 }
 
+.tac{
+  text-align: center;
+}
+
+.tar{
+  text-align: right;
+}
+
+
 .footer {
   margin-top: 10px;
   text-align: center;
