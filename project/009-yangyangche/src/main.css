@@ -28,10 +28,56 @@ img {
   width: 100%;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr:hover {
+  background: rgba(0, 80, 200, .06);
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+}
+
+.footer {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.simple-checker > input[type=checkbox] {
+  width: auto;
+}
+
+/*.simple-checker input {*/
+/*display: inline-block;*/
+/*}*/
+
+.anchor {
+  cursor: pointer;
+}
+
+.empty-holder {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #777;
+}
 
 .small {
   font-size: 80%;
 }
+
+.muted {
+  opacity: .8;
+}
+
+.muted a {
+  color: #555;
+}
+
 .por {
   position: relative;
 }
@@ -147,6 +193,10 @@ img {
   }
 }
 
+.kill-space {
+  font-size: 0;
+}
+
 .row {
   font-size: 0;
   display: block;
@@ -155,9 +205,11 @@ img {
 }
 
 .container {
-  min-width: 900px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 [class*=col-],
@@ -170,32 +222,61 @@ img {
 }
 
 .col.left,
-[class*=col-].left{
+[class*=col-].left {
   text-align: left;
 }
 
-.col.right,
-[class*=col-].right {
+.right {
   text-align: right;
+}
+
+.card {
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
 }
 
 button,
 .btn,
 input {
+  outline: 0;
   padding: 8px;
-  border: 1px solid rgba(0,0,0,.1);
-  color:#444;
-  border-radius: .25rem;
-  transition: color .15s ease-in-out,background-color .15s cubic-bezier(0.46, 0.03, 0.52, 0.96),border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, .1);
+  color: #444;
 }
 
-/* .btn{
+button[disabled],
+input[disabled],
+textarea[disabled] {
+  opacity: .6;
+  cursor: not-allowed;
+}
 
-} */
+input {
+  outline: 0;
+  width: 100%;
+}
 
 .btn-primary {
-  background: #fd52fd;
-  color:#fff;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #fd521d;
+  color: #fff;
+}
+
+.btn-small {
+  padding: 3px 5px;
+  font-size: .8rem;
+}
+
+.btn-group button,
+.btn-group .btn {
+  border-left-width: 0;
+}
+
+.btn-group button:first-child,
+.btn-group .btn:first-child {
+  border-left-width: 1px;
 }
 
 .btn-fat {
@@ -211,10 +292,62 @@ input {
   font-weight: bold;
 }
 
-.currency:before{
-  content: '💴';
+.currency:before {
+  content: '￥';
 }
 
 .input-control {
   margin-bottom: 10px;
 }
+
+.input-control label {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.input-group-3 > *, .input-group > * {
+  border-left: 0;
+}
+
+.input-group-3 > *:first-child, .input-group > *:first-child {
+  border-left: 1px solid rgba(0, 0, 0, .1);
+}
+
+.input-group-3 > *:first-child,
+.input-group > *:first-child {
+  width: 30%;
+}
+
+.input-group > *:last-child {
+  width: 70%;
+}
+
+.input-group-3 > *:nth-child(2) {
+  width: 50%;
+}
+
+.input-group-3 > *:last-child {
+  width: 20%;
+}
+
+.error-list {
+  background: rgba(255, 0, 0, .2);
+  margin-bottom: 10px;
+  color: #c10;
+}
+
+.error {
+  padding: 5px 10px;
+}
+
+.pagination {
+  text-align: center;
+}
+
+.pagination .active {
+  background: rgba(0, 0, 0, .1);
+}
+
+/*form[invalid] button[type=submit] {*/
+/*pointer-events: none;*/
+/*}*/

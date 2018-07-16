@@ -16,16 +16,9 @@
           <div class="col-lg-3 huge-text">买</div>
           <div class="col-lg-9">
             <div>
-              <span class="tag">大众</span>
-              <span class="tag">别克</span>
-              <span class="tag">雪佛兰</span>
-              <span class="tag">福特</span>
-              <span class="tag">五菱</span>
-              <span class="tag">大众</span>
-              <span class="tag">别克</span>
-              <span class="tag">雪佛兰</span>
-              <span class="tag">福特</span>
-              <span class="tag">五菱</span>
+              <router-link :to="'/search?brand_id=' + row.id" v-for="row in list.brand" class="tag">{{row
+                .name}}
+              </router-link>
             </div>
             <div>
               <span class="tag">3万以下</span>
@@ -34,11 +27,9 @@
               <span class="tag">20万以下</span>
             </div>
             <div>
-              <span class="tag">大众</span>
-              <span class="tag">别克</span>
-              <span class="tag">雪佛兰</span>
-              <span class="tag">福特</span>
-              <span class="tag">五菱</span>
+              <router-link :to="'/search?design_id=' + row.id" v-for="row in list.design" class="tag">{{row
+                .name}}
+              </router-link>
             </div>
           </div>
         </div>
@@ -101,140 +92,28 @@
     <div>
       <div class="vehicle-nav">
         <div class="container">
-          <div class="item">特价好车</div>
-          <div class="item">5万以下</div>
-          <div class="item">5-10万</div>
-          <div class="item">超值SUV</div>
-          <div class="item">急售降价车</div>
-          <div class="item">更多</div>
+          <div @click="read_main('on_sale')" class="item">特价好车</div>
+          <div @click="read_main('under_5')" class="item">5万以下</div>
+          <div @click="read_main('between_5_10')" class="item">5-10万</div>
+          <div @click="read_main('suv')" class="item">超值SUV</div>
+          <div @click="read_main('urgent')" class="item">急售降价车</div>
+          <router-link to="/search_result" class="item">更多</router-link>
         </div>
       </div>
-      <div class="vehicle-list">
-        <div class="container">
-          <div class="col-lg-3">
+      <div class="container">
+        <div class="row vehicle-list">
+          <div v-for="row in main_list" class="col-lg-3">
             <div class="card">
               <div class="thumbnail">
-                <img src="../assets/home/vehicle-list-thumbnail1.webp">
+                <img :src="get_main_cover_url(row)">
               </div>
               <div class="detail">
-                <div class="title">大众-高尔夫 2014款 1.6L 自动舒适型</div>
+                <div class="title">{{row.title}}</div>
                 <div class="desc">2015年02月 / 3.07万公里</div>
                 <div class="others">
-                  <span class="price">11.5万</span>
+                  <span class="price">{{row.price}}</span>
                   <span>首付3.5万</span>
-                  <a class="btn btn-primary buy">购买</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="card">
-              <div class="thumbnail">
-                <img src="../assets/home/vehicle-list-thumbnail1.webp">
-              </div>
-              <div class="detail">
-                <div class="title">大众-高尔夫 2014款 1.6L 自动舒适型</div>
-                <div class="desc">2015年02月 / 3.07万公里</div>
-                <div class="others">
-                  <span class="price">11.5万</span>
-                  <span>首付3.5万</span>
-                  <a class="btn btn-primary buy">购买</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="card">
-              <div class="thumbnail">
-                <img src="../assets/home/vehicle-list-thumbnail1.webp">
-              </div>
-              <div class="detail">
-                <div class="title">大众-高尔夫 2014款 1.6L 自动舒适型</div>
-                <div class="desc">2015年02月 / 3.07万公里</div>
-                <div class="others">
-                  <span class="price">11.5万</span>
-                  <span>首付3.5万</span>
-                  <a class="btn btn-primary buy">购买</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="card">
-              <div class="thumbnail">
-                <img src="../assets/home/vehicle-list-thumbnail1.webp">
-              </div>
-              <div class="detail">
-                <div class="title">大众-高尔夫 2014款 1.6L 自动舒适型</div>
-                <div class="desc">2015年02月 / 3.07万公里</div>
-                <div class="others">
-                  <span class="price">11.5万</span>
-                  <span>首付3.5万</span>
-                  <a class="btn btn-primary buy">购买</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="card">
-              <div class="thumbnail">
-                <img src="../assets/home/vehicle-list-thumbnail1.webp">
-              </div>
-              <div class="detail">
-                <div class="title">大众-高尔夫 2014款 1.6L 自动舒适型</div>
-                <div class="desc">2015年02月 / 3.07万公里</div>
-                <div class="others">
-                  <span class="price">11.5万</span>
-                  <span>首付3.5万</span>
-                  <a class="btn btn-primary buy">购买</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="card">
-              <div class="thumbnail">
-                <img src="../assets/home/vehicle-list-thumbnail1.webp">
-              </div>
-              <div class="detail">
-                <div class="title">大众-高尔夫 2014款 1.6L 自动舒适型</div>
-                <div class="desc">2015年02月 / 3.07万公里</div>
-                <div class="others">
-                  <span class="price">11.5万</span>
-                  <span>首付3.5万</span>
-                  <a class="btn btn-primary buy">购买</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="card">
-              <div class="thumbnail">
-                <img src="../assets/home/vehicle-list-thumbnail1.webp">
-              </div>
-              <div class="detail">
-                <div class="title">大众-高尔夫 2014款 1.6L 自动舒适型</div>
-                <div class="desc">2015年02月 / 3.07万公里</div>
-                <div class="others">
-                  <span class="price">11.5万</span>
-                  <span>首付3.5万</span>
-                  <a class="btn btn-primary buy">购买</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="card">
-              <div class="thumbnail">
-                <img src="../assets/home/vehicle-list-thumbnail1.webp">
-              </div>
-              <div class="detail">
-                <div class="title">大众-高尔夫 2014款 1.6L 自动舒适型</div>
-                <div class="desc">2015年02月 / 3.07万公里</div>
-                <div class="others">
-                  <span class="price">11.5万</span>
-                  <span>首付3.5万</span>
-                  <a class="btn btn-primary buy">购买</a>
+                  <router-link :to="'/detail/' + row.id" class="btn btn-primary buy">购买</router-link>
                 </div>
               </div>
             </div>
@@ -250,10 +129,93 @@
 </template>
 
 <script>
-  import Nav from '../components/Nav.vue';
+  import '../css/vehicle-list.css';
+  import Nav         from '../component/Nav.vue';
+  import VehicleList from '../mixin/VehicleList';
+  import Reader      from '../mixin/Reader';
+  import api         from '../lib/api';
 
   export default {
+    mixins     : [ VehicleList, Reader ],
     components : { Nav },
+    mounted () {
+      this.read_main('on_sale');
+      this.find_design('suv');
+      this.read('brand');
+      this.read('design');
+    },
+    data () {
+      return {
+        list      : {},
+        design    : {},
+        main_list : [],
+      };
+    },
+    methods    : {
+      find_design (name) {
+        api('design/search', { or : { name : name } })
+          .then(r => {
+            this.design[ name ] = r.data[ 0 ];
+          });
+      },
+
+
+      read_main (type) {
+
+        let condition = {};
+
+        switch (type) {
+          case 'on_sale':
+            condition = {
+              where : {
+                and : {
+                  on_sale : true,
+                },
+              },
+            };
+            break;
+          case 'under_5':
+            condition = {
+              where : {
+                and : [
+                  [ 'price', '<', 5 ],
+                ],
+              },
+            };
+            break;
+          case 'between_5_10':
+            condition = {
+              where : {
+                and : [
+                  [ 'price', '>', 5 ],
+                  [ 'price', '<', 10 ],
+                ],
+              },
+            };
+            break;
+          case 'suv':
+            condition = {
+              where : {
+                and : {
+                  design_id : this.design.suv.id,
+                },
+              },
+            };
+            break;
+          case 'urgent':
+            let date = new Date;
+            date.setDate(date.getDate() + 3);
+            date      = date.toISOString().split('T')[ 0 ];
+            condition = { query : `where("deadline" <= "${date}")` };
+            break;
+        }
+
+        api('vehicle/read', condition)
+          .then(r => {
+            this[ 'main_list' ] = r.data;
+          });
+      },
+    },
   };
 </script>
 
@@ -307,50 +269,6 @@
 
   .vehicle-nav .item:first-child {
     border-left-width: 1px;
-  }
-
-  .vehicle-list .col-lg-3 {
-    padding: 10px;
-  }
-
-  .vehicle-list .card {
-    background: #fff;
-  }
-
-  .vehicle-list .card .detail {
-    padding: 10px;
-  }
-
-  .vehicle-list .detail > * {
-    margin-bottom: 5px;
-  }
-
-  .vehicle-list .card .title {
-    font-size: .8rem;
-  }
-
-  .vehicle-list .card .desc,
-  .vehicle-list .card .others {
-    font-size: .6rem;
-    color: #888;
-  }
-
-  .vehicle-list .card .price {
-    color: #fd521d;
-    font-size: 1.3rem;
-  }
-
-  .vehicle-list .card {
-    position: relative;
-  }
-
-  .vehicle-list .card .buy {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    font-size: .8rem;
-    padding-left: 25px;
-    padding-right: 25px;
   }
 
 </style>
