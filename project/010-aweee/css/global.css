@@ -1,0 +1,328 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 17px;
+}
+
+html {
+  font-family: 'Microsoft YaHei', SimHei, sans-serif;
+  color: #444;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+body {
+  background: #f0f0f0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr:hover {
+  background: rgba(0, 80, 200, .06);
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+}
+
+.tac {
+  text-align: center;
+}
+
+.tar {
+  text-align: right;
+}
+
+.footer {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.simple-checker > input[type=checkbox] {
+  width: auto;
+}
+
+/*.simple-checker input {*/
+/*display: inline-block;*/
+/*}*/
+
+.anchor {
+  cursor: pointer;
+}
+
+.empty-holder {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #777;
+}
+
+.small {
+  font-size: 80%;
+}
+
+.muted {
+  opacity: .8;
+}
+
+.muted a {
+  color: #555;
+}
+
+.por {
+  position: relative;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.tel {
+  font-weight: bold;
+  color: #fd521d;
+}
+
+.col-lg-1 {
+  width: 8.333333333%;
+}
+
+.col-lg-2 {
+  width: 16.666666666%;
+}
+
+.col-lg-3 {
+  width: 25%;
+}
+
+.col-lg-4 {
+  width: 33.3333333333%;
+}
+
+.col-lg-5 {
+  width: 41.6666666666%;
+}
+
+.col-lg-6 {
+  width: 50%;
+}
+
+.col-lg-7 {
+  width: 58.33333333%;
+}
+
+.col-lg-8 {
+  width: 66.666666666%;
+}
+
+.col-lg-9 {
+  width: 75%;
+}
+
+.col-lg-10 {
+  width: 83.33333333333%;
+}
+
+.col-lg-11 {
+  width: 91.66666666666%;
+}
+
+.col-lg-12 {
+  width: 100%;
+}
+
+@media (max-width: 400px) {
+  .col-sm-1 {
+    width: 8.333333333%;
+  }
+
+  .col-sm-2 {
+    width: 16.666666666%;
+  }
+
+  .col-sm-3 {
+    width: 25%;
+  }
+
+  .col-sm-4 {
+    width: 33.3333333333%;
+  }
+
+  .col-sm-5 {
+    width: 41.6666666666%;
+  }
+
+  .col-sm-6 {
+    width: 50%;
+  }
+
+  .col-sm-7 {
+    width: 58.33333333%;
+  }
+
+  .col-sm-8 {
+    width: 66.666666666%;
+  }
+
+  .col-sm-9 {
+    width: 75%;
+  }
+
+  .col-sm-10 {
+    width: 83.33333333333%;
+  }
+
+  .col-sm-11 {
+    width: 91.66666666666%;
+  }
+
+  .col-sm-12 {
+    width: 100%;
+  }
+}
+
+.kill-space {
+  font-size: 0;
+}
+
+.row {
+  font-size: 0;
+  display: block;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.container {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.well {
+  -webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;
+  background: #f0f0f0;
+  padding: 10px;
+}
+
+[class*=col-],
+.col {
+  padding: 5px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1rem;
+}
+
+.col.left,
+[class*=col-].left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.card {
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+}
+
+textarea,
+button,
+.btn,
+input {
+  outline: 0;
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, .1);
+  color: #444;
+}
+
+fieldset[disabled] button,
+fieldset[disabled] input,
+fieldset[disabled] textarea,
+button[disabled],
+input[disabled],
+textarea[disabled] {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+textarea,
+input {
+  outline: 0;
+  width: 100%;
+}
+
+.btn-primary {
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #fd521d;
+  color: #fff;
+}
+
+.btn-small {
+  padding: 3px 5px;
+  font-size: .8rem;
+}
+
+.btn-group button,
+.btn-group .btn {
+  border-left-width: 0;
+}
+
+.btn-group button:first-child,
+.btn-group .btn:first-child {
+  border-left-width: 1px;
+}
+
+.btn-fat {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.huge-text {
+  font-size: 50px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.currency:before {
+  content: '￥';
+}
+
+.input-control {
+  margin-bottom: 10px;
+}
+
+.input-control label {
+  display: block;
+  margin-bottom: 2px;
+}
