@@ -1,0 +1,56 @@
+<script src="../../node_modules/axios/dist/axios.js"></script>
+<script src="./api.js"></script>
+<script>
+  // api('MODEL/CREATE', {
+  //   name      : 'user2',
+  //   structure : {
+  //     name         : {
+  //       type : 'string',
+  //     },
+  //     age          : {
+  //       type     : 'integer',
+  //       positive : true,
+  //     },
+  //     english_name : {
+  //       type : 'string',
+  //     },
+  //     gender       : {
+  //       type : 'string',
+  //     },
+  //   },
+  // });
+
+  // api('MODEL/SET_MOCK', {
+  //   model : 'user2',
+  //   mock  : {
+  //     name         : { mocker : 'name' },
+  //     age          : {
+  //       mocker : 'numberBetween',
+  //       params : [ 1, 99 ],
+  //     },
+  //     english_name : {
+  //       mocker   : 'name',
+  //       language : 'en_US', // 可指定语言
+  //     },
+  //     gender       : {
+  //       mocker : 'randomElement',
+  //       params : [ [ '男', '女', '未知' ] ],
+  //     },
+  //   },
+  // });
+
+  // api('PROPERTY/CREATE', {
+  //   key       : 'balance',
+  //   model     : 'user2',
+  //   structure : {
+  //     type : 'float',
+  //   },
+  // });
+
+  api('MODEL/FIND', {
+    key : 'user2',
+  });
+
+  // api('user2/seed', { amount : 500 });
+  // api('user2/read', { limit : 50 });
+</script>
